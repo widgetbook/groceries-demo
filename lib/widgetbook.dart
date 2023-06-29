@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:groceries_app/theme/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
@@ -52,10 +51,7 @@ class WidgetbookApp extends StatelessWidget {
           themeBuilder: (context, theme, child) => ColoredBox(
             color: theme.surface.primary,
             child: DefaultTextStyle(
-              // TODO change this later to the theme
-              style: GoogleFonts.poppins(
-                fontSize: 16,
-              ),
+              style: theme.typography.bodyDefault,
               child: AppTheme(
                 data: theme,
                 child: child,

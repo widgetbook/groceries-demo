@@ -12,6 +12,47 @@ final lightTheme = AppThemeData(
       fontWeight: FontWeight.w600,
       color: const Color(0xFF202020),
     ),
+    displayRegular: GoogleFonts.lora(
+      fontSize: 32,
+      fontWeight: FontWeight.w400,
+      color: const Color(0xFF202020),
+    ),
+    headingSemibold: GoogleFonts.poppins(
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.5,
+    ),
+    bodyRegular: GoogleFonts.poppins(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.5,
+    ),
+    bodyMedium: GoogleFonts.poppins(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.25,
+    ),
+    bodyDefault: GoogleFonts.poppins(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.25,
+    ),
+    bodySemiBold: GoogleFonts.poppins(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.5,
+    ),
+    labelMedium: GoogleFonts.poppins(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.1,
+    ),
   ),
   surface: SurfaceThemeData(
     primary: const Color(0xFFEAE0D5),
