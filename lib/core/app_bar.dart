@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app/core/app_icon.dart';
+import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(name: 'Default', type: AppBar)
@@ -21,30 +23,39 @@ class AppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 64,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: AppTheme.of(context).spacing.small,
+        vertical: AppTheme.of(context).spacing.extraSmall,
+      ),
       child: Row(
         children: [
-          const Icon(Icons.menu),
+          const AppIcon(icon: Icons.menu),
           Expanded(
-            child: Container(
+            child: Align(
               alignment: Alignment.center,
               child: Text(
                 title,
+                style: AppTheme.of(context).typography.logoDefault,
               ),
             ),
           ),
           Stack(
             children: [
-              const Icon(Icons.shopping_bag_outlined),
+              const AppIcon(icon: Icons.shopping_bag_outlined),
               if (hasItemsInBasket)
-                Container(
+                Positioned(
+                  left: 4,
+                  top: 4,
+                  child: Container(
                     width: 8,
                     height: 8,
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(4),
-                    )),
+                    ),
+                  ),
+                ),
             ],
           )
         ],

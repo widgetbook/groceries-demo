@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:groceries_app/theme/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
@@ -27,6 +28,16 @@ class WidgetbookApp extends StatelessWidget {
       directories: directories,
       appBuilder: (context, child) => child,
       addons: [
+        LocalizationAddon(
+          locales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+        ),
+        DeviceFrameAddon(
+          devices: [
+            Devices.ios.iPhone13,
+            Devices.ios.iPad,
+          ],
+        ),
         ThemeAddon(
           themes: [
             WidgetbookTheme(
@@ -38,19 +49,20 @@ class WidgetbookApp extends StatelessWidget {
               data: darkTheme,
             ),
           ],
-          themeBuilder: (context, theme, child) => AppTheme(
-            data: theme,
-            child: child,
+          themeBuilder: (context, theme, child) => ColoredBox(
+            color: theme.surface.primary,
+            child: DefaultTextStyle(
+              // TODO change this later to the theme
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+              ),
+              child: AppTheme(
+                data: theme,
+                child: child,
+              ),
+            ),
           ),
         ),
-        LocalizationAddon(
-          locales: AppLocalizations.supportedLocales,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-        ),
-        DeviceFrameAddon(devices: [
-          Devices.ios.iPhone13,
-          Devices.ios.iPad,
-        ])
       ],
     );
   }

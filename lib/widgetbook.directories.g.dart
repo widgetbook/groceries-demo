@@ -19,10 +19,11 @@ import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/basket/screen/basket_screen.dart';
 import 'package:groceries_app/core/app_bar.dart';
+import 'package:groceries_app/core/app_icon.dart';
+import 'package:groceries_app/core/app_icon_button.dart';
 import 'package:groceries_app/core/card.dart';
 import 'package:groceries_app/core/continue_button.dart';
 import 'package:groceries_app/core/core.dart';
-import 'package:groceries_app/core/icon_button.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/screen/home_screen.dart';
 import 'package:groceries_app/home/widgets/fruit_card.dart';
@@ -85,6 +86,15 @@ final directories = [
           WidgetbookUseCase(
             name: 'Default',
             builder: (context) => buildIconButtonUseCase(context),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'AppIcon',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Default',
+            builder: (context) => buildAppIconUseCase(context),
           ),
         ],
       ),
