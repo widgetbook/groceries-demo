@@ -25,44 +25,44 @@ class AppTheme extends InheritedWidget {
 
 class SpacingThemeData {
   final double none;
-  final double xs;
-  final double sm;
-  final double md;
-  final double lg;
-  final double xl;
-  final double xl2;
-  final double xl3;
+  final double extraSmall;
+  final double small;
+  final double medium;
+  final double large;
+  final double extraLarge;
+  final double extraExtraLarge;
+  final double extraExtraExtraLarge;
 
   const SpacingThemeData({
     this.none = 0,
-    this.xs = 4,
-    this.sm = 8,
-    this.md = 16,
-    this.lg = 24,
-    this.xl = 32,
-    this.xl2 = 40,
-    this.xl3 = 56,
+    this.extraSmall = 4,
+    this.small = 8,
+    this.medium = 16,
+    this.large = 24,
+    this.extraLarge = 32,
+    this.extraExtraLarge = 40,
+    this.extraExtraExtraLarge = 56,
   });
 }
 
 class RadiusThemeData {
   final double none;
-  final double xs;
-  final double sm;
-  final double md;
-  final double lg;
-  final double xl;
-  final double xl2;
+  final double extraSmall;
+  final double small;
+  final double medium;
+  final double large;
+  final double extraLarge;
+  final double extraExtraLarge;
   final double full;
 
   const RadiusThemeData({
     this.none = 0,
-    this.xs = 4,
-    this.sm = 8,
-    this.md = 12,
-    this.lg = 16,
-    this.xl = 28,
-    this.xl2 = 32,
+    this.extraSmall = 4,
+    this.small = 8,
+    this.medium = 12,
+    this.large = 16,
+    this.extraLarge = 28,
+    this.extraExtraLarge = 32,
     this.full = double.infinity,
   });
 }
@@ -84,10 +84,10 @@ class AppThemeData {
 }
 
 class TypographyThemeData {
-  final TextStyle headerSomething;
+  final TextStyle logoDefault;
 
   const TypographyThemeData({
-    required this.headerSomething,
+    required this.logoDefault,
   });
 }
 

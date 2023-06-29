@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/core/icon_button.dart';
+import 'package:groceries_app/core/app_icon_button.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
@@ -31,8 +31,8 @@ class FruitCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(AppTheme.of(context).radius.sm),
-              topRight: Radius.circular(AppTheme.of(context).radius.sm),
+              topLeft: Radius.circular(AppTheme.of(context).radius.small),
+              topRight: Radius.circular(AppTheme.of(context).radius.small),
             ),
             child: Stack(
               children: [
@@ -46,8 +46,8 @@ class FruitCard extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: AppTheme.of(context).spacing.sm,
-                  top: AppTheme.of(context).spacing.sm,
+                  right: AppTheme.of(context).spacing.small,
+                  top: AppTheme.of(context).spacing.small,
                   child: AppIconButton(
                     icon: Icons.shopping_bag_outlined,
                     onPressed: () => onFruitAdded(fruit),

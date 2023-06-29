@@ -4,10 +4,15 @@ import 'package:groceries_app/theme/theme.dart';
 
 final darkTheme = AppThemeData(
   spacing: const SpacingThemeData(
-    xs: 4,
+    extraSmall: 4,
   ),
   typography: TypographyThemeData(
-    headerSomething: GoogleFonts.poppins(),
+    logoDefault: GoogleFonts.newsreader(
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+      color: const Color(0xFFEAE0D5),
+      height: 28,
+    ),
   ),
   surface: SurfaceThemeData(
     primary: const Color(0xFF202020),

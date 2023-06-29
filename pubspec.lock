@@ -653,10 +653,11 @@ packages:
   widgetbook:
     dependency: "direct dev"
     description:
-      name: widgetbook
-      sha256: "2e01004a0e5b03fbfaf6a8bc5378e86b977ee5859a6aac27490252c77e88e870"
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/widgetbook"
+      ref: main
+      resolved-ref: a248be3e8ae84714e72fcf150fc6ad7c16ac3d2b
+      url: "https://github.com/widgetbook/widgetbook.git"
+    source: git
     version: "3.0.0"
   widgetbook_annotation:
     dependency: "direct main"
