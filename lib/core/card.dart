@@ -5,13 +5,14 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(name: 'Default', type: Card)
 Widget card(BuildContext context) {
-  return const Padding(
-    padding: EdgeInsets.all(8.0),
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
     child: Card(
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Text(
           'This is some text',
+          style: AppTheme.of(context).typography.bodyDefault,
         ),
       ),
     ),
@@ -30,8 +31,16 @@ class Card extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppTheme.of(context).surface.primary,
-        borderRadius: BorderRadius.circular(8),
+        color: AppTheme.of(context).surface.light,
+        borderRadius: BorderRadius.circular(
+          AppTheme.of(context).radius.small,
+        ),
+        border: Border.all(
+          color: AppTheme.of(context).border.lowEmphasis,
+          // TODO It's currently not possible to link a variable to that Figma
+          // property so we have this hard-coded for now
+          width: 1,
+        ),
       ),
       child: child,
     );

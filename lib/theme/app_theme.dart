@@ -63,7 +63,7 @@ class RadiusThemeData {
     this.large = 16,
     this.extraLarge = 28,
     this.extraExtraLarge = 32,
-    this.full = double.infinity,
+    this.full = 100,
   });
 }
 

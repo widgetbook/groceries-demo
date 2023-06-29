@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/core/app_icon_button.dart';
+import 'package:groceries_app/core/core.dart' as core;
 import 'package:groceries_app/fixtures/fruits.dart';
+import 'package:groceries_app/home/widgets/add_basket_button.dart';
 import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(name: 'Default', type: FruitCard)
 Widget fuitCard(BuildContext context) {
-  return FruitCard(
-    fruit: mangoFruit,
-    onFruitAdded: (_) {},
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: FruitCard(
+      fruit: mangoFruit,
+      onFruitAdded: (_) {},
+    ),
   );
 }
 
@@ -25,45 +29,87 @@ class FruitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return core.Card(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(AppTheme.of(context).radius.small),
-              topRight: Radius.circular(AppTheme.of(context).radius.small),
-            ),
-            child: Stack(
-              children: [
-                Container(
-                  height: 162,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('assets/fruits/mango.jpeg'),
+          Stack(
+            children: [
+              Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(
+                      AppTheme.of(context).radius.small,
+                    ),
+                    topRight: Radius.circular(
+                      AppTheme.of(context).radius.small,
                     ),
                   ),
-                ),
-                Positioned(
-                  right: AppTheme.of(context).spacing.small,
-                  top: AppTheme.of(context).spacing.small,
-                  child: AppIconButton(
-                    icon: Icons.shopping_bag_outlined,
-                    onPressed: () => onFruitAdded(fruit),
+                  border: Border.all(
+                    color: AppTheme.of(context).border.lowEmphasis,
+                    width: 0,
                   ),
+                  image: const DecorationImage(
+                    fit: BoxFit.fitWidth,
+                    image: AssetImage('assets/fruits/mango.jpeg'),
+                  ),
+                ),
+              ),
+              Positioned(
+                right: AppTheme.of(context).spacing.small,
+                top: AppTheme.of(context).spacing.small,
+                child: AddBasketButton(
+                  icon: Icons.shopping_bag_outlined,
+                  onPressed: () => onFruitAdded(fruit),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.all(AppTheme.of(context).spacing.medium),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        fruit.name,
+                        style: AppTheme.of(context).typography.headingSemibold,
+                      ),
+                    ),
+                    Text(
+                      '\$3.34/kg',
+                      style: AppTheme.of(context).typography.bodyDefault,
+                    ),
+                  ],
+                ),
+                SizedBox(height: AppTheme.of(context).spacing.medium),
+                Text(
+                  'Grown in germany',
+                  style: AppTheme.of(context).typography.bodyMedium,
+                ),
+                SizedBox(height: AppTheme.of(context).spacing.extraSmall),
+                Row(
+                  children: [
+                    Text(
+                      "John Doe's Farm",
+                      style: AppTheme.of(context).typography.bodyDefault,
+                    ),
+                    SizedBox(width: AppTheme.of(context).spacing.extraSmall),
+                    Icon(
+                      Icons.arrow_forward_rounded,
+                      size: 16,
+                      color: AppTheme.of(context).surface.secondary,
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-          Row(
-            children: [
-              Text(fruit.name),
-              const Text('3.34/kg'),
-            ],
-          ),
-          const Text('Grown in germany'),
-          const Text("John Doe's Farm"),
         ],
       ),
     );

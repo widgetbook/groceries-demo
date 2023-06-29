@@ -20,12 +20,12 @@ import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/basket/screen/basket_screen.dart';
 import 'package:groceries_app/core/app_bar.dart';
 import 'package:groceries_app/core/app_icon.dart';
-import 'package:groceries_app/core/app_icon_button.dart';
 import 'package:groceries_app/core/card.dart';
 import 'package:groceries_app/core/continue_button.dart';
 import 'package:groceries_app/core/core.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/screen/home_screen.dart';
+import 'package:groceries_app/home/widgets/add_basket_button.dart';
 import 'package:groceries_app/home/widgets/fruit_card.dart';
 import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
@@ -81,15 +81,6 @@ final directories = [
         ],
       ),
       WidgetbookComponent(
-        name: 'AppIconButton',
-        useCases: [
-          WidgetbookUseCase(
-            name: 'Default',
-            builder: (context) => buildIconButtonUseCase(context),
-          ),
-        ],
-      ),
-      WidgetbookComponent(
         name: 'AppIcon',
         useCases: [
           WidgetbookUseCase(
@@ -134,6 +125,15 @@ final directories = [
       WidgetbookFolder(
         name: 'widgets',
         children: [
+          WidgetbookComponent(
+            name: 'AddBasketButton',
+            useCases: [
+              WidgetbookUseCase(
+                name: 'Default',
+                builder: (context) => buildIconButtonUseCase(context),
+              ),
+            ],
+          ),
           WidgetbookComponent(
             name: 'FruitCard',
             useCases: [
