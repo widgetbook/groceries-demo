@@ -1,3 +1,14 @@
 {
-  "helloWorld": "Hallo Welt!"
+  "fruitsBananaName": "Banane",
+  "fruitsAvocadoName": "Avocado",
+  "fruitsMangoName": "Mango",
+  "fruitsHeadline": "Früchte",
+  "fruitsGrownInCalifornia": "In der USA angebaut",
+  "fruitsGrownInGermany": "In Deutschland angebaut",
+  "unit": "Stück",
+  "johnDoeFarm": "John Doe's Bauernhof",
+  "widgetbookFarm": "Widgetbook Bauernhof",
+
+  "basketContinueToShipping": "Weiter zum Versand",
+  "startShopping": "Beginn mit dem Einkauf"
 }

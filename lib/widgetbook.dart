@@ -8,11 +8,6 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 import 'widgetbook.directories.g.dart';
 
-@UseCase(name: 'Placeholder', type: Placeholder)
-Widget placeholder(BuildContext context) {
-  return Text(AppLocalizations.of(context)!.helloWorld);
-}
-
 void main() {
   runApp(const WidgetbookApp());
 }

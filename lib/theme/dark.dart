@@ -61,6 +61,7 @@ final darkTheme = AppThemeData(
     light: const Color(0xFF343434),
     tertiary: const Color(0xFFD3D3D3),
     brand: const Color(0xFFA0EFFF),
+    feature: const Color(0xFFFFDBD1),
   ),
   border: const BorderThemeData(
     lowEmphasis: Color(0xFF4D4D4D),

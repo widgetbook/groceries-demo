@@ -9,17 +9,16 @@
 // **************************************************************************
 
 import 'dart:core';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/basic.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:groceries_app/basket/basket_card.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/basket/screen/basket_screen.dart';
 import 'package:groceries_app/core/app_bar.dart';
 import 'package:groceries_app/core/app_icon.dart';
+import 'package:groceries_app/core/badge.dart';
 import 'package:groceries_app/core/card.dart';
 import 'package:groceries_app/core/continue_button.dart';
 import 'package:groceries_app/core/core.dart';
@@ -31,28 +30,22 @@ import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:groceries_app/theme/theme.dart';
 import 'package:groceries_app/widgetbook.colors.dart';
-import 'package:groceries_app/widgetbook.dart';
 import 'package:groceries_app/widgetbook.spacing.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 final directories = [
   WidgetbookFolder(
-    name: 'widgets',
+    name: 'core',
     children: [
       WidgetbookComponent(
-        name: 'Placeholder',
+        name: 'Badge',
         useCases: [
           WidgetbookUseCase(
-            name: 'Placeholder',
-            builder: (context) => placeholder(context),
+            name: 'Default',
+            builder: (context) => badge(context),
           ),
         ],
       ),
-    ],
-  ),
-  WidgetbookFolder(
-    name: 'core',
-    children: [
       WidgetbookComponent(
         name: 'AppBar',
         useCases: [

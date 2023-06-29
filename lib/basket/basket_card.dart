@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 @UseCase(name: 'Default', type: BasketCard)
 Widget buildBasketCardUseCase(BuildContext context) {
   return BasketCard(
-    fruit: mangoFruit,
+    fruit: getMango(context),
     onFruitAdded: (_) {},
     onFruitRemoved: (_) {},
     numberOfFruits: 1,

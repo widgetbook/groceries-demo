@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:groceries_app/core/core.dart' as core;
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/widgets/add_basket_button.dart';
@@ -11,7 +12,7 @@ Widget fuitCard(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: FruitCard(
-      fruit: mangoFruit,
+      fruit: getMango(context),
       onFruitAdded: (_) {},
     ),
   );
@@ -51,9 +52,9 @@ class FruitCard extends StatelessWidget {
                     color: AppTheme.of(context).border.lowEmphasis,
                     width: 0,
                   ),
-                  image: const DecorationImage(
+                  image: DecorationImage(
                     fit: BoxFit.fitWidth,
-                    image: AssetImage('assets/fruits/mango.jpeg'),
+                    image: AssetImage(fruit.image),
                   ),
                 ),
               ),
@@ -82,21 +83,21 @@ class FruitCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '\$3.34/kg',
+                      '\$${fruit.price}/${AppLocalizations.of(context)!.unit}',
                       style: AppTheme.of(context).typography.bodyDefault,
                     ),
                   ],
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.medium),
                 Text(
-                  'Grown in germany',
+                  fruit.grownIn,
                   style: AppTheme.of(context).typography.bodyMedium,
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.extraSmall),
                 Row(
                   children: [
                     Text(
-                      "John Doe's Farm",
+                      fruit.farm,
                       style: AppTheme.of(context).typography.bodyDefault,
                     ),
                     SizedBox(width: AppTheme.of(context).spacing.extraSmall),

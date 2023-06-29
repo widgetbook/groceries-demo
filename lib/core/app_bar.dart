@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/core/app_icon.dart';
+import 'package:groceries_app/core/badge.dart' as core;
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
@@ -7,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget buildAppBarUseCase(BuildContext context) {
   return const AppBar(
     title: 'Groceries App',
-    hasItemsInBasket: true,
+    numberOfItemsInBasket: 9,
   );
 }
 
@@ -15,11 +16,11 @@ class AppBar extends StatelessWidget {
   const AppBar({
     super.key,
     required this.title,
-    required this.hasItemsInBasket,
+    required this.numberOfItemsInBasket,
   });
 
   final String title;
-  final bool hasItemsInBasket;
+  final int numberOfItemsInBasket;
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +44,12 @@ class AppBar extends StatelessWidget {
           Stack(
             children: [
               const AppIcon(icon: Icons.shopping_bag_outlined),
-              if (hasItemsInBasket)
+              if (numberOfItemsInBasket > 0)
                 Positioned(
-                  left: 4,
-                  top: 4,
-                  child: Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                  right: 6,
+                  top: 6,
+                  child: core.Badge(
+                    number: numberOfItemsInBasket,
                   ),
                 ),
             ],

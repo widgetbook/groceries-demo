@@ -12,8 +12,8 @@ Widget buildBasketScreenUseCase(BuildContext context) {
   return BasketScope(
     state: BasketState(
       data: {
-        mangoFruit: 1,
-        avocadoFruit: 2,
+        getMango(context): 1,
+        getAvocado(context): 2,
       },
     ),
     child: Builder(
@@ -40,9 +40,9 @@ class BasketScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AppBar(
+        AppBar(
           title: 'Groceries App',
-          hasItemsInBasket: true,
+          numberOfItemsInBasket: fruits.length,
         ),
         Expanded(
           child: ListView.builder(

@@ -122,6 +122,7 @@ class SurfaceThemeData {
   final Color light;
   final Color tertiary;
   final Color brand;
+  final Color feature;
 
   SurfaceThemeData({
     required this.primary,
@@ -130,5 +131,6 @@ class SurfaceThemeData {
     required this.light,
     required this.tertiary,
     required this.brand,
+    required this.feature,
   });
 }

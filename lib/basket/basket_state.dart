@@ -6,8 +6,8 @@ class BasketState extends ChangeNotifier {
   Map<Fruit, int> data;
 
   BasketState({
-    this.data = const {},
-  });
+    Map<Fruit, int>? data,
+  }) : data = data ?? {};
 
   void addFruit(Fruit fruit) {
     if (data.containsKey(fruit)) {

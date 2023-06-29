@@ -10,14 +10,14 @@ final _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const HomeScreen(
-        fruits: fruits,
+      builder: (context, state) => HomeScreen(
+        fruits: getFruits(context),
       ),
     ),
     GoRoute(
       path: '/basket',
       builder: (context, state) => BasketScreen(
-        fruits: Map.fromIterable(fruits),
+        fruits: Map.fromIterable(getFruits(context)),
       ),
     ),
   ],
