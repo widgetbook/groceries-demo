@@ -8,7 +8,7 @@ Fruit getMango(BuildContext context) {
     farm: AppLocalizations.of(context)!.johnDoeFarm,
     grownIn: AppLocalizations.of(context)!.fruitsGrownInCalifornia,
     price: 3.34,
-    image: 'assets/fruits/mango.jpeg',
+    image: 'assets/fruits/mango2.jpeg',
   );
 }
 
@@ -18,7 +18,7 @@ Fruit getAvocado(BuildContext context) {
     farm: AppLocalizations.of(context)!.widgetbookFarm,
     grownIn: AppLocalizations.of(context)!.fruitsGrownInGermany,
     price: 5.45,
-    image: 'assets/fruits/mango.jpeg',
+    image: 'assets/fruits/avocado.jpeg',
   );
 }
 
@@ -28,7 +28,7 @@ Fruit getBanana(BuildContext context) {
     farm: AppLocalizations.of(context)!.widgetbookFarm,
     grownIn: AppLocalizations.of(context)!.fruitsGrownInGermany,
     price: 2.56,
-    image: 'assets/fruits/mango.jpeg',
+    image: 'assets/fruits/banana2.jpeg',
   );
 }
 

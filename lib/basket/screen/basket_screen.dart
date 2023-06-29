@@ -1,10 +1,15 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:groceries_app/basket/basket_card.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/core/core.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/models/fruit.dart';
+import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(name: 'Default', type: BasketScreen)
@@ -45,19 +50,44 @@ class BasketScreen extends StatelessWidget {
           numberOfItemsInBasket: fruits.length,
         ),
         Expanded(
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              final fruit = fruits.keys.toList()[index];
-              return BasketCard(
-                numberOfFruits: fruits[fruit]!,
-                fruit: fruit,
-                onFruitAdded: (fruit) =>
-                    BasketState.of(context).addFruit(fruit),
-                onFruitRemoved: (fruit) =>
-                    BasketState.of(context).removeFruit(fruit),
-              );
-            },
-            itemCount: fruits.length,
+          child: Padding(
+            padding: EdgeInsets.all(AppTheme.of(context).spacing.medium),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppLocalizations.of(context)!.basketHeadline,
+                  style: AppTheme.of(context).typography.displayRegular,
+                ),
+                SizedBox(
+                  height: AppTheme.of(context).spacing.large,
+                ),
+                Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return AlignedGridView.count(
+                        crossAxisCount: max(1, constraints.maxWidth ~/ 300),
+                        mainAxisSpacing: AppTheme.of(context).spacing.medium,
+                        crossAxisSpacing: AppTheme.of(context).spacing.medium,
+                        itemCount: fruits.length,
+                        itemBuilder: (context, index) {
+                          final fruit = fruits.keys.toList()[index];
+                          return BasketCard(
+                            numberOfFruits: fruits[fruit]!,
+                            fruit: fruit,
+                            onFruitAdded: (fruit) =>
+                                BasketState.of(context).addFruit(fruit),
+                            onFruitRemoved: (fruit) =>
+                                BasketState.of(context).removeFruit(fruit),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
           ),
         )
       ],

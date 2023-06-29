@@ -9,12 +9,15 @@
 // **************************************************************************
 
 import 'dart:core';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:groceries_app/basket/basket_card.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
+import 'package:groceries_app/basket/quantity.dart';
 import 'package:groceries_app/basket/screen/basket_screen.dart';
 import 'package:groceries_app/core/app_bar.dart';
 import 'package:groceries_app/core/app_icon.dart';
@@ -22,6 +25,7 @@ import 'package:groceries_app/core/badge.dart';
 import 'package:groceries_app/core/card.dart';
 import 'package:groceries_app/core/continue_button.dart';
 import 'package:groceries_app/core/core.dart';
+import 'package:groceries_app/core/quantity_button.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/screen/home_screen.dart';
 import 'package:groceries_app/home/widgets/add_basket_button.dart';
@@ -38,15 +42,6 @@ final directories = [
     name: 'core',
     children: [
       WidgetbookComponent(
-        name: 'Badge',
-        useCases: [
-          WidgetbookUseCase(
-            name: 'Default',
-            builder: (context) => badge(context),
-          ),
-        ],
-      ),
-      WidgetbookComponent(
         name: 'AppBar',
         useCases: [
           WidgetbookUseCase(
@@ -56,11 +51,33 @@ final directories = [
         ],
       ),
       WidgetbookComponent(
+        name: 'Badge',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Default',
+            builder: (context) => badge(context),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
         name: 'Card',
         useCases: [
           WidgetbookUseCase(
             name: 'Default',
             builder: (context) => card(context),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'QuantityButton',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Add',
+            builder: (context) => buildQuantityButtonAddUseCase(context),
+          ),
+          WidgetbookUseCase(
+            name: 'Remove',
+            builder: (context) => buildQuantityButtonRemoveUseCase(context),
           ),
         ],
       ),
@@ -93,6 +110,15 @@ final directories = [
           WidgetbookUseCase(
             name: 'Default',
             builder: (context) => buildBasketCardUseCase(context),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Quantity',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Default',
+            builder: (context) => buildQuantityUseCase(context),
           ),
         ],
       ),

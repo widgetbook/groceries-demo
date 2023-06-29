@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/core/core.dart';
@@ -51,17 +54,22 @@ class HomeScreen extends StatelessWidget {
                   height: AppTheme.of(context).spacing.large,
                 ),
                 Expanded(
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    itemCount: fruits.length,
-                    separatorBuilder: (context, index) => SizedBox(
-                      height: AppTheme.of(context).spacing.medium,
-                    ),
-                    itemBuilder: (context, index) => FruitCard(
-                      fruit: fruits[index],
-                      onFruitAdded: (fruit) =>
-                          BasketState.of(context).addFruit(fruit),
-                    ),
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return AlignedGridView.count(
+                        crossAxisCount: max(1, constraints.maxWidth ~/ 300),
+                        mainAxisSpacing: AppTheme.of(context).spacing.medium,
+                        crossAxisSpacing: AppTheme.of(context).spacing.medium,
+                        itemCount: fruits.length,
+                        itemBuilder: (context, index) {
+                          return FruitCard(
+                            fruit: fruits[index],
+                            onFruitAdded: (fruit) =>
+                                BasketState.of(context).addFruit(fruit),
+                          );
+                        },
+                      );
+                    },
                   ),
                 )
               ],

@@ -31,7 +31,7 @@ class AppBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const AppIcon(icon: Icons.menu),
+          const AppIcon(icon: Icons.menu_rounded),
           Expanded(
             child: Align(
               alignment: Alignment.center,
