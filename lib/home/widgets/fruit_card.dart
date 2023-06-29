@@ -46,8 +46,8 @@ class FruitCard extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: 8,
-                  top: 8,
+                  right: AppTheme.of(context).spacing.sm,
+                  top: AppTheme.of(context).spacing.sm,
                   child: AppIconButton(
                     icon: Icons.shopping_bag_outlined,
                     onPressed: () => onFruitAdded(fruit),
