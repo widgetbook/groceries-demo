@@ -2,12 +2,11 @@ workflows:
   # Push a new build everytime the staging branch is updated
   widgetbook-base:
     name: Widgetbook Workflow Base
-    working_directory: app_widgetbook
     triggering:
       events:
         - push
       branch_patterns:
-        - pattern: 'staging'
+        - pattern: 'main'
           include: true
     environment:
       # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
@@ -21,14 +20,14 @@ workflows:
       - name: Get dependencies
         script: flutter pub get
 
+      - name: Install Widgetbook CLI
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.2
+
       - name: Run build runner
         script: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Build Website
         script: flutter build web -t lib/widgetbook.dart
-
-      - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0
 
       - name: Upload Widgetbook
         script: |
@@ -38,7 +37,6 @@ workflows:
   # Create review information and push a build everytime the pull request is updated
   widgetbook-head:
     name: Widgetbook Workflow Head
-    working_directory: app_widgetbook
     triggering:
       events:
         - pull_request
@@ -52,9 +50,14 @@ workflows:
       # Necessary to make the correct branch information available 
       - name: Switch branch
         script: |
+          echo $CM_BRANCH
           git switch -c $CM_BRANCH
+          echo "Not deleting"
+          echo $CM_PULL_REQUEST_DEST
           git branch -D $CM_PULL_REQUEST_DEST
+          echo "Now switching again"
           git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
+          echo "Now switching to original"
           git switch $CM_BRANCH
       - name: Git diff
         script: |
@@ -65,14 +68,14 @@ workflows:
       - name: Get dependencies
         script: flutter pub get
 
+      - name: Install Widgetbook CLI
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.2
+
       - name: Run build runner
         script: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Build Website
         script: flutter build web -t lib/widgetbook.dart
-
-      - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0
 
       - name: Upload Widgetbook
         script: |
