@@ -85,9 +85,23 @@ class AppThemeData {
 
 class TypographyThemeData {
   final TextStyle logoDefault;
+  final TextStyle displayRegular;
+  final TextStyle headingSemibold;
+  final TextStyle bodyRegular;
+  final TextStyle bodyMedium;
+  final TextStyle bodyDefault;
+  final TextStyle bodySemiBold;
+  final TextStyle labelMedium;
 
   const TypographyThemeData({
     required this.logoDefault,
+    required this.displayRegular,
+    required this.headingSemibold,
+    required this.bodyRegular,
+    required this.bodyMedium,
+    required this.bodyDefault,
+    required this.bodySemiBold,
+    required this.labelMedium,
   });
 }
 
