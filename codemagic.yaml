@@ -1,0 +1,81 @@
+workflows:
+  # Push a new build everytime the staging branch is updated
+  widgetbook-base:
+    name: Widgetbook Workflow Base
+    working_directory: app_widgetbook
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: 'staging'
+          include: true
+    environment:
+      # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
+      # "Widgetbook Credentials" group
+      groups:
+        - Widgetbook Credentials
+    scripts:
+      - name: Get Flutter packages
+        script: | 
+          flutter packages pub get
+      - name: Get dependencies
+        script: flutter pub get
+
+      - name: Run build runner
+        script: flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Build Website
+        script: flutter build web -t lib/widgetbook.dart
+
+      - name: Install Widgetbook CLI
+        script: dart pub global activate widgetbook_cli 3.0.0
+
+      - name: Upload Widgetbook
+        script: |
+          widgetbook publish \
+                --api-key $WIDGETBOOK_API_KEY \
+                --branch $CM_BRANCH
+  # Create review information and push a build everytime the pull request is updated
+  widgetbook-head:
+    name: Widgetbook Workflow Head
+    working_directory: app_widgetbook
+    triggering:
+      events:
+        - pull_request
+    environment:
+      # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
+      # "Widgetbook Credentials" group
+      groups:
+        - Widgetbook Credentials
+    
+    scripts:
+      # Necessary to make the correct branch information available 
+      - name: Switch branch
+        script: |
+          git switch -c $CM_BRANCH
+          git branch -D $CM_PULL_REQUEST_DEST
+          git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
+          git switch $CM_BRANCH
+      - name: Git diff
+        script: |
+          git diff $CM_PULL_REQUEST_DEST
+      - name: Get Flutter packages
+        script: | 
+          flutter packages pub get
+      - name: Get dependencies
+        script: flutter pub get
+
+      - name: Run build runner
+        script: flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Build Website
+        script: flutter build web -t lib/widgetbook.dart
+
+      - name: Install Widgetbook CLI
+        script: dart pub global activate widgetbook_cli 3.0.0
+
+      - name: Upload Widgetbook
+        script: |
+          widgetbook publish \
+                --api-key $WIDGETBOOK_API_KEY \
+                --base-branch $CM_PULL_REQUEST_DEST
