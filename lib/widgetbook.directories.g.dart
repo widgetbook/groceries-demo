@@ -18,6 +18,7 @@ import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/basket/screen/basket_screen.dart';
 import 'package:groceries_app/basket/widgets/basket_card.dart';
+import 'package:groceries_app/basket/widgets/empty_basket_placeholder.dart';
 import 'package:groceries_app/basket/widgets/quantity.dart';
 import 'package:groceries_app/basket/widgets/summary.dart';
 import 'package:groceries_app/basket/widgets/widgets.dart';
@@ -25,8 +26,8 @@ import 'package:groceries_app/core/app_bar.dart';
 import 'package:groceries_app/core/app_icon.dart';
 import 'package:groceries_app/core/badge.dart';
 import 'package:groceries_app/core/card.dart';
-import 'package:groceries_app/core/continue_button.dart';
 import 'package:groceries_app/core/core.dart';
+import 'package:groceries_app/core/primary_button.dart';
 import 'package:groceries_app/core/quantity_button.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/screen/home_screen.dart';
@@ -84,10 +85,10 @@ final directories = [
         ],
       ),
       WidgetbookComponent(
-        name: 'ContinueButton',
+        name: 'PrimaryButton',
         useCases: [
           WidgetbookUseCase(
-            name: 'Default',
+            name: 'default',
             builder: (context) => buildContinueButtonUseCase(context),
           ),
         ],
@@ -119,6 +120,16 @@ final directories = [
             ],
           ),
           WidgetbookComponent(
+            name: 'EmptyBasketPlaceholder',
+            useCases: [
+              WidgetbookUseCase(
+                name: 'Default',
+                builder: (context) =>
+                    buildEmptyBasketPlaceholderUseCase(context),
+              ),
+            ],
+          ),
+          WidgetbookComponent(
             name: 'Summary',
             useCases: [
               WidgetbookUseCase(
@@ -145,8 +156,12 @@ final directories = [
             name: 'BasketScreen',
             useCases: [
               WidgetbookUseCase(
-                name: 'Default',
-                builder: (context) => buildBasketScreenUseCase(context),
+                name: 'filled',
+                builder: (context) => buildFilledBasketScreenUseCase(context),
+              ),
+              WidgetbookUseCase(
+                name: 'empty',
+                builder: (context) => buildEmptyBasketScreenUseCase(context),
               ),
             ],
           ),

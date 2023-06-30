@@ -7,47 +7,70 @@ final darkTheme = AppThemeData(
     extraSmall: 4,
   ),
   typography: TypographyThemeData(
-    logoDefault: GoogleFonts.newsreader(
+    logoSemiBold20: GoogleFonts.newsreader(
       fontSize: 22,
       fontWeight: FontWeight.w600,
       color: const Color(0xFFEAE0D5),
     ),
-    displayRegular: GoogleFonts.lora(
+    displayRegular32: GoogleFonts.lora(
       fontSize: 32,
       fontWeight: FontWeight.w400,
       color: const Color(0xFFEAE0D5),
     ),
-    headingSemibold: GoogleFonts.poppins(
+    headingSemibold20: GoogleFonts.poppins(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: const Color(0xFFEAE0D5),
       letterSpacing: 0.5,
     ),
-    bodyRegular: GoogleFonts.poppins(
+    headingMedium24: GoogleFonts.poppins(
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFFEAE0D5),
+    ),
+    bodyRegular12: GoogleFonts.poppins(
       fontSize: 12,
       fontWeight: FontWeight.w400,
       color: const Color(0xFFEAE0D5),
       letterSpacing: 0.5,
     ),
-    bodyMedium: GoogleFonts.poppins(
+    bodyRegular14: GoogleFonts.poppins(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: const Color(0xFFEAE0D5),
       letterSpacing: 0.25,
     ),
-    bodyDefault: GoogleFonts.poppins(
+    bodyMedium16: GoogleFonts.poppins(
       fontSize: 16,
       fontWeight: FontWeight.w500,
       color: const Color(0xFFEAE0D5),
       letterSpacing: 0.25,
     ),
-    bodySemiBold: GoogleFonts.poppins(
+    bodySemiBold16: GoogleFonts.poppins(
       fontSize: 16,
       fontWeight: FontWeight.w600,
       color: const Color(0xFFEAE0D5),
       letterSpacing: 0.5,
     ),
-    labelMedium: GoogleFonts.poppins(
+    labelMedium11: GoogleFonts.poppins(
+      fontSize: 11,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFFEAE0D5),
+      letterSpacing: 0.1,
+    ),
+    subheadingRegular16: GoogleFonts.poppins(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: const Color(0xFFEAE0D5),
+      letterSpacing: 0.5,
+    ),
+    subheadingMedium20: GoogleFonts.poppins(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFFEAE0D5),
+      letterSpacing: 0.5,
+    ),
+    labelMedium14: GoogleFonts.poppins(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       color: const Color(0xFFEAE0D5),

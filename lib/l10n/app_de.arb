@@ -14,5 +14,6 @@
   "basketTotal": "Gesamtsumme",
   "basketSubtotal": "Zwischensumme",
   "basketDelivery": "Versand",
+  "basketEmpty": "Dein Einkaufskorb ist leer",
   "startShopping": "Beginn mit dem Einkauf"
 }

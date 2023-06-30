@@ -32,12 +32,10 @@ class Quantity extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(AppTheme.of(context).spacing.extraSmall),
-        child: Expanded(
-          child: Text(
-            value.toString(),
-            textAlign: TextAlign.center,
-            style: AppTheme.of(context).typography.bodyDefault,
-          ),
+        child: Text(
+          value.toString(),
+          textAlign: TextAlign.center,
+          style: AppTheme.of(context).typography.bodyMedium16,
         ),
       ),
     );

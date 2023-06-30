@@ -39,23 +39,41 @@ class Summary extends StatelessWidget {
         ),
         Row(
           children: [
-            Text(AppLocalizations.of(context)!.basketSubtotal),
+            Text(
+              AppLocalizations.of(context)!.basketSubtotal,
+              style: AppTheme.of(context).typography.subheadingRegular16,
+            ),
             Expanded(child: Container()),
-            Text('\$${subTotal.toStringAsFixed(2)}'),
+            Text(
+              '\$${subTotal.toStringAsFixed(2)}',
+              style: AppTheme.of(context).typography.subheadingRegular16,
+            ),
           ],
         ),
         Row(
           children: [
-            Text(AppLocalizations.of(context)!.basketDelivery),
+            Text(
+              AppLocalizations.of(context)!.basketDelivery,
+              style: AppTheme.of(context).typography.subheadingRegular16,
+            ),
             Expanded(child: Container()),
-            Text('\$${delivery.toStringAsFixed(2)}'),
+            Text(
+              '\$${delivery.toStringAsFixed(2)}',
+              style: AppTheme.of(context).typography.subheadingRegular16,
+            ),
           ],
         ),
         Row(
           children: [
-            Text(AppLocalizations.of(context)!.basketTotal),
+            Text(
+              AppLocalizations.of(context)!.basketTotal,
+              style: AppTheme.of(context).typography.subheadingMedium20,
+            ),
             Expanded(child: Container()),
-            Text('\$${total.toStringAsFixed(2)}'),
+            Text(
+              '\$${total.toStringAsFixed(2)}',
+              style: AppTheme.of(context).typography.subheadingMedium20,
+            ),
           ],
         ),
       ],

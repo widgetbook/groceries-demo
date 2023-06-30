@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Text(
                   AppLocalizations.of(context)!.fruitsHeadline,
-                  style: AppTheme.of(context).typography.displayRegular,
+                  style: AppTheme.of(context).typography.displayRegular32,
                 ),
                 SizedBox(
                   height: AppTheme.of(context).spacing.large,

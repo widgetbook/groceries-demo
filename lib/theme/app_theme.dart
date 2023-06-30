@@ -84,24 +84,32 @@ class AppThemeData {
 }
 
 class TypographyThemeData {
-  final TextStyle logoDefault;
-  final TextStyle displayRegular;
-  final TextStyle headingSemibold;
-  final TextStyle bodyRegular;
-  final TextStyle bodyMedium;
-  final TextStyle bodyDefault;
-  final TextStyle bodySemiBold;
-  final TextStyle labelMedium;
+  final TextStyle displayRegular32;
+  final TextStyle headingSemibold20;
+  final TextStyle headingMedium24;
+  final TextStyle bodyRegular12;
+  final TextStyle bodyRegular14;
+  final TextStyle bodyMedium16;
+  final TextStyle bodySemiBold16;
+  final TextStyle labelMedium11;
+  final TextStyle labelMedium14;
+  final TextStyle subheadingRegular16;
+  final TextStyle subheadingMedium20;
+  final TextStyle logoSemiBold20;
 
   const TypographyThemeData({
-    required this.logoDefault,
-    required this.displayRegular,
-    required this.headingSemibold,
-    required this.bodyRegular,
-    required this.bodyMedium,
-    required this.bodyDefault,
-    required this.bodySemiBold,
-    required this.labelMedium,
+    required this.logoSemiBold20,
+    required this.displayRegular32,
+    required this.headingSemibold20,
+    required this.headingMedium24,
+    required this.bodyRegular12,
+    required this.bodyRegular14,
+    required this.bodyMedium16,
+    required this.bodySemiBold16,
+    required this.labelMedium11,
+    required this.labelMedium14,
+    required this.subheadingRegular16,
+    required this.subheadingMedium20,
   });
 }
 

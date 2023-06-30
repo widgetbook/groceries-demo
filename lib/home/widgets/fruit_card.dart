@@ -79,26 +79,27 @@ class FruitCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         fruit.name,
-                        style: AppTheme.of(context).typography.headingSemibold,
+                        style:
+                            AppTheme.of(context).typography.headingSemibold20,
                       ),
                     ),
                     Text(
                       '\$${fruit.price}/${AppLocalizations.of(context)!.unit}',
-                      style: AppTheme.of(context).typography.bodyDefault,
+                      style: AppTheme.of(context).typography.bodyMedium16,
                     ),
                   ],
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.medium),
                 Text(
                   fruit.grownIn,
-                  style: AppTheme.of(context).typography.bodyMedium,
+                  style: AppTheme.of(context).typography.bodyRegular14,
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.extraSmall),
                 Row(
                   children: [
                     Text(
                       fruit.farm,
-                      style: AppTheme.of(context).typography.bodyDefault,
+                      style: AppTheme.of(context).typography.bodyMedium16,
                     ),
                     SizedBox(width: AppTheme.of(context).spacing.extraSmall),
                     Icon(

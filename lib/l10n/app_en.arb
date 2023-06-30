@@ -14,5 +14,6 @@
   "basketTotal": "Total",
   "basketSubtotal": "Subtotal",
   "basketDelivery": "Delivery",
+  "basketEmpty": "Your Basket is empty",
   "startShopping": "Start shopping"
 }

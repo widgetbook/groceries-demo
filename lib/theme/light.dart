@@ -7,47 +7,70 @@ final lightTheme = AppThemeData(
     extraSmall: 4,
   ),
   typography: TypographyThemeData(
-    logoDefault: GoogleFonts.newsreader(
+    logoSemiBold20: GoogleFonts.newsreader(
       fontSize: 22,
       fontWeight: FontWeight.w600,
       color: const Color(0xFF202020),
     ),
-    displayRegular: GoogleFonts.lora(
+    displayRegular32: GoogleFonts.lora(
       fontSize: 32,
       fontWeight: FontWeight.w400,
       color: const Color(0xFF202020),
     ),
-    headingSemibold: GoogleFonts.poppins(
+    headingSemibold20: GoogleFonts.poppins(
       fontSize: 20,
       fontWeight: FontWeight.w600,
       color: const Color(0xFF202020),
       letterSpacing: 0.5,
     ),
-    bodyRegular: GoogleFonts.poppins(
+    headingMedium24: GoogleFonts.poppins(
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF202020),
+    ),
+    bodyRegular12: GoogleFonts.poppins(
       fontSize: 12,
       fontWeight: FontWeight.w400,
       color: const Color(0xFF202020),
       letterSpacing: 0.5,
     ),
-    bodyMedium: GoogleFonts.poppins(
+    bodyRegular14: GoogleFonts.poppins(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: const Color(0xFF202020),
       letterSpacing: 0.25,
     ),
-    bodyDefault: GoogleFonts.poppins(
+    bodyMedium16: GoogleFonts.poppins(
       fontSize: 16,
       fontWeight: FontWeight.w500,
       color: const Color(0xFF202020),
       letterSpacing: 0.25,
     ),
-    bodySemiBold: GoogleFonts.poppins(
+    bodySemiBold16: GoogleFonts.poppins(
       fontSize: 16,
       fontWeight: FontWeight.w600,
       color: const Color(0xFF202020),
       letterSpacing: 0.5,
     ),
-    labelMedium: GoogleFonts.poppins(
+    labelMedium11: GoogleFonts.poppins(
+      fontSize: 11,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.1,
+    ),
+    subheadingRegular16: GoogleFonts.poppins(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.5,
+    ),
+    subheadingMedium20: GoogleFonts.poppins(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF202020),
+      letterSpacing: 0.5,
+    ),
+    labelMedium14: GoogleFonts.poppins(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       color: const Color(0xFF202020),
@@ -58,7 +81,7 @@ final lightTheme = AppThemeData(
     primary: const Color(0xFFEAE0D5),
     secondary: const Color(0xFF343434),
     invert: const Color(0xFF202020),
-    light: const Color(0xFFEEE6DD),
+    light: const Color(0xFFF2ECE6),
     tertiary: const Color(0xFF7C7C7C),
     brand: const Color(0xFF15616D),
     feature: const Color(0xFF78290F),

@@ -3,15 +3,20 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Default', type: ContinueButton)
+@UseCase(name: 'default', type: PrimaryButton)
 Widget buildContinueButtonUseCase(BuildContext context) {
-  return const ContinueButton();
+  return PrimaryButton(
+    content: AppLocalizations.of(context)!.basketContinueToShipping,
+  );
 }
 
-class ContinueButton extends StatelessWidget {
-  const ContinueButton({
+class PrimaryButton extends StatelessWidget {
+  const PrimaryButton({
     super.key,
+    required this.content,
   });
+
+  final String content;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +35,8 @@ class ContinueButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            AppLocalizations.of(context)!.basketContinueToShipping,
-            style: AppTheme.of(context).typography.labelMedium.copyWith(
+            content,
+            style: AppTheme.of(context).typography.labelMedium14.copyWith(
                   color: AppTheme.of(context).surface.light,
                 ),
           ),

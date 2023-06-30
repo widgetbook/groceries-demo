@@ -37,7 +37,7 @@ class AppBar extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 title,
-                style: AppTheme.of(context).typography.logoDefault,
+                style: AppTheme.of(context).typography.logoSemiBold20,
               ),
             ),
           ),

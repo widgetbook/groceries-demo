@@ -66,11 +66,11 @@ class BasketCard extends StatelessWidget {
                 children: [
                   Text(
                     fruit.name,
-                    style: AppTheme.of(context).typography.headingSemibold,
+                    style: AppTheme.of(context).typography.headingSemibold20,
                   ),
                   Text(
                     '\$${fruit.price}/${AppLocalizations.of(context)!.unit}',
-                    style: AppTheme.of(context).typography.bodyRegular,
+                    style: AppTheme.of(context).typography.bodyRegular12,
                   ),
                   Row(
                     children: [
@@ -90,7 +90,7 @@ class BasketCard extends StatelessWidget {
                       Expanded(child: Container()),
                       Text(
                         '\$${(fruit.price * numberOfFruits).toStringAsFixed(2)}',
-                        style: AppTheme.of(context).typography.bodySemiBold,
+                        style: AppTheme.of(context).typography.bodySemiBold16,
                       ),
                     ],
                   )
