@@ -11,5 +11,8 @@
 
   "basketContinueToShipping": "Continue to shipping",
   "basketHeadline": "Basket",
+  "basketTotal": "Total",
+  "basketSubtotal": "Subtotal",
+  "basketDelivery": "Delivery",
   "startShopping": "Start shopping"
 }

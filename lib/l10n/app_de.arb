@@ -11,5 +11,8 @@
 
   "basketContinueToShipping": "Weiter zum Versand",
   "basketHeadline": "Einkaufskorb",
+  "basketTotal": "Gesamtsumme",
+  "basketSubtotal": "Zwischensumme",
+  "basketDelivery": "Versand",
   "startShopping": "Beginn mit dem Einkauf"
 }

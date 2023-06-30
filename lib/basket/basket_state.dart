@@ -2,28 +2,60 @@ import 'package:flutter/material.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/models/fruit.dart';
 
+class ProductOrder {
+  final int quantity;
+  final double total;
+
+  ProductOrder({
+    required this.quantity,
+    required this.total,
+  });
+}
+
 class BasketState extends ChangeNotifier {
-  Map<Fruit, int> data;
+  Map<Fruit, ProductOrder> basketSummary;
+  double get subtotal {
+    return basketSummary.values.fold(
+      0,
+      (previousValue, element) => previousValue + element.total,
+    );
+  }
+
+  // 10 cents for each items withing the basket
+  double get delivery => basketSummary.length * 0.10;
+
+  double get total => subtotal + delivery;
 
   BasketState({
-    Map<Fruit, int>? data,
-  }) : data = data ?? {};
+    Map<Fruit, ProductOrder>? data,
+  }) : basketSummary = data ?? {};
 
   void addFruit(Fruit fruit) {
-    if (data.containsKey(fruit)) {
-      data[fruit] = data[fruit]! + 1;
+    if (basketSummary.containsKey(fruit)) {
+      final order = basketSummary[fruit];
+      basketSummary[fruit] = ProductOrder(
+        quantity: order!.quantity + 1,
+        total: order.total + fruit.price,
+      );
     } else {
-      data[fruit] = 1;
+      basketSummary[fruit] = ProductOrder(
+        quantity: 1,
+        total: fruit.price,
+      );
     }
     notifyListeners();
   }
 
   void removeFruit(Fruit fruit) {
-    if (data.containsKey(fruit)) {
-      if (data[fruit] == 1) {
-        data.remove(fruit);
+    if (basketSummary.containsKey(fruit)) {
+      final order = basketSummary[fruit];
+      if (order!.quantity > 1) {
+        basketSummary[fruit] = ProductOrder(
+          quantity: order.quantity - 1,
+          total: order.total - fruit.price,
+        );
       } else {
-        data[fruit] = data[fruit]! - 1;
+        basketSummary.remove(fruit);
       }
     }
     notifyListeners();

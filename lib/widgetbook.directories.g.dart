@@ -14,11 +14,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:groceries_app/basket/basket_card.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
-import 'package:groceries_app/basket/quantity.dart';
 import 'package:groceries_app/basket/screen/basket_screen.dart';
+import 'package:groceries_app/basket/widgets/basket_card.dart';
+import 'package:groceries_app/basket/widgets/quantity.dart';
+import 'package:groceries_app/basket/widgets/summary.dart';
+import 'package:groceries_app/basket/widgets/widgets.dart';
 import 'package:groceries_app/core/app_bar.dart';
 import 'package:groceries_app/core/app_icon.dart';
 import 'package:groceries_app/core/badge.dart';
@@ -104,21 +106,35 @@ final directories = [
   WidgetbookFolder(
     name: 'basket',
     children: [
-      WidgetbookComponent(
-        name: 'BasketCard',
-        useCases: [
-          WidgetbookUseCase(
-            name: 'Default',
-            builder: (context) => buildBasketCardUseCase(context),
+      WidgetbookFolder(
+        name: 'widgets',
+        children: [
+          WidgetbookComponent(
+            name: 'BasketCard',
+            useCases: [
+              WidgetbookUseCase(
+                name: 'Default',
+                builder: (context) => buildBasketCardUseCase(context),
+              ),
+            ],
           ),
-        ],
-      ),
-      WidgetbookComponent(
-        name: 'Quantity',
-        useCases: [
-          WidgetbookUseCase(
-            name: 'Default',
-            builder: (context) => buildQuantityUseCase(context),
+          WidgetbookComponent(
+            name: 'Summary',
+            useCases: [
+              WidgetbookUseCase(
+                name: 'Default',
+                builder: (context) => buildSummaryUseCase(context),
+              ),
+            ],
+          ),
+          WidgetbookComponent(
+            name: 'Quantity',
+            useCases: [
+              WidgetbookUseCase(
+                name: 'Default',
+                builder: (context) => buildQuantityUseCase(context),
+              ),
+            ],
           ),
         ],
       ),

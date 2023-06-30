@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries_app/basket/basket.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 
 import 'home/home.dart';
@@ -14,12 +13,12 @@ final _router = GoRouter(
         fruits: getFruits(context),
       ),
     ),
-    GoRoute(
-      path: '/basket',
-      builder: (context, state) => BasketScreen(
-        fruits: Map.fromIterable(getFruits(context)),
-      ),
-    ),
+    // GoRoute(
+    //   path: '/basket',
+    //   builder: (context, state) => BasketScreen(
+    //     fruits: Map.fromIterable(getFruits(context)),
+    //   ),
+    // ),
   ],
 );
 

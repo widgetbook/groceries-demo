@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         AppBar(
           title: 'Groceries App',
-          numberOfItemsInBasket: basketState.data.length,
+          numberOfItemsInBasket: basketState.basketSummary.length,
         ),
         Expanded(
           child: Padding(

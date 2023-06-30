@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:groceries_app/basket/quantity.dart';
+import 'package:groceries_app/basket/widgets/quantity.dart';
 import 'package:groceries_app/core/core.dart';
 import 'package:groceries_app/core/quantity_button.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
