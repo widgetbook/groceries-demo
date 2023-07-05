@@ -15,5 +15,6 @@
   "basketSubtotal": "Subtotal",
   "basketDelivery": "Delivery",
   "basketEmpty": "Your Basket is empty",
+  "basketEmptyMessage": "The basket is a gateway to a world of infinite possibilities, patiently awaiting your selection to bring it to life.",
   "startShopping": "Start shopping"
 }

@@ -19,10 +19,11 @@ class WidgetbookGroup extends StatelessWidget {
         children: [
           Text(label),
           const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: children,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            ),
           ),
         ],
       ),

@@ -24,7 +24,11 @@ class ColorLabel extends StatelessWidget {
           height: 24,
           decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(
+              color: Colors.white,
+              width: 2,
+            ),
           ),
         ),
         const SizedBox(width: 16),
@@ -37,11 +41,35 @@ class ColorLabel extends StatelessWidget {
 @UseCase(name: 'Color', type: AppThemeData)
 Widget buildColorUseCase(BuildContext context) {
   return WidgetbookGroup(
-    label: 'text',
+    label: 'surface',
     children: [
       ColorLabel(
-        label: 'textInvertColor',
+        label: 'primary',
         color: AppTheme.of(context).surface.primary,
+      ),
+      ColorLabel(
+        label: 'secondary',
+        color: AppTheme.of(context).surface.secondary,
+      ),
+      ColorLabel(
+        label: 'invert',
+        color: AppTheme.of(context).surface.invert,
+      ),
+      ColorLabel(
+        label: 'light',
+        color: AppTheme.of(context).surface.light,
+      ),
+      ColorLabel(
+        label: 'tertiary',
+        color: AppTheme.of(context).surface.tertiary,
+      ),
+      ColorLabel(
+        label: 'brand',
+        color: AppTheme.of(context).surface.brand,
+      ),
+      ColorLabel(
+        label: 'feature',
+        color: AppTheme.of(context).surface.feature,
       ),
     ],
   );

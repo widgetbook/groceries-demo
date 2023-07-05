@@ -663,10 +663,10 @@ packages:
     description:
       path: "packages/widgetbook"
       ref: main
-      resolved-ref: a248be3e8ae84714e72fcf150fc6ad7c16ac3d2b
+      resolved-ref: f54ad62e1024c7087b5df77c40a9a5d7b278256a
       url: "https://github.com/widgetbook/widgetbook.git"
     source: git
-    version: "3.0.0"
+    version: "3.1.0"
   widgetbook_annotation:
     dependency: "direct main"
     description:

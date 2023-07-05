@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:groceries_app/theme/theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Default', type: Quantity)
+@UseCase(
+  name: 'Default',
+  type: Quantity,
+  designLink:
+      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-1996&mode=dev',
+)
 Widget buildQuantityUseCase(BuildContext context) {
   return const Quantity(
     value: 1,
@@ -20,6 +25,7 @@ class Quantity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(AppTheme.of(context).spacing.extraSmall + 1),
       width: AppTheme.of(context).spacing.extraExtraExtraLarge,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
@@ -30,13 +36,10 @@ class Quantity extends StatelessWidget {
           width: 1,
         ),
       ),
-      child: Padding(
-        padding: EdgeInsets.all(AppTheme.of(context).spacing.extraSmall),
-        child: Text(
-          value.toString(),
-          textAlign: TextAlign.center,
-          style: AppTheme.of(context).typography.bodyMedium16,
-        ),
+      child: Text(
+        value.toString(),
+        textAlign: TextAlign.center,
+        style: AppTheme.of(context).typography.bodyMedium16,
       ),
     );
   }

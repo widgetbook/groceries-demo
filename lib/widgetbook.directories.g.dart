@@ -36,6 +36,7 @@ import 'package:groceries_app/home/widgets/fruit_card.dart';
 import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:groceries_app/theme/theme.dart';
+import 'package:groceries_app/theme/typography_theme_data.dart';
 import 'package:groceries_app/widgetbook.colors.dart';
 import 'package:groceries_app/widgetbook.spacing.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -49,7 +50,7 @@ final directories = [
         useCases: [
           WidgetbookUseCase(
             name: 'Default',
-            builder: (context) => buildAppBarUseCase(context),
+            builder: (context) => appBarUseCase(context),
           ),
         ],
       ),
@@ -215,20 +216,19 @@ final directories = [
     name: 'theme',
     children: [
       WidgetbookComponent(
-        name: 'SpacingThemeData',
-        useCases: [
-          WidgetbookUseCase(
-            name: 'Data',
-            builder: (context) => buildWidgetbookSpacingUseCase(context),
-          ),
-        ],
-      ),
-      WidgetbookComponent(
         name: 'AppThemeData',
         useCases: [
           WidgetbookUseCase(
+            name: 'Spacing',
+            builder: (context) => buildWidgetbookSpacingUseCase(context),
+          ),
+          WidgetbookUseCase(
             name: 'Color',
             builder: (context) => buildColorUseCase(context),
+          ),
+          WidgetbookUseCase(
+            name: 'Typography',
+            builder: (context) => buildTypographyThemeDataUseCase(context),
           ),
         ],
       ),

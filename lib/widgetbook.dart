@@ -20,17 +20,22 @@ class WidgetbookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Widgetbook(
       directories: directories,
-      appBuilder: (context, child) => child,
+      appBuilder: (context, child) => ColoredBox(
+        color: const Color(0xFF404040),
+        child: child,
+      ),
       addons: [
         LocalizationAddon(
           locales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
+          initialLocale: AppLocalizations.supportedLocales.last,
         ),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,
             Devices.ios.iPad,
           ],
+          initialDevice: Devices.ios.iPhone13,
         ),
         ThemeAddon(
           themes: [

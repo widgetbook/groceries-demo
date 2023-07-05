@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:groceries_app/theme/typography_theme_data.dart';
 
 class AppTheme extends InheritedWidget {
   const AppTheme({
@@ -81,36 +82,6 @@ class AppThemeData {
   final RadiusThemeData radius;
   final BorderThemeData border;
   final SurfaceThemeData surface;
-}
-
-class TypographyThemeData {
-  final TextStyle displayRegular32;
-  final TextStyle headingSemibold20;
-  final TextStyle headingMedium24;
-  final TextStyle bodyRegular12;
-  final TextStyle bodyRegular14;
-  final TextStyle bodyMedium16;
-  final TextStyle bodySemiBold16;
-  final TextStyle labelMedium11;
-  final TextStyle labelMedium14;
-  final TextStyle subheadingRegular16;
-  final TextStyle subheadingMedium20;
-  final TextStyle logoSemiBold20;
-
-  const TypographyThemeData({
-    required this.logoSemiBold20,
-    required this.displayRegular32,
-    required this.headingSemibold20,
-    required this.headingMedium24,
-    required this.bodyRegular12,
-    required this.bodyRegular14,
-    required this.bodyMedium16,
-    required this.bodySemiBold16,
-    required this.labelMedium11,
-    required this.labelMedium14,
-    required this.subheadingRegular16,
-    required this.subheadingMedium20,
-  });
 }
 
 class BorderThemeData {

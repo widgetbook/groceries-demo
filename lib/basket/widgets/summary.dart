@@ -4,7 +4,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Default', type: Summary)
+@UseCase(
+  name: 'Default',
+  type: Summary,
+  designLink:
+      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=112-6510&mode=dev',
+)
 Widget buildSummaryUseCase(BuildContext context) {
   return const Summary(
     total: 10,
@@ -50,6 +55,9 @@ class Summary extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(
+          height: AppTheme.of(context).spacing.small,
+        ),
         Row(
           children: [
             Text(
@@ -62,6 +70,9 @@ class Summary extends StatelessWidget {
               style: AppTheme.of(context).typography.subheadingRegular16,
             ),
           ],
+        ),
+        SizedBox(
+          height: AppTheme.of(context).spacing.small,
         ),
         Row(
           children: [

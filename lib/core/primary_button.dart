@@ -3,7 +3,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'default', type: PrimaryButton)
+@UseCase(
+  name: 'default',
+  type: PrimaryButton,
+  designLink:
+      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=86-1012&mode=dev',
+)
 Widget buildContinueButtonUseCase(BuildContext context) {
   return PrimaryButton(
     content: AppLocalizations.of(context)!.basketContinueToShipping,
@@ -23,7 +28,7 @@ class PrimaryButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: AppTheme.of(context).spacing.medium,
-        horizontal: AppTheme.of(context).spacing.large,
+        horizontal: AppTheme.of(context).spacing.extraLarge,
       ),
       decoration: BoxDecoration(
         color: AppTheme.of(context).surface.brand,

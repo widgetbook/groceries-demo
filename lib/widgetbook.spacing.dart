@@ -66,16 +66,17 @@ class WidgetbookSpacing extends StatelessWidget {
   const WidgetbookSpacing({
     super.key,
     required this.spacing,
-    required this.color,
+    this.color,
     required this.label,
   });
 
   final String label;
   final double spacing;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
+    final theColor = color ?? AppTheme.of(context).surface.secondary;
     return Row(
       children: [
         Expanded(
@@ -98,7 +99,7 @@ class WidgetbookSpacing extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: color,
+                  color: theColor,
                   borderRadius: BorderRadius.circular(4),
                 ),
                 width: 24,
@@ -111,7 +112,7 @@ class WidgetbookSpacing extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: color,
+                  color: theColor,
                   borderRadius: BorderRadius.circular(4),
                 ),
                 width: 24,
@@ -125,30 +126,42 @@ class WidgetbookSpacing extends StatelessWidget {
   }
 }
 
-@UseCase(name: 'Data', type: SpacingThemeData)
+@UseCase(name: 'Spacing', type: AppThemeData)
 Widget buildWidgetbookSpacingUseCase(BuildContext context) {
   return WidgetbookGroup(
     label: 'Spacings',
     children: [
       WidgetbookSpacing(
-        label: 'xs',
-        spacing: 4,
-        color: AppTheme.of(context).surface.primary,
+        label: 'none',
+        spacing: AppTheme.of(context).spacing.none,
       ),
       WidgetbookSpacing(
-        label: 'md',
-        spacing: 8,
-        color: AppTheme.of(context).surface.primary,
+        label: 'extra-small',
+        spacing: AppTheme.of(context).spacing.extraSmall,
+      ),
+      WidgetbookSpacing(
+        label: 'small',
+        spacing: AppTheme.of(context).spacing.small,
+      ),
+      WidgetbookSpacing(
+        label: 'medium',
+        spacing: AppTheme.of(context).spacing.medium,
+      ),
+      WidgetbookSpacing(
+        label: 'large',
+        spacing: AppTheme.of(context).spacing.large,
       ),
       WidgetbookSpacing(
         label: 'xl',
-        spacing: 16,
-        color: AppTheme.of(context).surface.primary,
+        spacing: AppTheme.of(context).spacing.extraLarge,
+      ),
+      WidgetbookSpacing(
+        label: '2xl',
+        spacing: AppTheme.of(context).spacing.extraLarge,
       ),
       WidgetbookSpacing(
         label: '3xl',
-        spacing: 32,
-        color: AppTheme.of(context).surface.primary,
+        spacing: AppTheme.of(context).spacing.extraExtraExtraLarge,
       ),
     ],
   );

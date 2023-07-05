@@ -7,7 +7,12 @@ import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Default', type: FruitCard)
+@UseCase(
+  name: 'Default',
+  type: FruitCard,
+  designLink:
+      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-3200&mode=dev',
+)
 Widget fuitCard(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
@@ -59,8 +64,8 @@ class FruitCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: AppTheme.of(context).spacing.small,
-                top: AppTheme.of(context).spacing.small,
+                right: 6,
+                top: 6,
                 child: AddBasketButton(
                   icon: Icons.shopping_bag_outlined,
                   onPressed: () => onFruitAdded(fruit),
@@ -89,16 +94,20 @@ class FruitCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: AppTheme.of(context).spacing.medium),
+                SizedBox(
+                  height: AppTheme.of(context).spacing.medium,
+                ),
                 Text(
                   fruit.grownIn,
                   style: AppTheme.of(context).typography.bodyRegular14,
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.extraSmall),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       fruit.farm,
+                      textAlign: TextAlign.center,
                       style: AppTheme.of(context).typography.bodyMedium16,
                     ),
                     SizedBox(width: AppTheme.of(context).spacing.extraSmall),

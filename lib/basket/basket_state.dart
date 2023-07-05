@@ -21,8 +21,7 @@ class BasketState extends ChangeNotifier {
     );
   }
 
-  // 10 cents for each items withing the basket
-  double get delivery => basketSummary.length * 0.10;
+  double get delivery => 0.56;
 
   double get total => subtotal + delivery;
 

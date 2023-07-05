@@ -6,14 +6,19 @@ import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/basket/widgets/empty_basket_placeholder.dart';
 import 'package:groceries_app/basket/widgets/widgets.dart';
-import 'package:groceries_app/core/core.dart';
+import 'package:groceries_app/core/app_bar.dart';
 import 'package:groceries_app/core/primary_button.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/models/fruit.dart';
 import 'package:groceries_app/theme/app_theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'filled', type: BasketScreen)
+@UseCase(
+  name: 'filled',
+  type: BasketScreen,
+  designLink:
+      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-1089&mode=dev',
+)
 Widget buildFilledBasketScreenUseCase(BuildContext context) {
   final mango = getMango(context);
   final avocado = getAvocado(context);
@@ -38,7 +43,12 @@ Widget buildFilledBasketScreenUseCase(BuildContext context) {
   );
 }
 
-@UseCase(name: 'empty', type: BasketScreen)
+@UseCase(
+  name: 'empty',
+  type: BasketScreen,
+  designLink:
+      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2186&mode=dev',
+)
 Widget buildEmptyBasketScreenUseCase(BuildContext context) {
   return BasketScope(
     child: Builder(
@@ -104,6 +114,7 @@ class BasketScreen extends StatelessWidget {
               return GridView.count(
                 key: ValueKey(fruits),
                 crossAxisCount: columns,
+                padding: EdgeInsets.zero,
                 mainAxisSpacing: AppTheme.of(context).spacing.medium,
                 crossAxisSpacing: AppTheme.of(context).spacing.medium,
                 // TODO this is a bit of a hack
@@ -148,13 +159,21 @@ class BasketScreen extends StatelessWidget {
           title: 'Groceries App',
           numberOfItemsInBasket: fruits.length,
         ),
+        SizedBox(
+          height: AppTheme.of(context).spacing.large,
+        ),
         Expanded(
           child: Padding(
-              padding: EdgeInsets.all(AppTheme.of(context).spacing.medium),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppTheme.of(context).spacing.medium,
+              ),
               child: fruits.isEmpty
                   ? _buildEmptyPage(context)
                   : _buildFilledPage(context)),
-        )
+        ),
+        SizedBox(
+          height: AppTheme.of(context).spacing.medium,
+        ),
       ],
     );
   }

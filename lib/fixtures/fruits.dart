@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/models/fruit.dart';
 
 Fruit getMango(BuildContext context) {
@@ -30,6 +31,14 @@ Fruit getBanana(BuildContext context) {
     price: 2.56,
     image: 'assets/fruits/banana2.jpeg',
   );
+}
+
+Map<Fruit, ProductOrder> getFruitsMap(BuildContext context) {
+  return {
+    getMango(context): ProductOrder(quantity: 0, total: 0),
+    getAvocado(context): ProductOrder(quantity: 0, total: 0),
+    getBanana(context): ProductOrder(quantity: 0, total: 0),
+  };
 }
 
 List<Fruit> getFruits(BuildContext context) {
