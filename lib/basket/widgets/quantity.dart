@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/theme/theme.dart';
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
@@ -9,8 +10,15 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-1996&mode=dev',
 )
 Widget buildQuantityUseCase(BuildContext context) {
-  return const Quantity(
-    value: 1,
+  return Quantity(
+    value: context.knobs.double
+        .slider(
+          label: 'Value',
+          initialValue: 2,
+          min: 0,
+          max: 1000,
+        )
+        .toInt(),
   );
 }
 
