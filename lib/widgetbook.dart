@@ -25,6 +25,15 @@ class WidgetbookApp extends StatelessWidget {
         child: child,
       ),
       addons: [
+        TextScaleAddon(
+          scales: [
+            1,
+            1.25,
+            1.5,
+            1.75,
+            2,
+          ],
+        ),
         LocalizationAddon(
           locales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
