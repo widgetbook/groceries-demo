@@ -81,4 +81,5 @@ workflows:
         script: |
           widgetbook publish \
                 --api-key $WIDGETBOOK_API_KEY \
-                --base-branch $CM_PULL_REQUEST_DEST
+                --base-branch $CM_PULL_REQUEST_DEST \
+                --pr $CM_PULL_REQUEST_NUMBER
