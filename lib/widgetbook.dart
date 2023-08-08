@@ -60,6 +60,9 @@ class WidgetbookApp extends StatelessWidget {
           ),
         ),
       ],
+      integrations: [
+        WidgetbookCloudIntegration(),
+      ],
     );
   }
 }
