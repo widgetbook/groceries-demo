@@ -33,4 +33,4 @@ jobs:
 
       - name: Upload Widgetbook
         run: |
-          widgetbook publish --api-key --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }}
+          widgetbook publish --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }}
