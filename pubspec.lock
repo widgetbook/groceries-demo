@@ -678,10 +678,10 @@ packages:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: "81dfa73625ad61bb7b5e4ce377b7e04fa0fac2d97713b122cd0189aa17ca1bad"
+      sha256: bb6cec0c1b897ca8b4767ba0214c637470ebe8c8a0a543f8a76de9e2fdbd5869
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.1.0"
   win32:
     dependency: transitive
     description:
