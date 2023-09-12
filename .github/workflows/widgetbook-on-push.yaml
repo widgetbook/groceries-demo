@@ -1,0 +1,36 @@
+name: Upload build
+on:
+  push:
+    branches:
+      - staging
+      - main
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+
+      - name: Setup flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Run build runner
+        run: flutter pub run build_runner build -d
+
+      - name: Build Website
+        run: flutter build web -t lib/widgetbook.dart
+
+      - name: Install Widgetbook CLI
+        run: dart pub global activate widgetbook_cli 3.0.0-rc.3
+
+      - name: Upload Widgetbook
+        run: |
+          widgetbook publish --api-key --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }}
