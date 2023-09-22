@@ -47,17 +47,15 @@ workflows:
         - Widgetbook Credentials
     
     scripts:
-      # Necessary to make the correct branch information available 
+      # !!! 
+      # NOTE: Necessary to make the correct branch information available to Widgetbook CLI
+      # !!!
       - name: Switch branch
         script: |
-          echo $CM_BRANCH
           git switch -c $CM_BRANCH
-          echo "Not deleting"
           echo $CM_PULL_REQUEST_DEST
           git branch -D $CM_PULL_REQUEST_DEST
-          echo "Now switching again"
           git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
-          echo "Now switching to original"
           git switch $CM_BRANCH
       - name: Git diff
         script: |
