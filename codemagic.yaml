@@ -21,7 +21,7 @@ workflows:
         script: flutter pub get
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-rc.2
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.4
 
       - name: Run build runner
         script: flutter pub run build_runner build --delete-conflicting-outputs
