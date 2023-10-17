@@ -21,7 +21,7 @@ workflows:
         script: flutter pub get
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-rc.4
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.5
 
       - name: Run build runner
         script: flutter pub run build_runner build --delete-conflicting-outputs
@@ -47,19 +47,6 @@ workflows:
         - Widgetbook Credentials
     
     scripts:
-      # !!! 
-      # NOTE: Necessary to make the correct branch information available to Widgetbook CLI
-      # !!!
-      - name: Switch branch
-        script: |
-          git switch -c $CM_BRANCH
-          echo $CM_PULL_REQUEST_DEST
-          git branch -D $CM_PULL_REQUEST_DEST
-          git switch -c $CM_PULL_REQUEST_DEST source/$CM_PULL_REQUEST_DEST
-          git switch $CM_BRANCH
-      - name: Git diff
-        script: |
-          git diff $CM_PULL_REQUEST_DEST
       - name: Get Flutter packages
         script: | 
           flutter packages pub get
@@ -67,7 +54,7 @@ workflows:
         script: flutter pub get
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-rc.4
+        script: dart pub global activate widgetbook_cli 3.0.0-rc.5
 
       - name: Run build runner
         script: flutter pub run build_runner build --delete-conflicting-outputs
@@ -79,4 +66,4 @@ workflows:
         script: |
           widgetbook publish \
                 --api-key $WIDGETBOOK_API_KEY \
-                --base-branch $CM_PULL_REQUEST_DEST
+                --base-branch source/$CM_PULL_REQUEST_DEST
