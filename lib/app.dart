@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
@@ -8,6 +7,7 @@ import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/theme/theme.dart';
 
 import 'home/home.dart';
+import 'l10n/app_localizations.dart';
 
 final _router = GoRouter(
   routes: [

@@ -1,9 +1,7 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
 import 'package:groceries_app/theme/theme.dart';
-import 'package:groceries_app/widgetbook.group.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+import 'package:widgetbook_workspace/theme/group.dart';
 
 class ColorLabel extends StatelessWidget {
   const ColorLabel({

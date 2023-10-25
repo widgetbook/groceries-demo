@@ -1,12 +1,11 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:groceries_app/l10n/app_localizations.dart';
 import 'package:groceries_app/theme/theme.dart';
+
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-import 'widgetbook.directories.g.dart';
+import 'main.directories.g.dart';
 
 void main() {
   runApp(const WidgetbookApp());
