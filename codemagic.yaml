@@ -1,69 +1,73 @@
 workflows:
-  # Push a new build everytime the staging branch is updated
-  widgetbook-base:
-    name: Widgetbook Workflow Base
+  widgetbook-build:
+    name: Upload Widgetbook Build
+
     triggering:
       events:
         - push
       branch_patterns:
-        - pattern: 'main'
+        - pattern: staging
           include: true
+
     environment:
-      # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
-      # "Widgetbook Credentials" group
+      flutter: stable
       groups:
         - Widgetbook Credentials
+
     scripts:
-      - name: Get Flutter packages
-        script: | 
-          flutter packages pub get
-      - name: Get dependencies
-        script: flutter pub get
+      - name: Build App
+        script: |
+          flutter pub get
+          flutter gen-l10n
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-rc.5
+        script: dart pub global activate widgetbook_cli
 
-      - name: Run build runner
-        script: flutter pub run build_runner build --delete-conflicting-outputs
-
-      - name: Build Website
-        script: flutter build web -t lib/widgetbook.dart
+      - name: Build Widgetbook
+        working_directory: widgetbook
+        script: |
+          flutter pub get
+          dart run build_runner build -d
+          flutter build web -t lib/widgetbook.dart
 
       - name: Upload Widgetbook
+        working_directory: widgetbook
         script: |
           widgetbook publish \
-                --api-key $WIDGETBOOK_API_KEY \
-                --branch $CM_BRANCH
-  # Create review information and push a build everytime the pull request is updated
-  widgetbook-head:
-    name: Widgetbook Workflow Head
+            --api-key $WIDGETBOOK_API_KEY \
+            --branch $CM_BRANCH
+
+  widgetbook-review:
+    name: Upload Widgetbook Review
+
     triggering:
       events:
         - pull_request
+
     environment:
-      # Used so the $WIDGETBOOK_API_KEY is accessible as it's part of the
-      # "Widgetbook Credentials" group
+      flutter: stable
       groups:
         - Widgetbook Credentials
-    
+
     scripts:
-      - name: Get Flutter packages
-        script: | 
-          flutter packages pub get
-      - name: Get dependencies
-        script: flutter pub get
+      - name: Build App
+        script: |
+          flutter pub get
+          flutter gen-l10n
 
       - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli 3.0.0-rc.5
+        script: dart pub global activate widgetbook_cli
 
-      - name: Run build runner
-        script: flutter pub run build_runner build --delete-conflicting-outputs
-
-      - name: Build Website
-        script: flutter build web -t lib/widgetbook.dart
+      - name: Build Widgetbook
+        working_directory: widgetbook
+        script: |
+          flutter pub get
+          dart run build_runner build -d
+          flutter build web -t lib/widgetbook.dart
 
       - name: Upload Widgetbook
+        working_directory: widgetbook
         script: |
           widgetbook publish \
-                --api-key $WIDGETBOOK_API_KEY \
-                --base-branch source/$CM_PULL_REQUEST_DEST
+            --api-key $WIDGETBOOK_API_KEY \
+            --base-branch source/$CM_PULL_REQUEST_DEST
