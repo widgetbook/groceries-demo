@@ -28,7 +28,7 @@ workflows:
         script: |
           flutter pub get
           dart run build_runner build -d
-          flutter build web -t lib/widgetbook.dart
+          flutter build web -t lib/main.dart
 
       - name: Upload Widgetbook
         working_directory: widgetbook
@@ -63,7 +63,7 @@ workflows:
         script: |
           flutter pub get
           dart run build_runner build -d
-          flutter build web -t lib/widgetbook.dart
+          flutter build web -t lib/main.dart
 
       - name: Upload Widgetbook
         working_directory: widgetbook
