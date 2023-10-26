@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:groceries_app/theme/app_theme.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(
-  name: 'Default',
-  type: EmptyBasketPlaceholder,
-  designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=112-7193&mode=dev',
-)
-Widget buildEmptyBasketPlaceholderUseCase(BuildContext context) {
-  return const EmptyBasketPlaceholder();
-}
+import '../../l10n/app_localizations.dart';
+import '../../theme/app_theme.dart';
 
 class EmptyBasketPlaceholder extends StatelessWidget {
   const EmptyBasketPlaceholder({
@@ -27,8 +17,6 @@ class EmptyBasketPlaceholder extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
           children: [
             Container(
               height: 102,

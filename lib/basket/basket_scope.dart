@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/basket/basket_state.dart';
+
+import 'basket_state.dart';
 
 class BasketScope extends InheritedNotifier<BasketState> {
   BasketScope({

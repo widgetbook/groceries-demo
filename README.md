@@ -1,9 +1,20 @@
-This repository hosts a groceries demo application creatively called _Groceries App_. 
+# Groceries App x Widgetbook
+
+This repository hosts a groceries demo application creatively called _Groceries App_.
 
 ## Getting Started
 
-1. Run `flutter pub get`
-2. Run `flutter pub run build_runner watch -d`
-3. Run `flutter pub run -d macos -t lib/widgetbook.dart`
+1. Bootstrap App
 
+   ```bash
+   flutter pub get    # Install deps
+   flutter gen-l10n   # Generate localization files
+   ```
 
+1. Run Widgetbook
+
+   ```bash
+   flutter pub get                 # Install deps
+   dart run build_runner build -d  # Generate files
+   flutter run                     # Run
+   ```

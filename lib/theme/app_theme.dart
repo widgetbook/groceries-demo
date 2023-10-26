@@ -1,15 +1,12 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/theme/typography_theme_data.dart';
+import 'typography_theme_data.dart';
 
 class AppTheme extends InheritedWidget {
   const AppTheme({
-    Key? key,
+    super.key,
     required this.data,
-    required Widget child,
-  }) : super(
-          key: key,
-          child: child,
-        );
+    required super.child,
+  });
 
   final AppThemeData data;
 
@@ -25,14 +22,6 @@ class AppTheme extends InheritedWidget {
 }
 
 class SpacingThemeData {
-  final double none;
-  final double extraSmall;
-  final double small;
-  final double medium;
-  final double large;
-  final double extraLarge;
-  final double extraExtraLarge;
-  final double extraExtraExtraLarge;
 
   const SpacingThemeData({
     this.none = 0,
@@ -44,9 +33,6 @@ class SpacingThemeData {
     this.extraExtraLarge = 40,
     this.extraExtraExtraLarge = 56,
   });
-}
-
-class RadiusThemeData {
   final double none;
   final double extraSmall;
   final double small;
@@ -54,7 +40,10 @@ class RadiusThemeData {
   final double large;
   final double extraLarge;
   final double extraExtraLarge;
-  final double full;
+  final double extraExtraExtraLarge;
+}
+
+class RadiusThemeData {
 
   const RadiusThemeData({
     this.none = 0,
@@ -66,6 +55,14 @@ class RadiusThemeData {
     this.extraExtraLarge = 32,
     this.full = 100,
   });
+  final double none;
+  final double extraSmall;
+  final double small;
+  final double medium;
+  final double large;
+  final double extraLarge;
+  final double extraExtraLarge;
+  final double full;
 }
 
 class AppThemeData {
@@ -85,23 +82,16 @@ class AppThemeData {
 }
 
 class BorderThemeData {
-  final Color lowEmphasis;
-  final Color highEmphasis;
 
   const BorderThemeData({
     required this.lowEmphasis,
     required this.highEmphasis,
   });
+  final Color lowEmphasis;
+  final Color highEmphasis;
 }
 
 class SurfaceThemeData {
-  final Color primary;
-  final Color secondary;
-  final Color invert;
-  final Color light;
-  final Color tertiary;
-  final Color brand;
-  final Color feature;
 
   SurfaceThemeData({
     required this.primary,
@@ -112,4 +102,11 @@ class SurfaceThemeData {
     required this.brand,
     required this.feature,
   });
+  final Color primary;
+  final Color secondary;
+  final Color invert;
+  final Color light;
+  final Color tertiary;
+  final Color brand;
+  final Color feature;
 }

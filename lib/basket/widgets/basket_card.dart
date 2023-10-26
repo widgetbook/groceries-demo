@@ -1,27 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:groceries_app/basket/widgets/quantity.dart';
-import 'package:groceries_app/core/core.dart' as core;
-import 'package:groceries_app/core/quantity_button.dart';
-import 'package:groceries_app/fixtures/fruits.dart';
-import 'package:groceries_app/models/fruit.dart';
-import 'package:groceries_app/theme/theme.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(
-  name: 'Default',
-  type: BasketCard,
-  designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2014&mode=dev',
-)
-Widget buildBasketCardUseCase(BuildContext context) {
-  return BasketCard(
-    fruit: getMango(context),
-    onFruitAdded: (_) {},
-    onFruitRemoved: (_) {},
-    numberOfFruits: 1,
-  );
-}
+import '../../core/core.dart' as core;
+import '../../core/quantity_button.dart';
+import '../../l10n/app_localizations.dart';
+import '../../models/fruit.dart';
+import '../../theme/theme.dart';
+import 'quantity.dart';
 
 class BasketCard extends StatelessWidget {
   const BasketCard({
@@ -104,10 +88,10 @@ class BasketCard extends StatelessWidget {
                         style: AppTheme.of(context).typography.bodySemiBold16,
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

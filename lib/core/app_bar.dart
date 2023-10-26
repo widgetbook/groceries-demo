@@ -1,22 +1,8 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
-import 'package:groceries_app/core/app_icon.dart';
-import 'package:groceries_app/core/badge.dart' as core;
-import 'package:groceries_app/theme/theme.dart';
-import 'package:widgetbook/widgetbook.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'Default', type: AppBar)
-Widget appBarUseCase(BuildContext context) {
-  return AppBar(
-    title: context.knobs.string(
-      label: 'title',
-      initialValue: 'Groceries App',
-    ),
-    numberOfItemsInBasket: 9,
-  );
-}
+import '../theme/theme.dart';
+import 'app_icon.dart';
+import 'badge.dart' as core;
 
 class AppBar extends StatelessWidget {
   const AppBar({
@@ -40,7 +26,6 @@ class AppBar extends StatelessWidget {
           const AppIcon(icon: Icons.menu_rounded),
           Expanded(
             child: Align(
-              alignment: Alignment.center,
               child: Text(
                 title,
                 style: AppTheme.of(context).typography.logoSemiBold20,
@@ -59,7 +44,7 @@ class AppBar extends StatelessWidget {
                   ),
                 ),
             ],
-          )
+          ),
         ],
       ),
     );

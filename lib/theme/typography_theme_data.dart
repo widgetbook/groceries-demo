@@ -1,44 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:groceries_app/theme/app_theme.dart';
-import 'package:groceries_app/widgetbook.group.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
-
-@UseCase(name: 'Typography', type: AppThemeData)
-Widget buildTypographyThemeDataUseCase(BuildContext context) {
-  const data = 'The lazy dog jumped over the quick brown fox';
-  return WidgetbookGroup(
-    label: 'Typography',
-    children: [
-      Text(data, style: AppTheme.of(context).typography.displayRegular32),
-      Text(data, style: AppTheme.of(context).typography.headingSemibold20),
-      Text(data, style: AppTheme.of(context).typography.headingMedium24),
-      Text(data, style: AppTheme.of(context).typography.bodyRegular12),
-      Text(data, style: AppTheme.of(context).typography.bodyRegular14),
-      Text(data, style: AppTheme.of(context).typography.bodyMedium16),
-      Text(data, style: AppTheme.of(context).typography.bodySemiBold16),
-      Text(data, style: AppTheme.of(context).typography.labelMedium11),
-      Text(data, style: AppTheme.of(context).typography.labelMedium14),
-      Text(data, style: AppTheme.of(context).typography.subheadingRegular16),
-      Text(data, style: AppTheme.of(context).typography.subheadingMedium20),
-      Text(data, style: AppTheme.of(context).typography.logoSemiBold20),
-    ],
-  );
-}
 
 class TypographyThemeData {
-  final TextStyle displayRegular32;
-  final TextStyle headingSemibold20;
-  final TextStyle headingMedium24;
-  final TextStyle bodyRegular12;
-  final TextStyle bodyRegular14;
-  final TextStyle bodyMedium16;
-  final TextStyle bodySemiBold16;
-  final TextStyle labelMedium11;
-  final TextStyle labelMedium14;
-  final TextStyle subheadingRegular16;
-  final TextStyle subheadingMedium20;
-  final TextStyle logoSemiBold20;
 
   const TypographyThemeData({
     required this.logoSemiBold20,
@@ -64,7 +27,7 @@ class TypographyThemeData {
           fontWeight: FontWeight.w600,
           color: fontColor,
           letterSpacing: 0.5,
-          height: 20 / 24),
+          height: 20 / 24,),
       displayRegular32: GoogleFonts.lora(
         fontSize: 32,
         fontWeight: FontWeight.w400,
@@ -142,4 +105,16 @@ class TypographyThemeData {
       ),
     );
   }
+  final TextStyle displayRegular32;
+  final TextStyle headingSemibold20;
+  final TextStyle headingMedium24;
+  final TextStyle bodyRegular12;
+  final TextStyle bodyRegular14;
+  final TextStyle bodyMedium16;
+  final TextStyle bodySemiBold16;
+  final TextStyle labelMedium11;
+  final TextStyle labelMedium14;
+  final TextStyle subheadingRegular16;
+  final TextStyle subheadingMedium20;
+  final TextStyle logoSemiBold20;
 }

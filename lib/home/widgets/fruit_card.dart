@@ -1,27 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:groceries_app/core/core.dart' as core;
-import 'package:groceries_app/fixtures/fruits.dart';
-import 'package:groceries_app/home/widgets/add_basket_button.dart';
-import 'package:groceries_app/models/fruit.dart';
-import 'package:groceries_app/theme/app_theme.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(
-  name: 'Default',
-  type: FruitCard,
-  designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-3200&mode=dev',
-)
-Widget fuitCard(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: FruitCard(
-      fruit: getMango(context),
-      onFruitAdded: (_) {},
-    ),
-  );
-}
+import '../../core/core.dart' as core;
+import '../../l10n/app_localizations.dart';
+import '../../models/fruit.dart';
+import '../../theme/app_theme.dart';
+import 'add_basket_button.dart';
 
 class FruitCard extends StatelessWidget {
   const FruitCard({
@@ -103,7 +86,6 @@ class FruitCard extends StatelessWidget {
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.extraSmall),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       fruit.farm,

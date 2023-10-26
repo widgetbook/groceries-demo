@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "widgetbook",
-            "program": "lib/widgetbook.dart",
+            "program": "widgetbook/lib/main.dart",
             "request": "launch",
             "type": "dart"
         },
