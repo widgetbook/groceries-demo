@@ -2,13 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:groceries_app/basket/basket_state.dart';
-import 'package:groceries_app/core/core.dart' as core;
-import 'package:groceries_app/home/widgets/fruit_card.dart';
-import 'package:groceries_app/models/fruit.dart';
-import 'package:groceries_app/theme/theme.dart';
 
+import '../../basket/basket_state.dart';
+import '../../core/core.dart' as core;
 import '../../l10n/app_localizations.dart';
+import '../../models/fruit.dart';
+import '../../theme/theme.dart';
+import '../widgets/fruit_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -39,7 +39,6 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
                   AppLocalizations.of(context)!.fruitsHeadline,
@@ -67,11 +66,11 @@ class HomeScreen extends StatelessWidget {
                       );
                     },
                   ),
-                )
+                ),
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }

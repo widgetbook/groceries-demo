@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries_app/basket/basket_scope.dart';
-import 'package:groceries_app/basket/basket_state.dart';
-import 'package:groceries_app/fixtures/fruits.dart';
-import 'package:groceries_app/theme/theme.dart';
 
+import 'basket/basket_scope.dart';
+import 'basket/basket_state.dart';
+import 'fixtures/fruits.dart';
 import 'home/home.dart';
 import 'l10n/app_localizations.dart';
+import 'theme/theme.dart';
 
 final _router = GoRouter(
   routes: [

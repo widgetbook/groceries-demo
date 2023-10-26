@@ -2,18 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TypographyThemeData {
-  final TextStyle displayRegular32;
-  final TextStyle headingSemibold20;
-  final TextStyle headingMedium24;
-  final TextStyle bodyRegular12;
-  final TextStyle bodyRegular14;
-  final TextStyle bodyMedium16;
-  final TextStyle bodySemiBold16;
-  final TextStyle labelMedium11;
-  final TextStyle labelMedium14;
-  final TextStyle subheadingRegular16;
-  final TextStyle subheadingMedium20;
-  final TextStyle logoSemiBold20;
 
   const TypographyThemeData({
     required this.logoSemiBold20,
@@ -39,7 +27,7 @@ class TypographyThemeData {
           fontWeight: FontWeight.w600,
           color: fontColor,
           letterSpacing: 0.5,
-          height: 20 / 24),
+          height: 20 / 24,),
       displayRegular32: GoogleFonts.lora(
         fontSize: 32,
         fontWeight: FontWeight.w400,
@@ -117,4 +105,16 @@ class TypographyThemeData {
       ),
     );
   }
+  final TextStyle displayRegular32;
+  final TextStyle headingSemibold20;
+  final TextStyle headingMedium24;
+  final TextStyle bodyRegular12;
+  final TextStyle bodyRegular14;
+  final TextStyle bodyMedium16;
+  final TextStyle bodySemiBold16;
+  final TextStyle labelMedium11;
+  final TextStyle labelMedium14;
+  final TextStyle subheadingRegular16;
+  final TextStyle subheadingMedium20;
+  final TextStyle logoSemiBold20;
 }

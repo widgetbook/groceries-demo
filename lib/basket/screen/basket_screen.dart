@@ -1,14 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/basket/basket_state.dart';
-import 'package:groceries_app/basket/widgets/widgets.dart';
-import 'package:groceries_app/core/app_bar.dart';
-import 'package:groceries_app/core/primary_button.dart';
-import 'package:groceries_app/models/fruit.dart';
-import 'package:groceries_app/theme/app_theme.dart';
 
+import '../../core/app_bar.dart';
+import '../../core/primary_button.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/fruit.dart';
+import '../../theme/app_theme.dart';
+import '../basket_state.dart';
+import '../widgets/widgets.dart';
 
 class BasketScreen extends StatelessWidget {
   const BasketScreen({
@@ -63,7 +63,7 @@ class BasketScreen extends StatelessWidget {
                 mainAxisSpacing: AppTheme.of(context).spacing.medium,
                 crossAxisSpacing: AppTheme.of(context).spacing.medium,
                 // TODO this is a bit of a hack
-                // 116 is the height of the BasketCard
+                //  116 is the height of the BasketCard
                 childAspectRatio: constraint.maxWidth / columns / 116,
                 children: [
                   for (final fruit in fruits.keys)
@@ -109,12 +109,13 @@ class BasketScreen extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppTheme.of(context).spacing.medium,
-              ),
-              child: fruits.isEmpty
-                  ? _buildEmptyPage(context)
-                  : _buildFilledPage(context)),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppTheme.of(context).spacing.medium,
+            ),
+            child: fruits.isEmpty
+                ? _buildEmptyPage(context)
+                : _buildFilledPage(context),
+          ),
         ),
         SizedBox(
           height: AppTheme.of(context).spacing.medium,

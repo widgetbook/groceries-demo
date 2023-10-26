@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/basket/basket_scope.dart';
-import 'package:groceries_app/models/fruit.dart';
+
+import '../models/fruit.dart';
+import 'basket_scope.dart';
 
 class ProductOrder {
-  final int quantity;
-  final double total;
-
   ProductOrder({
     required this.quantity,
     required this.total,
   });
+
+  final int quantity;
+  final double total;
 }
 
 class BasketState extends ChangeNotifier {
+  BasketState({
+    Map<Fruit, ProductOrder>? data,
+  }) : basketSummary = data ?? {};
+
   Map<Fruit, ProductOrder> basketSummary;
+
   double get subtotal {
     return basketSummary.values.fold(
       0,
@@ -24,10 +30,6 @@ class BasketState extends ChangeNotifier {
   double get delivery => 0.56;
 
   double get total => subtotal + delivery;
-
-  BasketState({
-    Map<Fruit, ProductOrder>? data,
-  }) : basketSummary = data ?? {};
 
   void addFruit(Fruit fruit) {
     if (basketSummary.containsKey(fruit)) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/theme/theme.dart';
+
+import '../../theme/theme.dart';
 
 class Quantity extends StatelessWidget {
   const Quantity({
@@ -20,7 +21,6 @@ class Quantity extends StatelessWidget {
         ),
         border: Border.all(
           color: AppTheme.of(context).border.highEmphasis,
-          width: 1,
         ),
       ),
       child: Text(

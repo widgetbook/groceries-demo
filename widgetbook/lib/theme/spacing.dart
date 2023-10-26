@@ -2,18 +2,18 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:groceries_app/theme/theme.dart';
-import 'group.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-class LineContainer extends StatelessWidget {
-  final double lineWidth;
-  final double lineSpacing;
+import 'group.dart';
 
+class LineContainer extends StatelessWidget {
   const LineContainer({
     super.key,
     this.lineWidth = 2.0,
     this.lineSpacing = 5.0,
   });
+  final double lineWidth;
+  final double lineSpacing;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,12 @@ class LineContainer extends StatelessWidget {
 }
 
 class LinePainter extends CustomPainter {
-  final double lineWidth;
-  final double lineSpacing;
-
   LinePainter({
     required this.lineWidth,
     required this.lineSpacing,
   });
+  final double lineWidth;
+  final double lineSpacing;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -117,7 +116,7 @@ class WidgetbookSpacing extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

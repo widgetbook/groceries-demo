@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/theme/theme.dart';
-import 'package:groceries_app/theme/typography_theme_data.dart';
+import 'theme.dart';
+import 'typography_theme_data.dart';
 
 final lightTheme = AppThemeData(
   typography: TypographyThemeData.fromColor(

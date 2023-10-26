@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/theme/app_theme.dart';
+import '../theme/app_theme.dart';
 
 class QuantityButton extends StatelessWidget {
   const QuantityButton({
@@ -33,7 +33,6 @@ class QuantityButton extends StatelessWidget {
           ),
           border: Border.all(
             color: AppTheme.of(context).border.highEmphasis,
-            width: 1,
           ),
         ),
         child: Icon(

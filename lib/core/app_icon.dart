@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/theme/theme.dart';
+
+import '../theme/theme.dart';
 
 class AppIcon extends StatelessWidget {
   const AppIcon({

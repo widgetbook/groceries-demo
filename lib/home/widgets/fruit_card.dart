@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/core/core.dart' as core;
-import 'package:groceries_app/home/widgets/add_basket_button.dart';
-import 'package:groceries_app/models/fruit.dart';
-import 'package:groceries_app/theme/app_theme.dart';
 
+import '../../core/core.dart' as core;
 import '../../l10n/app_localizations.dart';
+import '../../models/fruit.dart';
+import '../../theme/app_theme.dart';
+import 'add_basket_button.dart';
 
 class FruitCard extends StatelessWidget {
   const FruitCard({
@@ -86,7 +86,6 @@ class FruitCard extends StatelessWidget {
                 ),
                 SizedBox(height: AppTheme.of(context).spacing.extraSmall),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       fruit.farm,

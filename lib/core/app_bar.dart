@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/core/app_icon.dart';
-import 'package:groceries_app/core/badge.dart' as core;
-import 'package:groceries_app/theme/theme.dart';
+
+import '../theme/theme.dart';
+import 'app_icon.dart';
+import 'badge.dart' as core;
 
 class AppBar extends StatelessWidget {
   const AppBar({
@@ -25,7 +26,6 @@ class AppBar extends StatelessWidget {
           const AppIcon(icon: Icons.menu_rounded),
           Expanded(
             child: Align(
-              alignment: Alignment.center,
               child: Text(
                 title,
                 style: AppTheme.of(context).typography.logoSemiBold20,
@@ -44,7 +44,7 @@ class AppBar extends StatelessWidget {
                   ),
                 ),
             ],
-          )
+          ),
         ],
       ),
     );

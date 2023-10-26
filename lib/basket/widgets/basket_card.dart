@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/basket/widgets/quantity.dart';
-import 'package:groceries_app/core/core.dart' as core;
-import 'package:groceries_app/core/quantity_button.dart';
-import 'package:groceries_app/models/fruit.dart';
-import 'package:groceries_app/theme/theme.dart';
 
+import '../../core/core.dart' as core;
+import '../../core/quantity_button.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/fruit.dart';
+import '../../theme/theme.dart';
+import 'quantity.dart';
 
 class BasketCard extends StatelessWidget {
   const BasketCard({
@@ -88,10 +88,10 @@ class BasketCard extends StatelessWidget {
                         style: AppTheme.of(context).typography.bodySemiBold16,
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
