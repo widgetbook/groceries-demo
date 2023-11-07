@@ -41,7 +41,7 @@ class BasketCard extends StatelessWidget {
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(fruit.image),
+                  image: AssetImage(fruit.image, package: 'groceries_app'),
                 ),
               ),
             ),
