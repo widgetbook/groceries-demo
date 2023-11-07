@@ -4,9 +4,7 @@ import '../../l10n/app_localizations.dart';
 import '../../theme/app_theme.dart';
 
 class EmptyBasketPlaceholder extends StatelessWidget {
-  const EmptyBasketPlaceholder({
-    super.key,
-  });
+  const EmptyBasketPlaceholder({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -68,11 +68,11 @@ class BasketScreen extends StatelessWidget {
                 children: [
                   for (final fruit in fruits.keys)
                     BasketCard(
-                      numberOfFruits: fruits[fruit]!.quantity,
                       fruit: fruit,
-                      onFruitAdded: (fruit) =>
+                      count: fruits[fruit]!.quantity,
+                      onFruitAdded: () =>
                           BasketState.of(context).addFruit(fruit),
-                      onFruitRemoved: (fruit) =>
+                      onFruitRemoved: () =>
                           BasketState.of(context).removeFruit(fruit),
                     ),
                 ],
@@ -81,7 +81,6 @@ class BasketScreen extends StatelessWidget {
           ),
         ),
         Summary(
-          total: total,
           delivery: delivery,
           subTotal: subTotal,
         ),

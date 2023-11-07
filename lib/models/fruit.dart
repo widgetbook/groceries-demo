@@ -10,6 +10,6 @@ class Fruit {
   final String name;
   final double price;
   final String image;
-  final String grownIn;
   final String farm;
+  final String grownIn;
 }

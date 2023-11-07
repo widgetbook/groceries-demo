@@ -12,9 +12,9 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildSummaryUseCase(BuildContext context) {
   return Summary(
-    total: context.knobs.double.slider(
-      label: 'Total',
-      initialValue: 10,
+    subTotal: context.knobs.double.slider(
+      label: 'Subtotal',
+      initialValue: 2,
       min: 0,
       max: 1000,
     ),
@@ -23,12 +23,6 @@ Widget buildSummaryUseCase(BuildContext context) {
       initialValue: 2,
       min: 0,
       max: 10,
-    ),
-    subTotal: context.knobs.double.slider(
-      label: 'Subtotal',
-      initialValue: 2,
-      min: 0,
-      max: 1000,
     ),
   );
 }

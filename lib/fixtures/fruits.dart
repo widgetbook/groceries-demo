@@ -35,10 +35,14 @@ Fruit getBanana(BuildContext context) {
 }
 
 Map<Fruit, ProductOrder> getFruitsMap(BuildContext context) {
+  final mango = getMango(context);
+  final avocado = getAvocado(context);
+  final banana = getBanana(context);
+
   return {
-    getMango(context): ProductOrder(quantity: 0, total: 0),
-    getAvocado(context): ProductOrder(quantity: 0, total: 0),
-    getBanana(context): ProductOrder(quantity: 0, total: 0),
+    mango: ProductOrder(quantity: 0, fruit: mango),
+    avocado: ProductOrder(quantity: 0, fruit: avocado),
+    banana: ProductOrder(quantity: 0, fruit: banana),
   };
 }
 

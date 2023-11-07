@@ -3,6 +3,7 @@ import 'package:groceries_app/basket/basket.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
 import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/fixtures/fruits.dart';
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
@@ -14,11 +15,28 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget buildFilledBasketScreenUseCase(BuildContext context) {
   final mango = getMango(context);
   final avocado = getAvocado(context);
+
   return BasketScope(
     state: BasketState(
       data: {
-        mango: ProductOrder(quantity: 1, total: mango.price),
-        avocado: ProductOrder(quantity: 2, total: avocado.price * 2),
+        mango: ProductOrder(
+          fruit: mango,
+          quantity: context.knobs.double
+              .input(
+                label: 'Mango Quantity',
+                initialValue: 1,
+              )
+              .toInt(),
+        ),
+        avocado: ProductOrder(
+          fruit: avocado,
+          quantity: context.knobs.double
+              .input(
+                label: 'Avocado Quantity',
+                initialValue: 2,
+              )
+              .toInt(),
+        ),
       },
     ),
     child: Builder(

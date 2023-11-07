@@ -5,12 +5,13 @@ import 'basket_scope.dart';
 
 class ProductOrder {
   ProductOrder({
+    required this.fruit,
     required this.quantity,
-    required this.total,
   });
 
+  final Fruit fruit;
   final int quantity;
-  final double total;
+  double get total => fruit.price * quantity;
 }
 
 class BasketState extends ChangeNotifier {
@@ -32,33 +33,36 @@ class BasketState extends ChangeNotifier {
   double get total => subtotal + delivery;
 
   void addFruit(Fruit fruit) {
-    if (basketSummary.containsKey(fruit)) {
-      final order = basketSummary[fruit];
-      basketSummary[fruit] = ProductOrder(
-        quantity: order!.quantity + 1,
-        total: order.total + fruit.price,
-      );
-    } else {
-      basketSummary[fruit] = ProductOrder(
+    basketSummary.update(
+      fruit,
+      (value) => ProductOrder(
+        fruit: fruit,
+        quantity: value.quantity + 1,
+      ),
+      ifAbsent: () => ProductOrder(
+        fruit: fruit,
         quantity: 1,
-        total: fruit.price,
-      );
-    }
+      ),
+    );
+
     notifyListeners();
   }
 
   void removeFruit(Fruit fruit) {
-    if (basketSummary.containsKey(fruit)) {
-      final order = basketSummary[fruit];
-      if (order!.quantity > 1) {
-        basketSummary[fruit] = ProductOrder(
-          quantity: order.quantity - 1,
-          total: order.total - fruit.price,
-        );
-      } else {
-        basketSummary.remove(fruit);
-      }
+    if (!basketSummary.containsKey(fruit)) return;
+
+    basketSummary.update(
+      fruit,
+      (value) => ProductOrder(
+        fruit: fruit,
+        quantity: value.quantity - 1,
+      ),
+    );
+
+    if (basketSummary[fruit]!.quantity <= 0) {
+      basketSummary.remove(fruit);
     }
+
     notifyListeners();
   }
 
