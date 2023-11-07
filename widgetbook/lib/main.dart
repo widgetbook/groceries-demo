@@ -23,18 +23,21 @@ class WidgetbookApp extends StatelessWidget {
         color: const Color(0xFF404040),
         child: child,
       ),
+      integrations: [
+        WidgetbookCloudIntegration(),
+      ],
       addons: [
-        LocalizationAddon(
-          locales: AppLocalizations.supportedLocales,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          initialLocale: AppLocalizations.supportedLocales.last,
-        ),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,
             Devices.ios.iPad,
           ],
           initialDevice: Devices.ios.iPhone13,
+        ),
+        LocalizationAddon(
+          locales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          initialLocale: AppLocalizations.supportedLocales.last,
         ),
         ThemeAddon(
           themes: [
@@ -58,9 +61,13 @@ class WidgetbookApp extends StatelessWidget {
             ),
           ),
         ),
-      ],
-      integrations: [
-        WidgetbookCloudIntegration(),
+        AlignmentAddon(),
+        BuilderAddon(
+          name: 'SafeArea',
+          builder: (_, child) => SafeArea(
+            child: child,
+          ),
+        ),
       ],
     );
   }
