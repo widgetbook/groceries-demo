@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "64.0.0"
+  accessibility_tools:
+    dependency: transitive
+    description:
+      name: accessibility_tools
+      sha256: "0a16adc8dfa3a7ebd38775135d86443011a65d4ecbb438913e4992b5d29135fe"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   analyzer:
     dependency: transitive
     description:
@@ -177,6 +185,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  fake_async:
+    dependency: transitive
+    description:
+      name: fake_async
+      sha256: "511392330127add0b769b75a987850d136345d9227c6b94c96a04cf4a391bf78"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.1"
   ffi:
     dependency: transitive
     description:
@@ -219,6 +235,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
+  flutter_test:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -303,6 +324,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  inspector:
+    dependency: transitive
+    description:
+      name: inspector
+      sha256: "40ba0ac1c819c85139bfec9d1e283804581a8985c91f19d00e93212cf29226b1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   intl:
     dependency: transitive
     description:
@@ -639,26 +668,29 @@ packages:
   widgetbook:
     dependency: "direct main"
     description:
-      name: widgetbook
-      sha256: dce7255b085d84ff1c5a941ce581d3bf24edd742902c22b4405279e5c3e22501
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/widgetbook"
+      ref: main
+      resolved-ref: "3caf696423676f9564a0c19b73b781362ccc684b"
+      url: "https://github.com/widgetbook/widgetbook.git"
+    source: git
     version: "3.3.0"
   widgetbook_annotation:
     dependency: "direct main"
     description:
-      name: widgetbook_annotation
-      sha256: f6376e539ed2aab245ff876790e2fd8fa3b63faedc67b5bd61bfd1eb23bb998e
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/widgetbook_annotation"
+      ref: main
+      resolved-ref: "3caf696423676f9564a0c19b73b781362ccc684b"
+      url: "https://github.com/widgetbook/widgetbook.git"
+    source: git
     version: "3.0.0"
   widgetbook_generator:
     dependency: "direct dev"
     description:
-      name: widgetbook_generator
-      sha256: e3f46701aa434a6d16eb22595c1f1641da03adb8d4d2ce60a57646896b7657b9
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/widgetbook_generator"
+      ref: main
+      resolved-ref: "3caf696423676f9564a0c19b73b781362ccc684b"
+      url: "https://github.com/widgetbook/widgetbook.git"
+    source: git
     version: "3.2.0"
   win32:
     dependency: transitive
@@ -686,4 +718,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.1.0 <4.0.0"
-  flutter: ">=3.7.0"
+  flutter: ">=3.10.0"
