@@ -3,10 +3,14 @@ import 'package:groceries_app/theme/theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 import 'group.dart';
 
-@UseCase(name: 'Color', type: AppThemeData)
+@UseCase(
+  name: 'Surface',
+  type: SurfaceThemeData,
+  path: '[Theme]',
+)
 Widget buildColorUseCase(BuildContext context) {
   return WidgetbookGroup(
-    label: 'Color',
+    label: 'Surface',
     children: [
       ColorLabel(
         label: 'Primary',

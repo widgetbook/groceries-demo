@@ -1,10 +1,15 @@
 import 'package:flutter/widgets.dart';
 import 'package:groceries_app/theme/theme.dart';
+import 'package:groceries_app/theme/typography_theme_data.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 import 'group.dart';
 
-@UseCase(name: 'Typography', type: AppThemeData)
+@UseCase(
+  name: 'Typography',
+  type: TypographyThemeData,
+  path: '[Theme]',
+)
 Widget buildTypographyThemeDataUseCase(BuildContext context) {
   const data = 'The lazy dog jumped over the quick brown fox';
 

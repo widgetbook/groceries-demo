@@ -6,7 +6,11 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 import 'group.dart';
 
-@UseCase(name: 'Spacing', type: AppThemeData)
+@UseCase(
+  name: 'Spacing',
+  type: SpacingThemeData,
+  path: '[Theme]',
+)
 Widget buildWidgetbookSpacingUseCase(BuildContext context) {
   return WidgetbookGroup(
     label: 'Spacing',

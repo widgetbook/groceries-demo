@@ -34,6 +34,8 @@ class WidgetbookApp extends StatelessWidget {
           ],
           initialDevice: Devices.ios.iPhone13,
         ),
+        AccessibilityAddon(),
+        InspectorAddon(),
         LocalizationAddon(
           locales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
