@@ -22,7 +22,6 @@ class AppTheme extends InheritedWidget {
 }
 
 class SpacingThemeData {
-
   const SpacingThemeData({
     this.none = 0,
     this.extraSmall = 4,
@@ -44,7 +43,6 @@ class SpacingThemeData {
 }
 
 class RadiusThemeData {
-
   const RadiusThemeData({
     this.none = 0,
     this.extraSmall = 4,
@@ -82,7 +80,6 @@ class AppThemeData {
 }
 
 class BorderThemeData {
-
   const BorderThemeData({
     required this.lowEmphasis,
     required this.highEmphasis,
@@ -92,7 +89,6 @@ class BorderThemeData {
 }
 
 class SurfaceThemeData {
-
   SurfaceThemeData({
     required this.primary,
     required this.secondary,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/core.dart' as core;
 import '../../core/quantity_button.dart';
 import '../../l10n/app_localizations.dart';
-import '../../models/fruit.dart';
+import '../../repositories/fruit.dart';
 import '../../theme/theme.dart';
 import 'quantity.dart';
 
@@ -11,15 +11,17 @@ class BasketCard extends StatelessWidget {
   const BasketCard({
     super.key,
     required this.fruit,
-    required this.onFruitAdded,
-    required this.onFruitRemoved,
-    required this.numberOfFruits,
+    required this.count,
+    this.onFruitAdded,
+    this.onFruitRemoved,
   });
 
   final Fruit fruit;
-  final int numberOfFruits;
-  final void Function(Fruit fruit) onFruitAdded;
-  final void Function(Fruit fruit) onFruitRemoved;
+  final int count;
+  final VoidCallback? onFruitAdded;
+  final VoidCallback? onFruitRemoved;
+
+  double get total => fruit.price * count;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class BasketCard extends StatelessWidget {
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(fruit.image, package: 'groceries_app'),
+                  image: NetworkImage(fruit.imageUrl),
                 ),
               ),
             ),
@@ -70,21 +72,22 @@ class BasketCard extends StatelessWidget {
                   Row(
                     children: [
                       QuantityButton.remove(
-                        onPressed: () => onFruitRemoved(fruit),
+                        onPressed: onFruitRemoved,
                       ),
-                      SizedBox(
-                        width: AppTheme.of(context).spacing.extraSmall,
-                      ),
-                      Quantity(value: numberOfFruits),
-                      SizedBox(
-                        width: AppTheme.of(context).spacing.extraSmall,
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppTheme.of(context).spacing.extraSmall,
+                        ),
+                        child: Quantity(
+                          value: count,
+                        ),
                       ),
                       QuantityButton.add(
-                        onPressed: () => onFruitAdded(fruit),
+                        onPressed: onFruitAdded,
                       ),
-                      Expanded(child: Container()),
+                      const Spacer(),
                       Text(
-                        '\$${(fruit.price * numberOfFruits).toStringAsFixed(2)}',
+                        '\$${total.toStringAsFixed(2)}',
                         style: AppTheme.of(context).typography.bodySemiBold16,
                       ),
                     ],

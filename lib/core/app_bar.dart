@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../theme/theme.dart';
 import 'app_icon.dart';
@@ -8,11 +9,11 @@ class AppBar extends StatelessWidget {
   const AppBar({
     super.key,
     required this.title,
-    required this.numberOfItemsInBasket,
+    required this.basketSize,
   });
 
   final String title;
-  final int numberOfItemsInBasket;
+  final int basketSize;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,9 @@ class AppBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const AppIcon(icon: Icons.menu_rounded),
+          const AppIcon(
+            icon: Icons.menu_rounded,
+          ),
           Expanded(
             child: Align(
               child: Text(
@@ -34,13 +37,16 @@ class AppBar extends StatelessWidget {
           ),
           Stack(
             children: [
-              const AppIcon(icon: Icons.shopping_bag_outlined),
-              if (numberOfItemsInBasket > 0)
+              AppIcon(
+                icon: Icons.shopping_bag_outlined,
+                onPressed: () => context.go('/basket'),
+              ),
+              if (basketSize > 0)
                 Positioned(
                   right: 6,
                   top: 6,
                   child: core.Badge(
-                    number: numberOfItemsInBasket,
+                    number: basketSize,
                   ),
                 ),
             ],

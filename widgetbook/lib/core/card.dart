@@ -11,10 +11,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget card(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(8),
     child: Card(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Text(
           'This is some text',
           style: AppTheme.of(context).typography.bodyMedium16,

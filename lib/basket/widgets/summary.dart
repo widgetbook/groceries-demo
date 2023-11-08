@@ -7,14 +7,14 @@ import '../../theme/app_theme.dart';
 class Summary extends StatelessWidget {
   const Summary({
     super.key,
-    required this.total,
-    required this.delivery,
     required this.subTotal,
+    required this.delivery,
   });
 
-  final double total;
-  final double delivery;
   final double subTotal;
+  final double delivery;
+
+  double get total => subTotal + delivery;
 
   @override
   Widget build(BuildContext context) {

@@ -18,7 +18,7 @@ class QuantityButton extends StatelessWidget {
     required this.onPressed,
   }) : icon = Icons.remove_rounded;
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final IconData icon;
 
   @override

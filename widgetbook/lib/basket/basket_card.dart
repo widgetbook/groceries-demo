@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/basket/basket.dart';
-import 'package:groceries_app/fixtures/fruits.dart';
+import 'package:groceries_app/repositories/data_store.dart';
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
@@ -11,9 +12,15 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildBasketCardUseCase(BuildContext context) {
   return BasketCard(
-    fruit: getMango(context),
-    onFruitAdded: (_) {},
-    onFruitRemoved: (_) {},
-    numberOfFruits: 1,
+    fruit: context.knobs.list(
+      label: 'Fruit',
+      options: DataStore.fruits,
+      labelBuilder: (item) => item.name,
+    ),
+    count: context.knobs.double
+        .input(
+          label: 'Count',
+        )
+        .toInt(),
   );
 }

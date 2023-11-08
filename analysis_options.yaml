@@ -1,4 +1,4 @@
-include: package:flutter_lints/flutter.yaml
+include: package:very_good_analysis/analysis_options.yaml
 
 analyzer:
   language:
@@ -13,28 +13,32 @@ analyzer:
 linter:
   rules:
     # Constructors
-    - sort_unnamed_constructors_first
-    - sort_constructors_first
-    - prefer_const_constructors
-    - use_key_in_widget_constructors
+    sort_unnamed_constructors_first: true
+    sort_constructors_first: true
+    prefer_const_constructors: true
+    use_key_in_widget_constructors: true
+    always_put_required_named_parameters_first: false
 
     # Imports
-    - prefer_relative_imports
-    - directives_ordering
-    - combinators_ordering
-    - depend_on_referenced_packages
-    - avoid_web_libraries_in_flutter
+    prefer_relative_imports: true
+    directives_ordering: true
+    combinators_ordering: true
+    depend_on_referenced_packages: true
+    avoid_web_libraries_in_flutter: true
+    always_use_package_imports: false
 
     # Dependencies
-    - sort_pub_dependencies
+    sort_pub_dependencies: true
 
     # Style
-    - prefer_single_quotes
-    - require_trailing_commas
-    - noop_primitive_operations
-    - use_super_parameters
-    - avoid_redundant_argument_values
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    noop_primitive_operations: true
+    use_super_parameters: true
+    avoid_redundant_argument_values: true
+    public_member_api_docs: false
+    flutter_style_todos: false
 
     # Types
-    - unrelated_type_equality_checks
-    - avoid_types_on_closure_parameters
+    unrelated_type_equality_checks: true
+    avoid_types_on_closure_parameters: true

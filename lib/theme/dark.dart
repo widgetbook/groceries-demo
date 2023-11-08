@@ -2,9 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'theme.dart';
 import 'typography_theme_data.dart';
 
-const _fontColor = Color(0xFFEAE0D5);
 final darkTheme = AppThemeData(
-  typography: TypographyThemeData.fromColor(_fontColor),
+  typography: TypographyThemeData.fromColor(
+    const Color(0xFFEAE0D5),
+  ),
   surface: SurfaceThemeData(
     primary: const Color(0xFF202020),
     secondary: const Color(0xFFAFAFAF),

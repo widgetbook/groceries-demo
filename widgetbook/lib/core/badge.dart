@@ -10,7 +10,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget badge(BuildContext context) {
   return const Padding(
-    padding: EdgeInsets.all(8.0),
+    padding: EdgeInsets.all(8),
     child: Badge(
       number: 9,
     ),

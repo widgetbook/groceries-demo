@@ -5,11 +5,11 @@ class AddBasketButton extends StatelessWidget {
   const AddBasketButton({
     super.key,
     required this.icon,
-    required this.onPressed,
+    this.onPressed,
   });
 
   final IconData icon;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {

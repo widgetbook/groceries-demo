@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/core.dart' as core;
 import '../../l10n/app_localizations.dart';
-import '../../models/fruit.dart';
+import '../../repositories/fruit.dart';
 import '../../theme/app_theme.dart';
 import 'add_basket_button.dart';
 
@@ -10,11 +10,11 @@ class FruitCard extends StatelessWidget {
   const FruitCard({
     super.key,
     required this.fruit,
-    required this.onFruitAdded,
+    this.onFruitAdded,
   });
 
   final Fruit fruit;
-  final void Function(Fruit fruit) onFruitAdded;
+  final VoidCallback? onFruitAdded;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class FruitCard extends StatelessWidget {
                   ),
                   image: DecorationImage(
                     fit: BoxFit.fitWidth,
-                    image: AssetImage(fruit.image, package: 'groceries_app'),
+                    image: NetworkImage(fruit.imageUrl),
                   ),
                 ),
               ),
@@ -51,7 +51,7 @@ class FruitCard extends StatelessWidget {
                 top: 6,
                 child: AddBasketButton(
                   icon: Icons.shopping_bag_outlined,
-                  onPressed: () => onFruitAdded(fruit),
+                  onPressed: onFruitAdded,
                 ),
               ),
             ],
@@ -81,10 +81,12 @@ class FruitCard extends StatelessWidget {
                   height: AppTheme.of(context).spacing.medium,
                 ),
                 Text(
-                  fruit.grownIn,
+                  fruit.origin,
                   style: AppTheme.of(context).typography.bodyRegular14,
                 ),
-                SizedBox(height: AppTheme.of(context).spacing.extraSmall),
+                SizedBox(
+                  height: AppTheme.of(context).spacing.extraSmall,
+                ),
                 Row(
                   children: [
                     Text(
@@ -92,7 +94,9 @@ class FruitCard extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: AppTheme.of(context).typography.bodyMedium16,
                     ),
-                    SizedBox(width: AppTheme.of(context).spacing.extraSmall),
+                    SizedBox(
+                      width: AppTheme.of(context).spacing.extraSmall,
+                    ),
                     Icon(
                       Icons.arrow_forward_rounded,
                       size: 16,

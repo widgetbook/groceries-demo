@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:groceries_app/basket/basket.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -12,9 +11,9 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildSummaryUseCase(BuildContext context) {
   return Summary(
-    total: context.knobs.double.slider(
-      label: 'Total',
-      initialValue: 10,
+    subTotal: context.knobs.double.slider(
+      label: 'Subtotal',
+      initialValue: 2,
       min: 0,
       max: 1000,
     ),
@@ -23,12 +22,6 @@ Widget buildSummaryUseCase(BuildContext context) {
       initialValue: 2,
       min: 0,
       max: 10,
-    ),
-    subTotal: context.knobs.double.slider(
-      label: 'Subtotal',
-      initialValue: 2,
-      min: 0,
-      max: 1000,
     ),
   );
 }
