@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import '../../core/app_bar.dart';
 import '../../core/primary_button.dart';
 import '../../l10n/app_localizations.dart';
-import '../../models/fruit.dart';
+import '../../repositories/fruit.dart';
 import '../../theme/app_theme.dart';
 import '../basket_state.dart';
 import '../widgets/widgets.dart';

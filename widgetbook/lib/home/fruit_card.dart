@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/widgets/fruit_card.dart';
+import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
@@ -13,7 +13,7 @@ Widget fruitCard(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: FruitCard(
-      fruit: getMango(context),
+      fruit: DataStore.fruits[0],
       onFruitAdded: (_) {},
     ),
   );

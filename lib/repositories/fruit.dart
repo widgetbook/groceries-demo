@@ -1,15 +1,15 @@
 class Fruit {
   const Fruit({
     required this.name,
-    required this.price,
-    required this.image,
+    required this.imageUrl,
     required this.farm,
-    required this.grownIn,
+    required this.origin,
+    required this.price,
   });
 
   final String name;
   final double price;
-  final String image;
+  final String imageUrl;
   final String farm;
-  final String grownIn;
+  final String origin;
 }

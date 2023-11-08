@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/basket/basket.dart';
-import 'package:groceries_app/fixtures/fruits.dart';
+import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
@@ -14,7 +14,7 @@ Widget buildBasketCardUseCase(BuildContext context) {
   return BasketCard(
     fruit: context.knobs.list(
       label: 'Fruit',
-      options: getFruits(context),
+      options: DataStore.fruits,
       labelBuilder: (item) => item.name,
     ),
     count: context.knobs.double

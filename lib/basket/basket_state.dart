@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/fruit.dart';
+import '../repositories/fruit.dart';
 import 'basket_scope.dart';
 
 class ProductOrder {
@@ -17,12 +17,12 @@ class ProductOrder {
 class BasketState extends ChangeNotifier {
   BasketState({
     Map<Fruit, ProductOrder>? data,
-  }) : basketSummary = data ?? {};
+  }) : store = data ?? {};
 
-  Map<Fruit, ProductOrder> basketSummary;
+  Map<Fruit, ProductOrder> store;
 
   double get subtotal {
-    return basketSummary.values.fold(
+    return store.values.fold(
       0,
       (previousValue, element) => previousValue + element.total,
     );
@@ -32,8 +32,12 @@ class BasketState extends ChangeNotifier {
 
   double get total => subtotal + delivery;
 
+  static BasketState of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<BasketScope>()!.notifier!;
+  }
+
   void addFruit(Fruit fruit) {
-    basketSummary.update(
+    store.update(
       fruit,
       (value) => ProductOrder(
         fruit: fruit,
@@ -49,9 +53,9 @@ class BasketState extends ChangeNotifier {
   }
 
   void removeFruit(Fruit fruit) {
-    if (!basketSummary.containsKey(fruit)) return;
+    if (!store.containsKey(fruit)) return;
 
-    basketSummary.update(
+    store.update(
       fruit,
       (value) => ProductOrder(
         fruit: fruit,
@@ -59,14 +63,10 @@ class BasketState extends ChangeNotifier {
       ),
     );
 
-    if (basketSummary[fruit]!.quantity <= 0) {
-      basketSummary.remove(fruit);
+    if (store[fruit]!.quantity <= 0) {
+      store.remove(fruit);
     }
 
     notifyListeners();
-  }
-
-  static BasketState of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<BasketScope>()!.notifier!;
   }
 }

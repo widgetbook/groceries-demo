@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/core.dart' as core;
 import '../../core/quantity_button.dart';
 import '../../l10n/app_localizations.dart';
-import '../../models/fruit.dart';
+import '../../repositories/fruit.dart';
 import '../../theme/theme.dart';
 import 'quantity.dart';
 
@@ -43,10 +43,7 @@ class BasketCard extends StatelessWidget {
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(
-                    fruit.image,
-                    package: 'groceries_app',
-                  ),
+                  image: NetworkImage(fruit.imageUrl),
                 ),
               ),
             ),

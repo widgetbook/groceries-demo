@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 
 import 'basket/basket_scope.dart';
 import 'basket/basket_state.dart';
-import 'fixtures/fruits.dart';
 import 'home/home.dart';
 import 'l10n/app_localizations.dart';
 import 'theme/theme.dart';
@@ -14,14 +13,12 @@ final _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => BasketScope(
-        state: BasketState(
-          data: getFruitsMap(context),
-        ),
+        state: BasketState(),
         child: Builder(
           builder: (context) {
             final basketState = BasketState.of(context);
             return HomeScreen(
-              fruits: basketState.basketSummary.keys.toList(),
+              fruits: basketState.store.keys.toList(),
             );
           },
         ),

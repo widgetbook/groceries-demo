@@ -1,20 +1,12 @@
 {
-  "fruitsBananaName": "Banane",
-  "fruitsAvocadoName": "Avocado",
-  "fruitsMangoName": "Mango",
   "fruitsHeadline": "Früchte",
-  "fruitsGrownInCalifornia": "In der USA angebaut",
-  "fruitsGrownInGermany": "In Deutschland angebaut",
   "unit": "Stück",
-  "johnDoeFarm": "John Doe's Bauernhof",
-  "widgetbookFarm": "Widgetbook Bauernhof",
-
   "basketContinueToShipping": "Weiter zum Versand",
   "basketHeadline": "Einkaufskorb",
   "basketTotal": "Gesamtsumme",
   "basketSubtotal": "Zwischensumme",
   "basketDelivery": "Versand",
   "basketEmpty": "Dein Einkaufskorb ist leer",
-    "basketEmptyMessage": "Der Einkaufskorb öffnet das Tor zu einer Welt voller grenzenloser Möglichkeiten und wartet geduldig auf deine Auswahl, um zum Leben erweckt zu werden.",
+  "basketEmptyMessage": "Der Einkaufskorb öffnet das Tor zu einer Welt voller grenzenloser Möglichkeiten und wartet geduldig auf deine Auswahl, um zum Leben erweckt zu werden.",
   "startShopping": "Beginn mit dem Einkauf"
 }

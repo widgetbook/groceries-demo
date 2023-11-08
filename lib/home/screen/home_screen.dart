@@ -6,7 +6,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../basket/basket_state.dart';
 import '../../core/core.dart' as core;
 import '../../l10n/app_localizations.dart';
-import '../../models/fruit.dart';
+import '../../repositories/fruit.dart';
 import '../../theme/theme.dart';
 import '../widgets/fruit_card.dart';
 
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         core.AppBar(
           title: 'Grocery App',
-          numberOfItemsInBasket: basketState.basketSummary.length,
+          numberOfItemsInBasket: basketState.store.length,
         ),
         SizedBox(
           height: AppTheme.of(context).spacing.large,

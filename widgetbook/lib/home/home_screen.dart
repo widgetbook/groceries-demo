@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:groceries_app/basket/basket_scope.dart';
-import 'package:groceries_app/fixtures/fruits.dart';
 import 'package:groceries_app/home/screen/home_screen.dart';
+import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
@@ -12,8 +12,8 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildHomeUseCase(BuildContext context) {
   return BasketScope(
-    child: HomeScreen(
-      fruits: getFruits(context),
+    child: const HomeScreen(
+      fruits: DataStore.fruits,
     ),
   );
 }
