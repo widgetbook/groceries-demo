@@ -1,7 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:groceries_app/basket/basket.dart';
-import 'package:groceries_app/basket/basket_scope.dart';
-import 'package:groceries_app/basket/basket_state.dart';
 import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';

@@ -3,12 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../basket/basket_state.dart';
-import '../../core/core.dart' as core;
-import '../../l10n/app_localizations.dart';
-import '../../repositories/fruit.dart';
-import '../../theme/theme.dart';
-import '../widgets/fruit_card.dart';
+import '../basket/state/basket_state.dart';
+import '../core/core.dart' as core;
+import '../l10n/app_localizations.dart';
+import '../repositories/fruit.dart';
+import '../theme/theme.dart';
+import 'widgets/fruit_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({

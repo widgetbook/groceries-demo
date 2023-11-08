@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/home/widgets/fruit_card.dart';
+import 'package:groceries_app/home/home.dart';
 import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 

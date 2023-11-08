@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/basket/basket_scope.dart';
-import 'package:groceries_app/home/screen/home_screen.dart';
+import 'package:groceries_app/basket/basket.dart';
+import 'package:groceries_app/home/home.dart';
 import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 

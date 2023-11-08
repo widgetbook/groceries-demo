@@ -2,8 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import 'basket/basket_scope.dart';
-import 'basket/basket_state.dart';
+import 'basket/basket.dart';
 import 'home/home.dart';
 import 'l10n/app_localizations.dart';
 import 'theme/theme.dart';
