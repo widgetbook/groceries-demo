@@ -11,7 +11,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget fruitCard(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(8),
     child: FruitCard(
       fruit: DataStore.fruits[0],
       onFruitAdded: (_) {},

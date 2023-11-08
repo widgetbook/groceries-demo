@@ -12,6 +12,7 @@ class LineContainer extends StatelessWidget {
     this.lineWidth = 2.0,
     this.lineSpacing = 5.0,
   });
+
   final double lineWidth;
   final double lineSpacing;
 
@@ -42,11 +43,12 @@ class LinePainter extends CustomPainter {
 
     final path = Path();
 
-    for (double x = -max(size.width, size.height);
+    for (var x = -max(size.width, size.height);
         x <= 2 * max(size.width, size.height);
         x += lineSpacing) {
-      path.moveTo(x, 0);
-      path.lineTo(x + size.height, size.height);
+      path
+        ..moveTo(x, 0)
+        ..lineTo(x + size.height, size.height);
     }
 
     canvas.drawPath(path, paint);
@@ -60,10 +62,10 @@ class LinePainter extends CustomPainter {
 
 class WidgetbookSpacing extends StatelessWidget {
   const WidgetbookSpacing({
-    super.key,
     required this.spacing,
-    this.color,
     required this.label,
+    super.key,
+    this.color,
   });
 
   final String label;
