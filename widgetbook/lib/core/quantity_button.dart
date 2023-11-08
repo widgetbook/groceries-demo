@@ -9,9 +9,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-1996&mode=dev',
 )
 Widget buildQuantityButtonAddUseCase(BuildContext context) {
-  return QuantityButton.add(
-    onPressed: () {},
-  );
+  return const QuantityButton.add();
 }
 
 @UseCase(
@@ -21,7 +19,5 @@ Widget buildQuantityButtonAddUseCase(BuildContext context) {
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-1996&mode=dev',
 )
 Widget buildQuantityButtonRemoveUseCase(BuildContext context) {
-  return QuantityButton.remove(
-    onPressed: () {},
-  );
+  return const QuantityButton.remove();
 }

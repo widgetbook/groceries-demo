@@ -3,6 +3,43 @@ import 'package:groceries_app/theme/theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 import 'group.dart';
 
+@UseCase(name: 'Color', type: AppThemeData)
+Widget buildColorUseCase(BuildContext context) {
+  return WidgetbookGroup(
+    label: 'Color',
+    children: [
+      ColorLabel(
+        label: 'Primary',
+        color: AppTheme.of(context).surface.primary,
+      ),
+      ColorLabel(
+        label: 'Secondary',
+        color: AppTheme.of(context).surface.secondary,
+      ),
+      ColorLabel(
+        label: 'Invert',
+        color: AppTheme.of(context).surface.invert,
+      ),
+      ColorLabel(
+        label: 'Light',
+        color: AppTheme.of(context).surface.light,
+      ),
+      ColorLabel(
+        label: 'Tertiary',
+        color: AppTheme.of(context).surface.tertiary,
+      ),
+      ColorLabel(
+        label: 'Brand',
+        color: AppTheme.of(context).surface.brand,
+      ),
+      ColorLabel(
+        label: 'Feature',
+        color: AppTheme.of(context).surface.feature,
+      ),
+    ],
+  );
+}
+
 class ColorLabel extends StatelessWidget {
   const ColorLabel({
     super.key,
@@ -34,41 +71,4 @@ class ColorLabel extends StatelessWidget {
       ],
     );
   }
-}
-
-@UseCase(name: 'Color', type: AppThemeData)
-Widget buildColorUseCase(BuildContext context) {
-  return WidgetbookGroup(
-    label: 'surface',
-    children: [
-      ColorLabel(
-        label: 'primary',
-        color: AppTheme.of(context).surface.primary,
-      ),
-      ColorLabel(
-        label: 'secondary',
-        color: AppTheme.of(context).surface.secondary,
-      ),
-      ColorLabel(
-        label: 'invert',
-        color: AppTheme.of(context).surface.invert,
-      ),
-      ColorLabel(
-        label: 'light',
-        color: AppTheme.of(context).surface.light,
-      ),
-      ColorLabel(
-        label: 'tertiary',
-        color: AppTheme.of(context).surface.tertiary,
-      ),
-      ColorLabel(
-        label: 'brand',
-        color: AppTheme.of(context).surface.brand,
-      ),
-      ColorLabel(
-        label: 'feature',
-        color: AppTheme.of(context).surface.feature,
-      ),
-    ],
-  );
 }

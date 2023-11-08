@@ -11,13 +11,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildQuantityUseCase(BuildContext context) {
   return Quantity(
-    value: context.knobs.double
-        .slider(
-          label: 'Value',
-          initialValue: 2,
-          min: 0,
-          max: 1000,
-        )
-        .toInt(),
+    value: context.knobs.int.slider(
+      label: 'Value',
+      initialValue: 2,
+      max: 1000,
+    ),
   );
 }

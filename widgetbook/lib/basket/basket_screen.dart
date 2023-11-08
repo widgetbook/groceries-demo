@@ -5,7 +5,7 @@ import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
-  name: 'filled',
+  name: 'Filled',
   type: BasketScreen,
   designLink:
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-1089&mode=dev',
@@ -19,21 +19,17 @@ Widget buildFilledBasketScreenUseCase(BuildContext context) {
       data: {
         fruit_1: ProductOrder(
           fruit: fruit_1,
-          quantity: context.knobs.double
-              .input(
-                label: '${fruit_1.name} Quantity',
-                initialValue: 1,
-              )
-              .toInt(),
+          quantity: context.knobs.int.input(
+            label: '${fruit_1.name} Quantity',
+            initialValue: 1,
+          ),
         ),
         fruit_2: ProductOrder(
           fruit: fruit_2,
-          quantity: context.knobs.double
-              .input(
-                label: '${fruit_2.name} Quantity',
-                initialValue: 2,
-              )
-              .toInt(),
+          quantity: context.knobs.int.input(
+            label: '${fruit_2.name} Quantity',
+            initialValue: 2,
+          ),
         ),
       },
     ),
@@ -52,7 +48,7 @@ Widget buildFilledBasketScreenUseCase(BuildContext context) {
 }
 
 @UseCase(
-  name: 'empty',
+  name: 'Empty',
   type: BasketScreen,
   designLink:
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2186&mode=dev',

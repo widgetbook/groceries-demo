@@ -7,6 +7,7 @@ import 'group.dart';
 @UseCase(name: 'Typography', type: AppThemeData)
 Widget buildTypographyThemeDataUseCase(BuildContext context) {
   const data = 'The lazy dog jumped over the quick brown fox';
+
   return WidgetbookGroup(
     label: 'Typography',
     children: [

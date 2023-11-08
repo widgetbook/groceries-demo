@@ -14,13 +14,11 @@ Widget buildSummaryUseCase(BuildContext context) {
     subTotal: context.knobs.double.slider(
       label: 'Subtotal',
       initialValue: 2,
-      min: 0,
       max: 1000,
     ),
     delivery: context.knobs.double.slider(
       label: 'Delivery',
       initialValue: 2,
-      min: 0,
       max: 10,
     ),
   );

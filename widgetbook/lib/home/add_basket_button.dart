@@ -9,8 +9,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=112-2401&mode=dev',
 )
 Widget buildIconButtonUseCase(BuildContext context) {
-  return AddBasketButton(
+  return const AddBasketButton(
     icon: Icons.add,
-    onPressed: () {},
   );
 }

@@ -17,10 +17,8 @@ Widget buildBasketCardUseCase(BuildContext context) {
       options: DataStore.fruits,
       labelBuilder: (item) => item.name,
     ),
-    count: context.knobs.double
-        .input(
-          label: 'Count',
-        )
-        .toInt(),
+    count: context.knobs.int.input(
+      label: 'Count',
+    ),
   );
 }
