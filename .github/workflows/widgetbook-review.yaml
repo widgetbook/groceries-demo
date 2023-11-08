@@ -3,7 +3,7 @@ name: Upload Widgetbook Review
 on:
   pull_request:
     branches:
-      - staging
+      - main
 
 jobs:
   build:

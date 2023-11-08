@@ -3,7 +3,7 @@ name: Upload Widgetbook Build
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   build:
