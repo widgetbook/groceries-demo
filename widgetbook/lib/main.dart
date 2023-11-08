@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/l10n/app_localizations.dart';
 import 'package:groceries_app/theme/theme.dart';
-
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
@@ -34,7 +33,6 @@ class WidgetbookApp extends StatelessWidget {
           ],
           initialDevice: Devices.ios.iPhone13,
         ),
-        AccessibilityAddon(),
         InspectorAddon(),
         LocalizationAddon(
           locales: AppLocalizations.supportedLocales,

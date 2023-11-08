@@ -10,7 +10,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-3200&mode=dev',
 )
 Widget fruitCard(BuildContext context) {
-  return FruitCard(
-    fruit: DataStore.fruits[0],
+  return Padding(
+    padding: const EdgeInsets.all(8),
+    child: FruitCard(
+      fruit: DataStore.fruits[0],
+    ),
   );
 }

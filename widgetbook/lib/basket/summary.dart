@@ -10,16 +10,19 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=112-6510&mode=dev',
 )
 Widget buildSummaryUseCase(BuildContext context) {
-  return Summary(
-    subTotal: context.knobs.double.slider(
-      label: 'Subtotal',
-      initialValue: 2,
-      max: 1000,
-    ),
-    delivery: context.knobs.double.slider(
-      label: 'Delivery',
-      initialValue: 2,
-      max: 10,
+  return Padding(
+    padding: const EdgeInsets.all(8),
+    child: Summary(
+      subTotal: context.knobs.double.slider(
+        label: 'Subtotal',
+        initialValue: 2,
+        max: 1000,
+      ),
+      delivery: context.knobs.double.slider(
+        label: 'Delivery',
+        initialValue: 2,
+        max: 10,
+      ),
     ),
   );
 }
