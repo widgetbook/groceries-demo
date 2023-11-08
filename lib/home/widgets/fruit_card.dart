@@ -10,11 +10,11 @@ class FruitCard extends StatelessWidget {
   const FruitCard({
     super.key,
     required this.fruit,
-    required this.onFruitAdded,
+    this.onFruitAdded,
   });
 
   final Fruit fruit;
-  final void Function(Fruit fruit) onFruitAdded;
+  final VoidCallback? onFruitAdded;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class FruitCard extends StatelessWidget {
                 top: 6,
                 child: AddBasketButton(
                   icon: Icons.shopping_bag_outlined,
-                  onPressed: () => onFruitAdded(fruit),
+                  onPressed: onFruitAdded,
                 ),
               ),
             ],

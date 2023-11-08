@@ -21,12 +21,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final basketState = BasketState.of(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         core.AppBar(
           title: 'Grocery App',
-          numberOfItemsInBasket: basketState.store.length,
+          basketSize: basketState.store.length,
         ),
         SizedBox(
           height: AppTheme.of(context).spacing.large,
@@ -57,10 +58,10 @@ class HomeScreen extends StatelessWidget {
                         crossAxisSpacing: AppTheme.of(context).spacing.medium,
                         itemCount: fruits.length,
                         itemBuilder: (context, index) {
+                          final fruit = fruits[index];
                           return FruitCard(
-                            fruit: fruits[index],
-                            onFruitAdded: (fruit) =>
-                                BasketState.of(context).addFruit(fruit),
+                            fruit: fruit,
+                            onFruitAdded: () => basketState.addFruit(fruit),
                           );
                         },
                       );

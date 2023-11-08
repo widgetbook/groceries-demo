@@ -10,6 +10,6 @@ Widget appBarUseCase(BuildContext context) {
       label: 'title',
       initialValue: 'Groceries App',
     ),
-    numberOfItemsInBasket: 9,
+    basketSize: 9,
   );
 }

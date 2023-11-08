@@ -40,11 +40,11 @@ Widget buildFilledBasketScreenUseCase(BuildContext context) {
     child: Builder(
       builder: (context) {
         final basketState = BasketState.of(context);
+
         return BasketScreen(
-          fruits: basketState.store,
+          basket: basketState.store,
           delivery: basketState.delivery,
-          total: basketState.total,
-          subTotal: basketState.subtotal,
+          subTotal: basketState.subTotal,
         );
       },
     ),
@@ -63,10 +63,9 @@ Widget buildEmptyBasketScreenUseCase(BuildContext context) {
       builder: (context) {
         final basketState = BasketState.of(context);
         return BasketScreen(
-          fruits: basketState.store,
+          basket: basketState.store,
           delivery: basketState.delivery,
-          total: basketState.total,
-          subTotal: basketState.subtotal,
+          subTotal: basketState.subTotal,
         );
       },
     ),

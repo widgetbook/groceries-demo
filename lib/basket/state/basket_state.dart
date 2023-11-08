@@ -11,6 +11,7 @@ class ProductOrder {
 
   final Fruit fruit;
   final int quantity;
+
   double get total => fruit.price * quantity;
 }
 
@@ -21,7 +22,7 @@ class BasketState extends ChangeNotifier {
 
   Map<Fruit, ProductOrder> store;
 
-  double get subtotal {
+  double get subTotal {
     return store.values.fold(
       0,
       (previousValue, element) => previousValue + element.total,
@@ -29,8 +30,6 @@ class BasketState extends ChangeNotifier {
   }
 
   double get delivery => 0.56;
-
-  double get total => subtotal + delivery;
 
   static BasketState of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<BasketScope>()!.notifier!;

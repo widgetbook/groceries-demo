@@ -14,7 +14,6 @@ Widget fruitCard(BuildContext context) {
     padding: const EdgeInsets.all(8),
     child: FruitCard(
       fruit: DataStore.fruits[0],
-      onFruitAdded: (_) {},
     ),
   );
 }

@@ -13,15 +13,13 @@ import 'widgets/widgets.dart';
 class BasketScreen extends StatelessWidget {
   const BasketScreen({
     super.key,
-    required this.fruits,
+    required this.basket,
     required this.delivery,
-    required this.total,
     required this.subTotal,
   });
 
-  final Map<Fruit, ProductOrder> fruits;
+  final Map<Fruit, ProductOrder> basket;
   final double delivery;
-  final double total;
   final double subTotal;
 
   Widget _buildEmptyPage(BuildContext context) {
@@ -57,7 +55,7 @@ class BasketScreen extends StatelessWidget {
                 constraint.maxWidth ~/ 350,
               );
               return GridView.count(
-                key: ValueKey(fruits),
+                key: ValueKey(basket),
                 crossAxisCount: columns,
                 padding: EdgeInsets.zero,
                 mainAxisSpacing: AppTheme.of(context).spacing.medium,
@@ -66,10 +64,10 @@ class BasketScreen extends StatelessWidget {
                 //  116 is the height of the BasketCard
                 childAspectRatio: constraint.maxWidth / columns / 116,
                 children: [
-                  for (final fruit in fruits.keys)
+                  for (final fruit in basket.keys)
                     BasketCard(
                       fruit: fruit,
-                      count: fruits[fruit]!.quantity,
+                      count: basket[fruit]!.quantity,
                       onFruitAdded: () =>
                           BasketState.of(context).addFruit(fruit),
                       onFruitRemoved: () =>
@@ -101,7 +99,7 @@ class BasketScreen extends StatelessWidget {
       children: [
         AppBar(
           title: 'Groceries App',
-          numberOfItemsInBasket: fruits.length,
+          basketSize: basket.length,
         ),
         SizedBox(
           height: AppTheme.of(context).spacing.large,
@@ -111,7 +109,7 @@ class BasketScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: AppTheme.of(context).spacing.medium,
             ),
-            child: fruits.isEmpty
+            child: basket.isEmpty
                 ? _buildEmptyPage(context)
                 : _buildFilledPage(context),
           ),
