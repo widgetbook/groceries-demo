@@ -10,15 +10,12 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2014&mode=dev',
 )
 Widget card(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(8),
-    child: Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Text(
-          'This is some text',
-          style: AppTheme.of(context).typography.bodyMedium16,
-        ),
+  return Card(
+    child: Padding(
+      padding: const EdgeInsets.all(8),
+      child: Text(
+        'This is some text',
+        style: AppTheme.of(context).typography.bodyMedium16,
       ),
     ),
   );

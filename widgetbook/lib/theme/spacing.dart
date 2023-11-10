@@ -6,6 +6,51 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 import 'group.dart';
 
+@UseCase(
+  name: 'Spacing',
+  type: SpacingThemeData,
+  path: '[Theme]',
+)
+Widget buildWidgetbookSpacingUseCase(BuildContext context) {
+  return WidgetbookGroup(
+    label: 'Spacing',
+    children: [
+      WidgetbookSpacing(
+        label: 'none',
+        spacing: AppTheme.of(context).spacing.none,
+      ),
+      WidgetbookSpacing(
+        label: 'xs',
+        spacing: AppTheme.of(context).spacing.extraSmall,
+      ),
+      WidgetbookSpacing(
+        label: 'small',
+        spacing: AppTheme.of(context).spacing.small,
+      ),
+      WidgetbookSpacing(
+        label: 'medium',
+        spacing: AppTheme.of(context).spacing.medium,
+      ),
+      WidgetbookSpacing(
+        label: 'large',
+        spacing: AppTheme.of(context).spacing.large,
+      ),
+      WidgetbookSpacing(
+        label: 'xl',
+        spacing: AppTheme.of(context).spacing.extraLarge,
+      ),
+      WidgetbookSpacing(
+        label: '2xl',
+        spacing: AppTheme.of(context).spacing.extraExtraLarge,
+      ),
+      WidgetbookSpacing(
+        label: '3xl',
+        spacing: AppTheme.of(context).spacing.extraExtraExtraLarge,
+      ),
+    ],
+  );
+}
+
 class LineContainer extends StatelessWidget {
   const LineContainer({
     super.key,
@@ -122,45 +167,4 @@ class WidgetbookSpacing extends StatelessWidget {
       ],
     );
   }
-}
-
-@UseCase(name: 'Spacing', type: AppThemeData)
-Widget buildWidgetbookSpacingUseCase(BuildContext context) {
-  return WidgetbookGroup(
-    label: 'Spacings',
-    children: [
-      WidgetbookSpacing(
-        label: 'none',
-        spacing: AppTheme.of(context).spacing.none,
-      ),
-      WidgetbookSpacing(
-        label: 'extra-small',
-        spacing: AppTheme.of(context).spacing.extraSmall,
-      ),
-      WidgetbookSpacing(
-        label: 'small',
-        spacing: AppTheme.of(context).spacing.small,
-      ),
-      WidgetbookSpacing(
-        label: 'medium',
-        spacing: AppTheme.of(context).spacing.medium,
-      ),
-      WidgetbookSpacing(
-        label: 'large',
-        spacing: AppTheme.of(context).spacing.large,
-      ),
-      WidgetbookSpacing(
-        label: 'xl',
-        spacing: AppTheme.of(context).spacing.extraLarge,
-      ),
-      WidgetbookSpacing(
-        label: '2xl',
-        spacing: AppTheme.of(context).spacing.extraLarge,
-      ),
-      WidgetbookSpacing(
-        label: '3xl',
-        spacing: AppTheme.of(context).spacing.extraExtraExtraLarge,
-      ),
-    ],
-  );
 }

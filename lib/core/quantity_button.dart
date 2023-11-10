@@ -4,18 +4,18 @@ import '../theme/app_theme.dart';
 class QuantityButton extends StatelessWidget {
   const QuantityButton({
     super.key,
-    required this.onPressed,
     required this.icon,
+    this.onPressed,
   });
 
   const QuantityButton.add({
     super.key,
-    required this.onPressed,
+    this.onPressed,
   }) : icon = Icons.add_rounded;
 
   const QuantityButton.remove({
     super.key,
-    required this.onPressed,
+    this.onPressed,
   }) : icon = Icons.remove_rounded;
 
   final VoidCallback? onPressed;
