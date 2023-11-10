@@ -668,30 +668,27 @@ packages:
   widgetbook:
     dependency: "direct main"
     description:
-      path: "packages/widgetbook"
-      ref: main
-      resolved-ref: "3caf696423676f9564a0c19b73b781362ccc684b"
-      url: "https://github.com/widgetbook/widgetbook.git"
-    source: git
-    version: "3.3.0"
+      name: widgetbook
+      sha256: a62c1499623e72b3aeb5767c09d98f385f05ad14c63b4600503ca926aa5f58a6
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.4.0"
   widgetbook_annotation:
     dependency: "direct main"
     description:
-      path: "packages/widgetbook_annotation"
-      ref: main
-      resolved-ref: "3caf696423676f9564a0c19b73b781362ccc684b"
-      url: "https://github.com/widgetbook/widgetbook.git"
-    source: git
-    version: "3.0.0"
+      name: widgetbook_annotation
+      sha256: c2d881d0241525b36aa3777d0ac406d198528ed28b84ca73b7dd9f59189d6bb0
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   widgetbook_generator:
     dependency: "direct dev"
     description:
-      path: "packages/widgetbook_generator"
-      ref: main
-      resolved-ref: "3caf696423676f9564a0c19b73b781362ccc684b"
-      url: "https://github.com/widgetbook/widgetbook.git"
-    source: git
-    version: "3.2.0"
+      name: widgetbook_generator
+      sha256: e60bb3ca46246bc8d5d3a0bed1994d90268b4913704a298093fcf7b6d781c6e0
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.0"
   win32:
     dependency: transitive
     description:
