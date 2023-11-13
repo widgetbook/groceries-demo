@@ -1,4 +1,4 @@
-name: Upload Widgetbook Review
+name: Upload Widgetbook Review - Staging
 
 on:
   pull_request:

@@ -1,4 +1,4 @@
-name: Upload Widgetbook Build
+name: Upload Widgetbook Build - Staging
 
 on:
   push:
