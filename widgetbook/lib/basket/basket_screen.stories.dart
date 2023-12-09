@@ -1,8 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:groceries_app/basket/basket.dart';
 import 'package:groceries_app/repositories/data_store.dart';
+import 'package:groceries_app/repositories/fruit.dart';
+import 'package:widgetbook/next.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
+part 'basket_screen.stories.book.dart';
 
 @UseCase(
   name: 'Filled',
@@ -67,3 +71,15 @@ Widget buildEmptyBasketScreenUseCase(BuildContext context) {
     ),
   );
 }
+
+final meta = Meta<BasketScreen>();
+
+final Default = BasketScreenStory(
+  name: 'Default',
+  setup: (context, child) => BasketScope(child: child),
+  args: BasketScreenArgs(
+    basket: BasketState.of(context).store,
+    delivery: BasketState.of(context).delivery,
+    subTotal: BasketState.of(context).subTotal,
+  ),
+);

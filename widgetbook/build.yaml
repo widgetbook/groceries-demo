@@ -1,0 +1,7 @@
+targets:
+  $default:
+    builders:
+      widgetbook_generator:experimental_story_builder:
+        enabled: true
+      widgetbook_generator:experimental_components_builder:
+        enabled: true
