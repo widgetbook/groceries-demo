@@ -24,7 +24,7 @@ jobs:
           flutter gen-l10n
 
       - name: Install Widgetbook CLI
-        run: dart pub global activate widgetbook_cli
+        run: dart pub global activate -s git https://github.com/widgetbook/widgetbook.git --git-path packages/widgetbook_cli --git-ref feat/cli/visual-diff
 
       - name: Build Widgetbook
         working-directory: widgetbook
@@ -42,4 +42,5 @@ jobs:
             --actor $GITHUB_ACTOR \
             --base-branch $GITHUB_BASE_REF \
             --branch $GITHUB_HEAD_REF \
-            --commit ${{ github.event.pull_request.head.sha }}
+            --commit ${{ github.event.pull_request.head.sha }} \
+            --experimental-visual-diff
