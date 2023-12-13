@@ -33,9 +33,9 @@ jobs:
           dart run build_runner build -d
           flutter build web -t lib/main.dart
 
-#      - name: Upload Widgetbook
-#        working-directory: widgetbook
-#        run: widgetbook_staging publish --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}  --experimental-visual-diff
+      - name: Upload Widgetbook
+        working-directory: widgetbook
+        run: widgetbook_staging publish --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}  --experimental-visual-diff
       - name: Upload Widgetbook
         working-directory: widgetbook
         run: |
