@@ -15,7 +15,7 @@ Widget buildContinueButtonUseCase(BuildContext context) {
     child: PrimaryButton(
       content: context.knobs.string(
         label: 'Content',
-        initialValue: 'Continue to Shipping 123',
+        initialValue: 'Continue to Shipping',
       ),
     ),
   );
