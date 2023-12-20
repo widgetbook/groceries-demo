@@ -12,7 +12,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget badge(BuildContext context) {
   return Badge(
     number: context.knobs.int.input(
-      label: 'Number',
+      label: 'Number 1',
     ),
   );
 }
