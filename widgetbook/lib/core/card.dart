@@ -14,7 +14,7 @@ Widget card(BuildContext context) {
     child: Padding(
       padding: const EdgeInsets.all(8),
       child: Text(
-        'This is some text 2',
+        'This is some text',
         style: AppTheme.of(context).typography.bodyMedium16,
       ),
     ),
