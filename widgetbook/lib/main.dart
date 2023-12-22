@@ -4,6 +4,7 @@ import 'package:groceries_app/theme/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
+import 'addons/animation_addon.dart';
 import 'components.book.dart';
 import 'main.directories.g.dart';
 
@@ -27,6 +28,7 @@ class WidgetbookApp extends StatelessWidget {
         WidgetbookCloudIntegration(),
       ],
       addons: [
+        TimeDilationAddon(),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,
@@ -40,6 +42,7 @@ class WidgetbookApp extends StatelessWidget {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           initialLocale: AppLocalizations.supportedLocales.last,
         ),
+        AnimationStateAddon(name: 'A name'),
         ThemeAddon(
           themes: [
             WidgetbookTheme(

@@ -17,6 +17,7 @@ import 'package:widgetbook_workspace/basket/empty_basket_placeholder.stories.dar
     as _i10;
 import 'package:widgetbook_workspace/basket/quantity.stories.dart' as _i11;
 import 'package:widgetbook_workspace/basket/summary.stories.dart' as _i12;
+import 'package:widgetbook_workspace/core/like.stories.dart' as _i13;
 
 final components = <_i1.Component<dynamic>>[
   _i2.AppBarComponent,
@@ -30,4 +31,5 @@ final components = <_i1.Component<dynamic>>[
   _i10.EmptyBasketPlaceholderComponent,
   _i11.QuantityComponent,
   _i12.SummaryComponent,
+  _i13.AnimatedBoxWidgetComponent,
 ];

@@ -74,12 +74,12 @@ Widget buildEmptyBasketScreenUseCase(BuildContext context) {
 
 final meta = Meta<BasketScreen>();
 
-final Default = BasketScreenStory(
-  name: 'Default',
-  setup: (context, child) => BasketScope(child: child),
-  args: BasketScreenArgs(
-    basket: BasketState.of(context).store,
-    delivery: BasketState.of(context).delivery,
-    subTotal: BasketState.of(context).subTotal,
-  ),
-);
+// final Default = BasketScreenStory(
+//   name: 'Default',
+//   setup: (context, child) => BasketScope(child: child),
+//   args: BasketScreenArgs(
+//     basket: BasketState.of(context).store,
+//     delivery: BasketState.of(context).delivery,
+//     subTotal: BasketState.of(context).subTotal,
+//   ),
+// );
