@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/core/core.dart';
+import 'package:widgetbook/next.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
+part 'quantity_button.stories.book.dart';
 
 @UseCase(
   name: 'Add',
@@ -21,3 +24,31 @@ Widget buildQuantityButtonAddUseCase(BuildContext context) {
 Widget buildQuantityButtonRemoveUseCase(BuildContext context) {
   return const QuantityButton.remove();
 }
+
+final meta = Meta<QuantityButton>();
+
+final $Default = QuantityButtonStory(
+  name: 'Add',
+  args: QuantityButtonArgs.fixed(
+    icon: Icons.ac_unit,
+    onPressed: () {},
+  ),
+);
+
+// TODO currently not possible
+final $Add = QuantityButtonStory(
+  name: 'Add',
+  args: QuantityButtonArgs.fixed(
+    icon: Icons.ac_unit,
+    onPressed: () {},
+  ),
+);
+
+// TODO currently not possible
+final $Remove = QuantityButtonStory(
+  name: 'Add',
+  args: QuantityButtonArgs.fixed(
+    icon: Icons.ac_unit,
+    onPressed: () {},
+  ),
+);

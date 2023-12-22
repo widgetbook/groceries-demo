@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:groceries_app/basket/basket.dart';
+import 'package:widgetbook/next.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
+part 'empty_basket_placeholder.stories.book.dart';
+
+final meta = Meta<EmptyBasketPlaceholder>();
+
+final $Default = EmptyBasketPlaceholderStory(
+  name: 'Default',
+);
 
 @UseCase(
   name: 'Default',
