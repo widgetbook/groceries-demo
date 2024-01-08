@@ -7,6 +7,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 @UseCase(
   name: 'Filled',
   type: BasketScreen,
+  path: 'basket/screens',
   designLink:
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-1089&mode=dev',
 )
@@ -50,6 +51,7 @@ Widget buildFilledBasketScreenUseCase(BuildContext context) {
 @UseCase(
   name: 'Empty',
   type: BasketScreen,
+  path: 'basket/screens',
   designLink:
       'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2186&mode=dev',
 )
