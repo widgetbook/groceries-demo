@@ -5,9 +5,11 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
     required this.content,
+    required this.buttonColor,
   });
 
   final String content;
+  final Color buttonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class PrimaryButton extends StatelessWidget {
         horizontal: AppTheme.of(context).spacing.extraLarge,
       ),
       decoration: BoxDecoration(
-        color: AppTheme.of(context).surface.brand,
+        color: buttonColor,
         borderRadius: BorderRadius.circular(
           AppTheme.of(context).radius.full,
         ),

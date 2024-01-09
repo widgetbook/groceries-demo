@@ -61,6 +61,8 @@ class WidgetbookApp extends StatelessWidget {
             ),
           ),
         ),
+        TextScaleAddon(scales: [1.0, 1.5, 2.0], initialScale: 1.0),
+        TimeDilationAddon(),
         AlignmentAddon(),
         BuilderAddon(
           name: 'SafeArea',
