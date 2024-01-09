@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
-class QuantityButton extends StatelessWidget {
+class QuantityButton extends StatefulWidget {
   const QuantityButton({
     super.key,
     required this.icon,
@@ -22,23 +22,45 @@ class QuantityButton extends StatelessWidget {
   final IconData icon;
 
   @override
+  State<QuantityButton> createState() => _QuantityButtonState();
+}
+
+class _QuantityButtonState extends State<QuantityButton> {
+  bool isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Container(
-        padding: EdgeInsets.all(AppTheme.of(context).spacing.extraSmall),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-            AppTheme.of(context).radius.full,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: GestureDetector(
+        onTap: widget.onPressed,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 100),
+          padding: EdgeInsets.all(AppTheme.of(context).spacing.extraSmall),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              AppTheme.of(context).radius.full,
+            ),
+            color: isHovered ? Colors.black.withOpacity(0.3) : null,
+            border: Border.all(
+              color: AppTheme.of(context).border.highEmphasis,
+            ),
           ),
-          border: Border.all(
-            color: AppTheme.of(context).border.highEmphasis,
+          child: Icon(
+            widget.icon,
+            size: 22,
+            color: AppTheme.of(context).surface.invert,
           ),
-        ),
-        child: Icon(
-          icon,
-          size: 22,
-          color: AppTheme.of(context).surface.invert,
         ),
       ),
     );

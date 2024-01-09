@@ -7,7 +7,7 @@ import '../../repositories/fruit.dart';
 import '../../theme/theme.dart';
 import 'quantity.dart';
 
-class BasketCard extends StatelessWidget {
+class BasketCard extends StatefulWidget {
   const BasketCard({
     super.key,
     required this.fruit,
@@ -21,7 +21,34 @@ class BasketCard extends StatelessWidget {
   final VoidCallback? onFruitAdded;
   final VoidCallback? onFruitRemoved;
 
-  double get total => fruit.price * count;
+  @override
+  State<BasketCard> createState() => _BasketCardState();
+}
+
+class _BasketCardState extends State<BasketCard>
+    with SingleTickerProviderStateMixin {
+  double get total => widget.fruit.price * widget.count;
+
+  late final AnimationController animationController;
+  late final Animation<double> scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100),
+    );
+    scaleAnimation = Tween<double>(begin: 1, end: 1.1).animate(
+      CurvedAnimation(parent: animationController, curve: Curves.bounceInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +70,7 @@ class BasketCard extends StatelessWidget {
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(fruit.imageUrl),
+                  image: NetworkImage(widget.fruit.imageUrl),
                 ),
               ),
             ),
@@ -56,14 +83,14 @@ class BasketCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    fruit.name,
+                    widget.fruit.name,
                     style: AppTheme.of(context).typography.headingSemibold20,
                   ),
                   SizedBox(
                     height: AppTheme.of(context).spacing.extraSmall - 2,
                   ),
                   Text(
-                    '\$${fruit.price}/${AppLocalizations.of(context)!.unit}',
+                    '\$${widget.fruit.price}/${AppLocalizations.of(context)!.unit}',
                     style: AppTheme.of(context).typography.bodyRegular12,
                   ),
                   SizedBox(
@@ -72,18 +99,31 @@ class BasketCard extends StatelessWidget {
                   Row(
                     children: [
                       QuantityButton.remove(
-                        onPressed: onFruitRemoved,
+                        onPressed: () {
+                          widget.onFruitRemoved?.call();
+                          animationController.forward().then(
+                                (_) => animationController.reverse(),
+                              );
+                        },
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: AppTheme.of(context).spacing.extraSmall,
                         ),
-                        child: Quantity(
-                          value: count,
+                        child: ScaleTransition(
+                          scale: scaleAnimation,
+                          child: Quantity(
+                            value: widget.count,
+                          ),
                         ),
                       ),
                       QuantityButton.add(
-                        onPressed: onFruitAdded,
+                        onPressed: () {
+                          widget.onFruitAdded?.call();
+                          animationController.forward().then(
+                                (_) => animationController.reverse(),
+                              );
+                        },
                       ),
                       const Spacer(),
                       Text(
