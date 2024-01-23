@@ -25,12 +25,14 @@ class BasketCard extends StatefulWidget {
   State<BasketCard> createState() => _BasketCardState();
 }
 
-class _BasketCardState extends State<BasketCard>
-    with SingleTickerProviderStateMixin {
+class _BasketCardState extends State<BasketCard> with TickerProviderStateMixin {
   double get total => widget.fruit.price * widget.count;
 
   late final AnimationController animationController;
   late final Animation<double> scaleAnimation;
+
+  late final AnimationController zoomController;
+  late final Animation<double> zoomInAnimation;
 
   @override
   void initState() {
@@ -39,14 +41,24 @@ class _BasketCardState extends State<BasketCard>
       vsync: this,
       duration: const Duration(milliseconds: 100),
     );
+    zoomController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 10),
+    );
     scaleAnimation = Tween<double>(begin: 1, end: 1.1).animate(
       CurvedAnimation(parent: animationController, curve: Curves.bounceInOut),
     );
+    zoomInAnimation = Tween<double>(begin: 0.5, end: 1).animate(
+      CurvedAnimation(parent: zoomController, curve: Curves.linear),
+    );
+
+    zoomController.forward();
   }
 
   @override
   void dispose() {
     animationController.dispose();
+    zoomController.dispose();
     super.dispose();
   }
 
@@ -59,18 +71,28 @@ class _BasketCardState extends State<BasketCard>
         ),
         child: Row(
           children: [
-            Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(
-                    AppTheme.of(context).radius.extraSmall,
-                  ),
+            ClipRRect(
+              borderRadius: BorderRadius.all(
+                Radius.circular(
+                  AppTheme.of(context).radius.extraSmall,
                 ),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(widget.fruit.imageUrl),
+              ),
+              child: ScaleTransition(
+                scale: zoomInAnimation,
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        AppTheme.of(context).radius.extraSmall,
+                      ),
+                    ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(widget.fruit.imageUrl),
+                    ),
+                  ),
                 ),
               ),
             ),
