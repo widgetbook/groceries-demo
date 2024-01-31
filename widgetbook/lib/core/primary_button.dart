@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries_app/core/core.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+import 'package:groceries_app/theme/app_theme.dart';
 
 @UseCase(
   name: 'Default',
@@ -16,6 +17,10 @@ Widget buildContinueButtonUseCase(BuildContext context) {
       content: context.knobs.string(
         label: 'Content',
         initialValue: 'Continue to Shipping',
+      ),
+      buttonColor: context.knobs.color(
+        label: 'Button color',
+        initialValue: AppTheme.of(context).surface.brand,
       ),
     ),
   );

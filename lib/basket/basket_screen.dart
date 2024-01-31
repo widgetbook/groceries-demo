@@ -30,6 +30,7 @@ class BasketScreen extends StatelessWidget {
         const Expanded(child: EmptyBasketPlaceholder()),
         PrimaryButton(
           content: AppLocalizations.of(context)!.startShopping,
+          buttonColor: AppTheme.of(context).surface.brand,
         ),
       ],
     );
@@ -87,6 +88,7 @@ class BasketScreen extends StatelessWidget {
         ),
         PrimaryButton(
           content: AppLocalizations.of(context)!.basketContinueToShipping,
+          buttonColor: AppTheme.of(context).surface.brand,
         ),
       ],
     );
