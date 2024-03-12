@@ -12,7 +12,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildBasketCardUseCase(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(8),
+    padding: const EdgeInsets.all(10),
     child: BasketCard(
       fruit: context.knobs.list(
         label: 'Fruit',
