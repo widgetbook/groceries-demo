@@ -23,14 +23,14 @@ class AppTheme extends InheritedWidget {
 
 class SpacingThemeData {
   const SpacingThemeData({
-    this.none = 0,
-    this.extraSmall = 4,
-    this.small = 8,
-    this.medium = 16,
-    this.large = 24,
-    this.extraLarge = 32,
-    this.extraExtraLarge = 40,
-    this.extraExtraExtraLarge = 56,
+    this.none = 4,
+    this.extraSmall = 8,
+    this.small = 16,
+    this.medium = 24,
+    this.large = 32,
+    this.extraLarge = 40,
+    this.extraExtraLarge = 56,
+    this.extraExtraExtraLarge = 64,
   });
   final double none;
   final double extraSmall;
