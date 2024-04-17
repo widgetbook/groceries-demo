@@ -37,14 +37,7 @@ jobs:
         working-directory: widgetbook
         run: |
           widgetbook_staging publish \
-            --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }} \
-            --repository $GITHUB_REPOSITORY \
-            --actor $GITHUB_ACTOR \
-            --base-branch $GITHUB_BASE_REF \
-            --branch $GITHUB_HEAD_REF \
-            --commit ${{ github.event.pull_request.head.sha }} \
-            --experimental-visual-diff
+            --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}        
           
           
-          
-#           widgetbook_debug publish --api-key b8375d5858cbe221386b1e94c89d10733be7dfe12c32b47bb02e1b9d32099a8f --repository widgetbook/groceries-demo --actor tim --base-branch main --branch feature-branch-3 --commit some_random_sha
+#           widgetbook publish --api-key API_KEY --repository exelnait/groceries-demo --actor exelnait --base-branch main --branch feature-branch-3 --commit some_random_sha
