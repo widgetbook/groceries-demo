@@ -24,7 +24,7 @@ jobs:
           flutter gen-l10n
 
       - name: Install Widgetbook CLI
-        run: dart pub global activate -s git https://github.com/widgetbook/widgetbook.git --git-path packages/widgetbook_cli --git-ref feat/cli/visual-diff
+        run: dart pub global activate widgetbook_cli
 
       - name: Build Widgetbook
         working-directory: widgetbook
@@ -35,4 +35,4 @@ jobs:
 
       - name: Upload Widgetbook
         working-directory: widgetbook
-        run: widgetbook_staging publish --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}  --experimental-visual-diff
+        run: widgetbook_staging cloud build push --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}

@@ -36,8 +36,5 @@ jobs:
       - name: Upload Widgetbook
         working-directory: widgetbook
         run: |
-          widgetbook_staging publish \
-            --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}        
-          
-          
-#           widgetbook publish --api-key API_KEY --repository exelnait/groceries-demo --actor exelnait --base-branch main --branch feature-branch-3 --commit some_random_sha
+          widgetbook_staging cloud review sync \
+            --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }} --base-branch $GITHUB_BASE_REF --base-sha ${{ github.event.pull_request.base.sha }} --head-branch $GITHUB_HEAD_REF --head-sha ${{ github.event.pull_request.head.sha }}
