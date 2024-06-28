@@ -11,7 +11,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildSummaryUseCase(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(8),
+    padding: const EdgeInsets.all(12),
     child: Summary(
       subTotal: context.knobs.double.slider(
         label: 'Subtotal',
