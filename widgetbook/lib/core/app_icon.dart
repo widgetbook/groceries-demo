@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Default',
   type: AppIcon,
   designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=112-1457&mode=dev',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=112-1457&t=Jvcq3BxVyPK6l2OF-4",
 )
 Widget buildAppIconUseCase(BuildContext context) {
   return const AppIcon(

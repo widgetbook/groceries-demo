@@ -19,7 +19,7 @@ class AppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: AppTheme.of(context).spacing.extraSmall,
+        horizontal: AppTheme.of(context).spacing.small,
         vertical: AppTheme.of(context).spacing.small,
       ),
       child: Row(

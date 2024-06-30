@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Default',
   type: BasketCard,
   designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2014&mode=dev',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=74-2014&t=Jvcq3BxVyPK6l2OF-4",
 )
 Widget buildBasketCardUseCase(BuildContext context) {
   return Padding(
