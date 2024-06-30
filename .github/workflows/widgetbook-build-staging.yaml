@@ -3,7 +3,7 @@ name: Upload Widgetbook Build - Staging
 on:
   push:
     branches:
-      - main
+      - staging
 
 jobs:
   build:
@@ -35,4 +35,4 @@ jobs:
 
       - name: Upload Widgetbook
         working-directory: widgetbook
-        run: widgetbook_staging publish --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}
+        run: widgetbook cloud build push --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY }}

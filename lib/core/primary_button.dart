@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../theme/app_theme.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.of(context).surface.brand,
         borderRadius: BorderRadius.circular(
-          AppTheme.of(context).radius.full,
+          0,
         ),
       ),
       child: Row(
