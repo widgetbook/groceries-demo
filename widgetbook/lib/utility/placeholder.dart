@@ -16,7 +16,7 @@ class Placeholder extends StatelessWidget {
   name: 'Default',
   type: Placeholder,
   designLink:
-      'https://www.figma.com/design/OsLeJAAv09GZwyCWWPCR1n/refactor?node-id=6802-3280&t=1B8M6TeC2N4MqCDc-4',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=6802-3280&t=OwNskhPgyoe2Fkcc-4",
 )
 Widget placeholderUseCase(BuildContext context) {
   return const Placeholder();

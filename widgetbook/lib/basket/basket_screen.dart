@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Filled',
   type: BasketScreen,
   designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=60-1089&mode=dev',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=6809-5504&t=Jvcq3BxVyPK6l2OF-4",
 )
 Widget buildFilledBasketScreenUseCase(BuildContext context) {
   final fruit_1 = DataStore.fruits[0];
@@ -51,7 +51,7 @@ Widget buildFilledBasketScreenUseCase(BuildContext context) {
   name: 'Empty',
   type: BasketScreen,
   designLink:
-      'https://www.figma.com/file/EXuEpwiyksLAejYX1qr1v4/Demo-App-featuring-variables?type=design&node-id=74-2186&mode=dev',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=6809-5986&t=Jvcq3BxVyPK6l2OF-4",
 )
 Widget buildEmptyBasketScreenUseCase(BuildContext context) {
   return BasketScope(

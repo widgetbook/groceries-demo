@@ -9,7 +9,7 @@ import '../utility/placeholder.dart' as utility;
   name: 'Default',
   type: ResponsiveLayout,
   designLink:
-      'https://www.figma.com/design/OsLeJAAv09GZwyCWWPCR1n/refactor?node-id=6802-3376&t=1B8M6TeC2N4MqCDc-4',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=6802-5313&t=OwNskhPgyoe2Fkcc-4",
 )
 Widget responsiveLayoutUseCase(BuildContext context) {
   return ResponsiveLayout(
@@ -25,7 +25,7 @@ Widget responsiveLayoutUseCase(BuildContext context) {
   name: 'Sticky Footer',
   type: ResponsiveLayout,
   designLink:
-      'https://www.figma.com/design/OsLeJAAv09GZwyCWWPCR1n/refactor?node-id=6802-3376&t=1B8M6TeC2N4MqCDc-4',
+      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=6802-5313&t=OwNskhPgyoe2Fkcc-4",
 )
 Widget responsiveLayoutStickyFooterUseCase(BuildContext context) {
   return ResponsiveLayout(
