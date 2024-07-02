@@ -14,9 +14,8 @@ class PageShell extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppBar(
+        const AppBar(
           title: 'Groceries App',
-          basketSize: basketSize,
         ),
         SizedBox(
           height: AppTheme.of(context).spacing.small,

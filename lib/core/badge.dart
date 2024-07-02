@@ -5,10 +5,7 @@ import '../theme/theme.dart';
 class Badge extends StatelessWidget {
   const Badge({
     super.key,
-    required this.number,
   });
-
-  final int number;
 
   @override
   Widget build(BuildContext context) {

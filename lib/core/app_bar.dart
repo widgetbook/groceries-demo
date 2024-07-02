@@ -9,11 +9,11 @@ class AppBar extends StatelessWidget {
   const AppBar({
     super.key,
     required this.title,
-    required this.basketSize,
+    this.basketHasItems = false,
   });
 
   final String title;
-  final int basketSize;
+  final bool basketHasItems;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +41,11 @@ class AppBar extends StatelessWidget {
                 icon: Icons.shopping_bag_outlined,
                 onPressed: () => context.go('/basket'),
               ),
-              if (basketSize > 0)
-                Positioned(
+              if (basketHasItems)
+                const Positioned(
                   right: 6,
                   top: 6,
-                  child: core.Badge(
-                    number: basketSize,
-                  ),
+                  child: core.Badge(),
                 ),
             ],
           ),
