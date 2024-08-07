@@ -7,9 +7,8 @@ on:
 
 jobs:
   deploy:
-    # Only run it if the service account is set,
-    # to avoid running it on internal forks (e.g. e2e)
-    if: ${{ secrets.STORAGE_SERVICE_ACCOUNT != '' }}
+    # Avoid running deploy on internal forks (e.g. e2e)
+    if: github.repository == 'widgetbook/groceries-demo'
     runs-on: ubuntu-latest
 
     steps:
