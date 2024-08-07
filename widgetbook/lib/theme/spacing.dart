@@ -9,14 +9,14 @@ import 'group.dart';
 @UseCase(
   name: 'Spacing',
   type: SpacingThemeData,
-  path: '[Theme]',
+  path: '[Theme]/spacing',
 )
 Widget buildWidgetbookSpacingUseCase(BuildContext context) {
   return WidgetbookGroup(
     label: 'Spacing',
     children: [
       WidgetbookSpacing(
-        label: 'none',
+        label: 'None',
         spacing: AppTheme.of(context).spacing.none,
       ),
       WidgetbookSpacing(
