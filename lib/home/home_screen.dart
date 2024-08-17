@@ -1,15 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../basket/state/basket_state.dart';
-import '../core/page_shell.dart';
-import '../core/responsive_layout.dart';
-import '../l10n/app_localizations.dart';
+import '../features/basket/state/basket_state.dart';
 import '../repositories/fruit.dart';
-import '../theme/theme.dart';
-import 'widgets/fruit_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -22,30 +14,30 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final basketState = BasketState.of(context);
-
-    return PageShell(
-      basketSize: basketState.store.length,
-      child: ResponsiveLayout(
-        headline: AppLocalizations.of(context)!.fruitsHeadline,
-        content: LayoutBuilder(
-          builder: (context, constraints) {
-            return AlignedGridView.count(
-              padding: EdgeInsets.zero,
-              crossAxisCount: max(1, constraints.maxWidth ~/ 300),
-              mainAxisSpacing: AppTheme.of(context).spacing.medium,
-              crossAxisSpacing: AppTheme.of(context).spacing.medium,
-              itemCount: fruits.length,
-              itemBuilder: (context, index) {
-                final fruit = fruits[index];
-                return FruitCard(
-                  fruit: fruit,
-                  onFruitAdded: () => basketState.addFruit(fruit),
-                );
-              },
-            );
-          },
-        ),
-      ),
-    );
+    return Container();
+    // return PageShell(
+    //   header: 'Fruits',
+    //   child: ResponsiveLayout(
+    //     headline: AppLocalizations.of(context)!.fruitsHeadline,
+    //     content: LayoutBuilder(
+    //       builder: (context, constraints) {
+    //         return AlignedGridView.count(
+    //           padding: EdgeInsets.zero,
+    //           crossAxisCount: max(1, constraints.maxWidth ~/ 300),
+    //           mainAxisSpacing: AppTheme.of(context).spacing.medium,
+    //           crossAxisSpacing: AppTheme.of(context).spacing.medium,
+    //           itemCount: fruits.length,
+    //           itemBuilder: (context, index) {
+    //             final fruit = fruits[index];
+    //             return FruitCard(
+    //               fruit: fruit,
+    //               onFruitAdded: () => basketState.addFruit(fruit),
+    //             );
+    //           },
+    //         );
+    //       },
+    //     ),
+    //   ),
+    // );
   }
 }

@@ -3,11 +3,11 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 import 'about/about_screen.dart';
-import 'basket/basket.dart';
+import 'features/basket/basket.dart';
 import 'home/home.dart';
 import 'l10n/app_localizations.dart';
 import 'repositories/fruits_repository.dart';
-import 'theme/theme.dart';
+import 'ui/ui.dart';
 
 final _router = GoRouter(
   routes: [
@@ -33,7 +33,7 @@ final _router = GoRouter(
       builder: (context, state) {
         final basketState = BasketState.of(context);
 
-        return BasketScreen(
+        return BasketView(
           basket: basketState.store,
           delivery: basketState.delivery,
           subTotal: basketState.subTotal,
@@ -50,18 +50,18 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppTheme(
       data: MediaQuery.of(context).platformBrightness == Brightness.light
-          ? lightTheme
-          : darkTheme,
+          ? AppThemeData.light
+          : AppThemeData.dark,
       child: Builder(
         builder: (context) {
           return BasketScope(
             child: ColoredBox(
-              color: AppTheme.of(context).surface.primary,
+              color: AppTheme.of(context).background.primary,
               child: SafeArea(
                 child: WidgetsApp.router(
                   title: 'Grocery App',
                   debugShowCheckedModeBanner: false,
-                  color: lightTheme.surface.primary,
+                  color: AppTheme.of(context).background.primary,
                   routerConfig: _router,
                   supportedLocales: AppLocalizations.supportedLocales,
                   localizationsDelegates:
