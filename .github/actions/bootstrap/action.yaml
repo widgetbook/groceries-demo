@@ -1,0 +1,28 @@
+name: Bootstrap
+description: Bootstrap the app and Widgetbook, then build Widgetbook
+
+runs:
+  using: composite
+  steps:
+    - name: Setup flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+
+    - name: Bootstrap App
+      shell: bash
+      run: |
+        flutter pub get
+        flutter gen-l10n
+
+    - name: Bootstrap Widgetbook
+      working-directory: widgetbook
+      shell: bash
+      run: |
+        flutter pub get
+        dart run build_runner build -d
+
+    - name: Build Widgetbook
+      working-directory: widgetbook
+      shell: bash
+      run: flutter build web
