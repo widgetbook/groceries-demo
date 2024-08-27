@@ -3,7 +3,7 @@ import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-import '../../utility/placeholder.dart' as util;
+import '../../features/utility/placeholder.dart' as util;
 
 @UseCase(
   name: 'Default',
