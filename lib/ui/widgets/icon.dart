@@ -20,6 +20,7 @@ class Icon extends StatelessWidget {
       child: FaIcon(
         icon,
         size: 20 * scale,
+        color: AppTheme.of(context).text.primary,
       ),
     );
   }
