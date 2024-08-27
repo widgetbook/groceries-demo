@@ -4,26 +4,11 @@ import 'package:go_router/go_router.dart';
 
 import 'about/about_screen.dart';
 import 'features/basket/basket.dart';
-import 'home/home.dart';
 import 'l10n/app_localizations.dart';
-import 'repositories/fruits_repository.dart';
 import 'ui/ui.dart';
 
 final _router = GoRouter(
   routes: [
-    GoRoute(
-      path: '/',
-      builder: (_, __) => FutureBuilder(
-        future: FruitRepository().getFruits(),
-        builder: (_, snapshot) {
-          if (!snapshot.hasData) return const Placeholder();
-
-          return HomeScreen(
-            fruits: snapshot.data!,
-          );
-        },
-      ),
-    ),
     GoRoute(
       path: '/about',
       builder: (context, state) => const AboutScreen(),

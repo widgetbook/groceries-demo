@@ -10,13 +10,13 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7395-4299&t=N6qwmLP7MP59ClWB-4',
 )
-Widget buildDesignSystemNavigationItemUseCase(BuildContext context) {
+Widget buildNavigationItemUseCase(BuildContext context) {
   return NavigationItem(
     isSelected: context.knobs.boolean(
       label: 'isSelected',
     ),
-    iconSelected: FontAwesomeIcons.solidUser,
-    iconUnselected: FontAwesomeIcons.user,
+    iconSelected: FontAwesomeIcons.solidLemon,
+    iconUnselected: FontAwesomeIcons.lemon,
     text: context.knobs.string(
       label: 'text',
       initialValue: 'Account',

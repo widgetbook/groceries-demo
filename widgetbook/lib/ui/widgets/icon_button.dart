@@ -9,7 +9,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7337-3250&t=N6qwmLP7MP59ClWB-4',
 )
-Widget buildDesignSystemIconButtonUseCase(BuildContext context) {
+Widget buildIconButtonUseCase(BuildContext context) {
   return IconButton(
     icon: FontAwesomeIcons.user,
     onPressed: () {},

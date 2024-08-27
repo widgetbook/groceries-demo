@@ -13,10 +13,10 @@ class IconButton extends StatefulWidget {
   final VoidCallback onPressed;
 
   @override
-  _IconButtonState createState() => _IconButtonState();
+  IconButtonState createState() => IconButtonState();
 }
 
-class _IconButtonState extends State<IconButton> {
+class IconButtonState extends State<IconButton> {
   double _scale = 1;
 
   void _onTapDown(TapDownDetails details) {

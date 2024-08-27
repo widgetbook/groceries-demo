@@ -18,15 +18,15 @@ class BottomNavigationBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           NavigationItem(
-            isSelected: true,
-            iconUnselected: FontAwesomeIcons.shop,
-            iconSelected: FontAwesomeIcons.shop,
+            isSelected: false,
+            iconUnselected: FontAwesomeIcons.lemon,
+            iconSelected: FontAwesomeIcons.solidLemon,
             text: AppLocalizations.of(context)!.navigationShopLabel,
           ),
           NavigationItem(
-            isSelected: false,
-            iconUnselected: FontAwesomeIcons.basketShopping,
-            iconSelected: FontAwesomeIcons.basketShopping,
+            isSelected: true,
+            iconUnselected: FontAwesomeIcons.rectangleList,
+            iconSelected: FontAwesomeIcons.solidRectangleList,
             text: AppLocalizations.of(context)!.navigationBasketLabel,
           ),
           NavigationItem(

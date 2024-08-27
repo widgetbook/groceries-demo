@@ -8,6 +8,6 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7271-52117&t=N6qwmLP7MP59ClWB-4',
 )
-Widget buildDesignSystemBottomNavigationBarUseCase(BuildContext context) {
+Widget buildBottomNavigationBarUseCase(BuildContext context) {
   return const BottomNavigationBar();
 }
