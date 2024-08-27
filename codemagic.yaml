@@ -68,6 +68,6 @@ workflows:
       - name: Upload Widgetbook
         working_directory: widgetbook
         script: |
-          widgetbook publish \
+          widgetbook cloud build push \
             --api-key $WIDGETBOOK_API_KEY \
             --base-branch source/$CM_PULL_REQUEST_DEST
