@@ -42,7 +42,12 @@ class SpacingWidget extends StatelessWidget {
   }
 }
 
-@UseCase(name: 'Default', type: DesignSystemSpacing)
+@UseCase(
+  name: 'Default',
+  type: DesignSystemSpacing,
+  designLink:
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7340-24767&t=uJW8KKcBrCOkO7C7-4',
+)
 Widget buildDesignSystemSpacingUseCase(BuildContext context) {
   return const SingleChildScrollView(
     child: Column(

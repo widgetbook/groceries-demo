@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Default',
   type: Card,
   designLink:
-      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=7235-1918&t=onfGiInlWR5fpa58-4",
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7340-24498&t=N6qwmLP7MP59ClWB-4',
 )
 Widget buildCardUseCase(BuildContext context) {
   return const Card(

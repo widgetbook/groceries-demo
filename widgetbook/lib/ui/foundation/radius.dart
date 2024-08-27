@@ -46,7 +46,12 @@ class RadiusWidget extends StatelessWidget {
   }
 }
 
-@UseCase(name: 'Default', type: DesignSystemRadius)
+@UseCase(
+  name: 'Default',
+  type: DesignSystemRadius,
+  designLink:
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7340-24769&t=uJW8KKcBrCOkO7C7-4',
+)
 Widget buildDesignSystemRadiusUseCase(BuildContext context) {
   return const SingleChildScrollView(
     child: Column(

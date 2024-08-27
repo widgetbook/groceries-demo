@@ -21,7 +21,12 @@ class TextWidget extends StatelessWidget {
   }
 }
 
-@UseCase(name: 'Default', type: DesignSystemTextStyles)
+@UseCase(
+  name: 'Default',
+  type: DesignSystemTextStyles,
+  designLink:
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7225-2964&t=N6qwmLP7MP59ClWB-4',
+)
 Widget buildDesignSystemTextStylesUseCase(BuildContext context) {
   final styles = DesignSystemTextStyles();
   const spacing = 16.0;

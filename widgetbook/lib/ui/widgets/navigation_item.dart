@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Default',
   type: DesignSystemNavigationItem,
   designLink:
-      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=7395-4299&t=Jj5fjVUaGAsV0QSp-4",
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7395-4299&t=N6qwmLP7MP59ClWB-4',
 )
 Widget buildDesignSystemNavigationItemUseCase(BuildContext context) {
   return DesignSystemNavigationItem(

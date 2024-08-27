@@ -9,7 +9,7 @@ import '../../features/utility/placeholder.dart' as util;
   name: 'Default',
   type: PageShell,
   designLink:
-      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=6802-3379&t=Jvcq3BxVyPK6l2OF-4",
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6802-3379&t=N6qwmLP7MP59ClWB-4',
 )
 Widget buildPageShellUseCase(BuildContext context) {
   return PageShell(

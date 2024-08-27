@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Default',
   type: DesignSystemDivider,
   designLink:
-      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=7271-82082&t=Jj5fjVUaGAsV0QSp-4",
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7271-23241&t=N6qwmLP7MP59ClWB-4',
 )
 Widget buildDividerUseCase(BuildContext context) {
   return const DesignSystemDivider();
