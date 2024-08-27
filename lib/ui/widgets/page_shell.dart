@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../ui.dart';
 
@@ -14,10 +14,10 @@ class PageShell extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const DesignSystemAppBar(
+        const AppBar(
           title: 'Groceries App',
         ),
-        const DesignSystemDivider(),
+        const Divider(),
         if (header != null)
           Padding(
             padding: EdgeInsets.all(AppTheme.of(context).spacing.sm),
@@ -34,8 +34,8 @@ class PageShell extends StatelessWidget {
             child: child,
           ),
         ),
-        const DesignSystemDivider(),
-        const DesignSystemBottomNavigationBar(),
+        const Divider(),
+        const BottomNavigationBar(),
       ],
     );
   }

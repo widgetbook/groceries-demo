@@ -3,8 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../ui.dart';
 
-class DesignSystemIcon extends StatelessWidget {
-  const DesignSystemIcon(
+class Icon extends StatelessWidget {
+  const Icon(
     this.icon, {
     super.key,
     this.scale = 1,

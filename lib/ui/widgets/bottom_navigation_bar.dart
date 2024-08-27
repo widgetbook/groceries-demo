@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../l10n/app_localizations.dart';
 import '../ui.dart';
 
-class DesignSystemBottomNavigationBar extends StatelessWidget {
-  const DesignSystemBottomNavigationBar({super.key});
+class BottomNavigationBar extends StatelessWidget {
+  const BottomNavigationBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +17,19 @@ class DesignSystemBottomNavigationBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          DesignSystemNavigationItem(
+          NavigationItem(
             isSelected: true,
             iconUnselected: FontAwesomeIcons.shop,
             iconSelected: FontAwesomeIcons.shop,
             text: AppLocalizations.of(context)!.navigationShopLabel,
           ),
-          DesignSystemNavigationItem(
+          NavigationItem(
             isSelected: false,
             iconUnselected: FontAwesomeIcons.basketShopping,
             iconSelected: FontAwesomeIcons.basketShopping,
             text: AppLocalizations.of(context)!.navigationBasketLabel,
           ),
-          DesignSystemNavigationItem(
+          NavigationItem(
             isSelected: false,
             iconUnselected: FontAwesomeIcons.user,
             iconSelected: FontAwesomeIcons.user,

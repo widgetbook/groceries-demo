@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart' hide Icon;
 
 import '../ui.dart';
 
-class DesignSystemIconButton extends StatefulWidget {
-  const DesignSystemIconButton({
+class IconButton extends StatefulWidget {
+  const IconButton({
     super.key,
     required this.icon,
     required this.onPressed,
@@ -13,10 +13,10 @@ class DesignSystemIconButton extends StatefulWidget {
   final VoidCallback onPressed;
 
   @override
-  _DesignSystemIconButtonState createState() => _DesignSystemIconButtonState();
+  _IconButtonState createState() => _IconButtonState();
 }
 
-class _DesignSystemIconButtonState extends State<DesignSystemIconButton> {
+class _IconButtonState extends State<IconButton> {
   double _scale = 1;
 
   void _onTapDown(TapDownDetails details) {
@@ -47,7 +47,7 @@ class _DesignSystemIconButtonState extends State<DesignSystemIconButton> {
       child: AnimatedScale(
         scale: _scale,
         duration: const Duration(milliseconds: 100),
-        child: DesignSystemIcon(widget.icon),
+        child: Icon(widget.icon),
       ),
     );
   }

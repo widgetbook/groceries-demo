@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Icon;
 
 import '../ui.dart';
 
@@ -20,7 +20,7 @@ class EmptyState extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        DesignSystemIcon(
+        Icon(
           icon,
           scale: 2,
         ),

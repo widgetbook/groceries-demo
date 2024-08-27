@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../ui.dart';
@@ -25,7 +25,7 @@ class Counter extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          DesignSystemIconButton(
+          IconButton(
             icon: FontAwesomeIcons.minus,
             onPressed: onDecrement,
           ),
@@ -39,7 +39,7 @@ class Counter extends StatelessWidget {
               style: AppTheme.of(context).typography.bodyMedium,
             ),
           ),
-          DesignSystemIconButton(
+          IconButton(
             icon: FontAwesomeIcons.plus,
             onPressed: onIncrement,
           ),

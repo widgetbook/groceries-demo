@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 
 import '../ui.dart';
 
-class DesignSystemDivider extends StatelessWidget {
-  const DesignSystemDivider({super.key});
+class Divider extends StatelessWidget {
+  const Divider({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,12 +5,12 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
   name: 'Default',
-  type: DesignSystemAppBar,
+  type: AppBar,
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7271-82082&t=N6qwmLP7MP59ClWB-4',
 )
 Widget buildAppBarUseCase(BuildContext context) {
-  return DesignSystemAppBar(
+  return AppBar(
     title: context.knobs.string(
       label: 'title',
       initialValue: 'Title',

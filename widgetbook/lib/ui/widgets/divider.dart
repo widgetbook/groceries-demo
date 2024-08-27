@@ -4,10 +4,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
   name: 'Default',
-  type: DesignSystemDivider,
+  type: Divider,
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7271-23241&t=N6qwmLP7MP59ClWB-4',
 )
 Widget buildDividerUseCase(BuildContext context) {
-  return const DesignSystemDivider();
+  return const Divider();
 }

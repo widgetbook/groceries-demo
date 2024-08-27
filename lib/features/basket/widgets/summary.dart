@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../l10n/app_localizations.dart';
@@ -22,7 +21,7 @@ class Summary extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const DesignSystemDivider(),
+        const Divider(),
         SizedBox(
           height: AppTheme.of(context).spacing.xxs,
         ),

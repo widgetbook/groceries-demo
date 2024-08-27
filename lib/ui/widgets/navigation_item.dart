@@ -1,9 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart' hide Icon;
 
 import 'icon.dart';
 
-class DesignSystemNavigationItem extends StatelessWidget {
-  const DesignSystemNavigationItem({
+class NavigationItem extends StatelessWidget {
+  const NavigationItem({
     super.key,
     required this.isSelected,
     required this.iconUnselected,
@@ -20,10 +20,7 @@ class DesignSystemNavigationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (isSelected)
-          DesignSystemIcon(iconSelected)
-        else
-          DesignSystemIcon(iconUnselected),
+        if (isSelected) Icon(iconSelected) else Icon(iconUnselected),
         Text(text),
       ],
     );

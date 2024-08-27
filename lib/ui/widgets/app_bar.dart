@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart' hide Icon;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../ui.dart';
 
-class DesignSystemAppBar extends StatelessWidget {
-  const DesignSystemAppBar({
+class AppBar extends StatelessWidget {
+  const AppBar({
     super.key,
     required this.title,
   });
@@ -28,7 +28,7 @@ class DesignSystemAppBar extends StatelessWidget {
           SizedBox(
             width: AppTheme.of(context).spacing.xs,
           ),
-          const DesignSystemIcon(FontAwesomeIcons.bell),
+          const Icon(FontAwesomeIcons.bell),
         ],
       ),
     );
