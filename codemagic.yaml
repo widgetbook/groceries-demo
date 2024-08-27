@@ -5,9 +5,6 @@ workflows:
     triggering:
       events:
         - push
-      branch_patterns:
-        - pattern: main
-          include: true
 
     environment:
       flutter: stable
