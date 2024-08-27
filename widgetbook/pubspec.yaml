@@ -11,6 +11,7 @@ dependencies:
     path: ../assets
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.7.0
   groceries_app:
     path: ../
   widgetbook: ^3.8.0

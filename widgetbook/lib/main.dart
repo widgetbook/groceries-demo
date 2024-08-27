@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/l10n/app_localizations.dart';
-import 'package:groceries_app/theme/theme.dart';
+import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
@@ -43,17 +43,17 @@ class WidgetbookApp extends StatelessWidget {
           themes: [
             WidgetbookTheme(
               name: 'Light',
-              data: lightTheme,
+              data: AppThemeData.light,
             ),
             WidgetbookTheme(
               name: 'Dark',
-              data: darkTheme,
+              data: AppThemeData.dark,
             ),
           ],
           themeBuilder: (context, theme, child) => ColoredBox(
-            color: theme.surface.primary,
+            color: theme.background.primary,
             child: DefaultTextStyle(
-              style: theme.typography.bodyMedium16,
+              style: theme.typography.bodyMedium,
               child: AppTheme(
                 data: theme,
                 child: child,

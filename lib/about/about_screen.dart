@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_theme.dart';
+import '../ui/ui.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -18,11 +18,11 @@ class AboutScreen extends StatelessWidget {
             height: 100,
           ),
           SizedBox(
-            height: AppTheme.of(context).spacing.medium,
+            height: AppTheme.of(context).spacing.m,
           ),
           Text(
             'Created by Widgetbook',
-            style: AppTheme.of(context).typography.labelMedium14,
+            style: AppTheme.of(context).typography.label,
           ),
         ],
       ),

@@ -5,9 +5,6 @@ workflows:
     triggering:
       events:
         - push
-      branch_patterns:
-        - pattern: main
-          include: true
 
     environment:
       flutter: stable
@@ -33,41 +30,6 @@ workflows:
       - name: Upload Widgetbook
         working_directory: widgetbook
         script: |
-          widgetbook publish \
+          widgetbook cloud build push \
             --api-key $WIDGETBOOK_API_KEY \
             --branch $CM_BRANCH
-
-  widgetbook-review:
-    name: Upload Widgetbook Review
-
-    triggering:
-      events:
-        - pull_request
-
-    environment:
-      flutter: stable
-      groups:
-        - Widgetbook Credentials
-
-    scripts:
-      - name: Build App
-        script: |
-          flutter pub get
-          flutter gen-l10n
-
-      - name: Install Widgetbook CLI
-        script: dart pub global activate widgetbook_cli
-
-      - name: Build Widgetbook
-        working_directory: widgetbook
-        script: |
-          flutter pub get
-          dart run build_runner build -d
-          flutter build web -t lib/main.dart
-
-      - name: Upload Widgetbook
-        working_directory: widgetbook
-        script: |
-          widgetbook publish \
-            --api-key $WIDGETBOOK_API_KEY \
-            --base-branch source/$CM_PULL_REQUEST_DEST
