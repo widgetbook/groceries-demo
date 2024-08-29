@@ -3,22 +3,6 @@ name: Widgetbook Cloud
 on: push
 
 jobs:
-  staging:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Bootstrap
-        uses: ./.github/actions/bootstrap
-
-      - name: Install Widgetbook CLI
-        run: dart pub global activate widgetbook_cli
-
-      - name: Upload Widgetbook
-        working-directory: widgetbook
-        run: widgetbook_staging cloud build push --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}
-
   production:
     runs-on: ubuntu-latest
     steps:
