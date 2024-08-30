@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Empty',
   type: BasketView,
   designLink:
-      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=7271-82082&t=Jj5fjVUaGAsV0QSp-4",
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5986&t=zUakLdAaKjMZAqSq-4',
 )
 Widget buildBasketViewEmptyUseCase(BuildContext context) {
   return const BasketView(
@@ -22,7 +22,7 @@ Widget buildBasketViewEmptyUseCase(BuildContext context) {
   name: 'Non-empty',
   type: BasketView,
   designLink:
-      "https://www.figma.com/design/TQ3x8ohiB7XfUKSYeFVb7v/FlutterCon-'24?node-id=7271-82082&t=Jj5fjVUaGAsV0QSp-4",
+      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5504&t=zUakLdAaKjMZAqSq-4',
 )
 Widget buildBasketViewUseCase(BuildContext context) {
   final fruit_1 = DataStore.fruits[0];
