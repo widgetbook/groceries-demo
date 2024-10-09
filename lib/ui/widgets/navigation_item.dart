@@ -19,6 +19,7 @@ class NavigationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         if (isSelected) Icon(iconSelected) else Icon(iconUnselected),
         Text(text),
