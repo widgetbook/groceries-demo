@@ -14,6 +14,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   groceries_app:
     path: ../
+  url_launcher: ^6.3.1
   widgetbook: ^3.9.0
   widgetbook_annotation: ^3.2.0
 
