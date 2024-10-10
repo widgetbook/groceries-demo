@@ -11,7 +11,26 @@ void main() {
   runApp(const WidgetbookApp());
 }
 
-@App()
+@App(
+  cloudAddonsConfigs: {
+    'German Light': [
+      LocalizationAddonConfig('de'),
+      ThemeAddonConfig('Light'),
+    ],
+    'German Dark': [
+      LocalizationAddonConfig('de'),
+      ThemeAddonConfig('Dark'),
+    ],
+    'English Light': [
+      LocalizationAddonConfig('en'),
+      ThemeAddonConfig('Light'),
+    ],
+    'English Dark': [
+      LocalizationAddonConfig('en'),
+      ThemeAddonConfig('Dark'),
+    ],
+  },
+)
 class WidgetbookApp extends StatelessWidget {
   const WidgetbookApp({super.key});
 
