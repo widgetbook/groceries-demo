@@ -1,0 +1,36 @@
+image: ghcr.io/cirruslabs/flutter
+
+pipelines:
+  default:
+    - step:
+        name: Build
+        script:
+          # Bootstrap App
+          - flutter pub get
+          - flutter gen-l10n
+          # Bootstrap Widgetbook
+          - cd widgetbook
+          - flutter pub get
+          - dart run build_runner build -d
+          - flutter build web
+        artifacts:
+          - widgetbook/build/web/**
+          - widgetbook/.dart_tool/build/generated/**
+
+    - step:
+        name: Widgetbook Staging
+        deployment: staging
+        script:
+          - dart pub global activate widgetbook_cli
+          - export PATH="$PATH":"$HOME/.pub-cache/bin"
+          - cd widgetbook
+          - widgetbook_staging cloud build push --api-key "$WIDGETBOOK_CLOUD_API_KEY_STAGING"
+
+    - step:
+        name: Widgetbook Production
+        deployment: production
+        script:
+          - dart pub global activate widgetbook_cli
+          - export PATH="$PATH":"$HOME/.pub-cache/bin"
+          - cd widgetbook
+          - widgetbook cloud build push --api-key "$WIDGETBOOK_CLOUD_API_KEY"
