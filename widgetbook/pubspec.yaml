@@ -15,7 +15,7 @@ dependencies:
   groceries_app:
     path: ../
   url_launcher: ^6.3.1
-  widgetbook: ^3.9.0
+  widgetbook: ^3.10.0
   widgetbook_annotation: ^3.2.0
 
 dev_dependencies:
