@@ -17,7 +17,7 @@ jobs:
 
       - name: Upload Widgetbook
         working-directory: widgetbook
-        run: widgetbook_staging cloud build push --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }}
+        run: widgetbook cloud build push --api-key ${{ secrets.WIDGETBOOK_CLOUD_API_KEY_STAGING }} --api-url ${{ secrets.WIDGETBOOK_CLOUD_API_URL_STAGING }}
 
   production:
     runs-on: ubuntu-latest

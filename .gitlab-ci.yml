@@ -28,7 +28,7 @@ staging:
     - dart pub global activate widgetbook_cli
     - export PATH="$PATH":"$HOME/.pub-cache/bin"
     - cd widgetbook
-    - widgetbook_staging cloud build push --api-key "$WIDGETBOOK_CLOUD_API_KEY_STAGING"
+    - widgetbook cloud build push --api-key "$WIDGETBOOK_CLOUD_API_KEY_STAGING" --api-url "$WIDGETBOOK_CLOUD_API_URL_STAGING"
 
 production:
   stage: widgetbook
