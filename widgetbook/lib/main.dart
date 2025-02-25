@@ -42,9 +42,6 @@ class WidgetbookApp extends StatelessWidget {
         color: const Color(0xFF404040),
         child: child,
       ),
-      integrations: [
-        WidgetbookCloudIntegration(),
-      ],
       addons: [
         GitHubAddon('widgetbook/groceries-demo'),
         DeviceFrameAddon(
