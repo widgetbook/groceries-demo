@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import 'about/about_screen.dart';
+import 'features/about/about.dart';
 import 'features/basket/basket.dart';
 import 'l10n/app_localizations.dart';
 import 'ui/ui.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/about/about_screen.dart';
+import 'package:groceries_app/features/about/about.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
