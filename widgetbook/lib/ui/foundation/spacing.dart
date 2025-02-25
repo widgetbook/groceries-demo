@@ -2,45 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-class SpacingWidget extends StatelessWidget {
-  const SpacingWidget({
-    super.key,
-    required this.spacing,
-    required this.name,
-  });
-
-  final double spacing;
-  final String name;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 100,
-            child: Text(
-              name,
-            ),
-          ),
-          Container(
-            height: 28,
-            width: spacing,
-            decoration: BoxDecoration(
-              color: DesignSystemColor.brand.shade400,
-              borderRadius: BorderRadius.circular(2),
-            ),
-          ),
-          const SizedBox(
-            width: 16,
-          ),
-          Text('${spacing.toStringAsFixed(0)}px'),
-        ],
-      ),
-    );
-  }
-}
+import 'spacing_preview.dart';
 
 @UseCase(
   name: 'Default',
@@ -52,35 +14,35 @@ Widget buildDesignSystemSpacingUseCase(BuildContext context) {
   return const SingleChildScrollView(
     child: Column(
       children: [
-        SpacingWidget(
+        SpacingPreview(
           name: 'none',
           spacing: DesignSystemSpacing.zero,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'xxs',
           spacing: DesignSystemSpacing.xxs,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'xs',
           spacing: DesignSystemSpacing.xs,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'small',
           spacing: DesignSystemSpacing.sm,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'medium',
           spacing: DesignSystemSpacing.m,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'large',
           spacing: DesignSystemSpacing.l,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'xl',
           spacing: DesignSystemSpacing.xl,
         ),
-        SpacingWidget(
+        SpacingPreview(
           name: 'xxl',
           spacing: DesignSystemSpacing.xxl,
         ),
