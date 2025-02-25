@@ -18,7 +18,7 @@ final _router = GoRouter(
       builder: (context, state) {
         final basketState = BasketState.of(context);
 
-        return BasketView(
+        return BasketScreen(
           basket: basketState.store,
           delivery: basketState.delivery,
           subTotal: basketState.subTotal,

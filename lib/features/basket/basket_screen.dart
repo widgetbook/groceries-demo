@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../l10n/app_localizations.dart';
-import '../../../repositories/fruit.dart';
-import '../../../ui/ui.dart';
-import '../basket.dart';
+import '../../l10n/app_localizations.dart';
+import '../../repositories/fruit.dart';
+import '../../ui/ui.dart';
+import 'basket.dart';
 
-class BasketView extends StatelessWidget {
-  const BasketView({
+class BasketScreen extends StatelessWidget {
+  const BasketScreen({
     super.key,
     required this.basket,
     required this.delivery,

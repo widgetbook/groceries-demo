@@ -6,12 +6,12 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
   name: 'Empty',
-  type: BasketView,
+  type: BasketScreen,
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5986&t=zUakLdAaKjMZAqSq-4',
 )
-Widget buildBasketViewEmptyUseCase(BuildContext context) {
-  return const BasketView(
+Widget buildBasketScreenEmptyUseCase(BuildContext context) {
+  return const BasketScreen(
     basket: {},
     delivery: 0,
     subTotal: 0,
@@ -20,11 +20,11 @@ Widget buildBasketViewEmptyUseCase(BuildContext context) {
 
 @UseCase(
   name: 'Non-empty',
-  type: BasketView,
+  type: BasketScreen,
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5504&t=zUakLdAaKjMZAqSq-4',
 )
-Widget buildBasketViewUseCase(BuildContext context) {
+Widget buildBasketScreenUseCase(BuildContext context) {
   final fruit_1 = DataStore.fruits[0];
   final fruit_2 = DataStore.fruits[1];
 
@@ -51,7 +51,7 @@ Widget buildBasketViewUseCase(BuildContext context) {
       builder: (context) {
         final basketState = BasketState.of(context);
 
-        return BasketView(
+        return BasketScreen(
           basket: basketState.store,
           delivery: basketState.delivery,
           subTotal: basketState.subTotal,
