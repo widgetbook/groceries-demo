@@ -20,13 +20,11 @@ class AppBar extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        spacing: AppTheme.of(context).spacing.xs,
         children: [
           Text(
             title,
             style: AppTheme.of(context).typography.subheadingLarge,
-          ),
-          SizedBox(
-            width: AppTheme.of(context).spacing.xs,
           ),
           const Icon(FontAwesomeIcons.bell),
         ],

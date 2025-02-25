@@ -47,12 +47,12 @@ class BasketCard extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: AppTheme.of(context).spacing.xxs,
                       children: [
                         Text(
                           fruit.name,
                           style: AppTheme.of(context).typography.headingLarge,
                         ),
-                        SizedBox(height: AppTheme.of(context).spacing.xxs),
                         Text(
                           '\$${fruit.price.toStringAsFixed(2)}',
                           style: AppTheme.of(context).typography.bodyMedium,

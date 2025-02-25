@@ -92,16 +92,20 @@ class ColorSwatchWidget extends StatelessWidget {
 )
 Widget buildDesignSystemColorUseCase(BuildContext context) {
   return const Column(
+    spacing: 16,
     children: [
-      ColorSwatchWidget(name: 'Primary', color: DesignSystemColor.primary),
-      SizedBox(
-        height: 16,
+      ColorSwatchWidget(
+        name: 'Primary',
+        color: DesignSystemColor.primary,
       ),
-      ColorSwatchWidget(name: 'Brand', color: DesignSystemColor.brand),
-      SizedBox(
-        height: 16,
+      ColorSwatchWidget(
+        name: 'Brand',
+        color: DesignSystemColor.brand,
       ),
-      ColorSwatchWidget(name: 'Grey', color: DesignSystemColor.grey),
+      ColorSwatchWidget(
+        name: 'Grey',
+        color: DesignSystemColor.grey,
+      ),
     ],
   );
 }

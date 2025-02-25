@@ -10,15 +10,13 @@ class AboutScreen extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        spacing: AppTheme.of(context).spacing.m,
         children: [
           Image.asset(
             'logo.png',
             package: 'assets',
             width: 100,
             height: 100,
-          ),
-          SizedBox(
-            height: AppTheme.of(context).spacing.m,
           ),
           Text(
             'Created by Widgetbook',

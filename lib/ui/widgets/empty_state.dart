@@ -16,23 +16,17 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final spacing = AppTheme.of(context).spacing.sm;
     return Column(
       mainAxisSize: MainAxisSize.min,
+      spacing: AppTheme.of(context).spacing.sm,
       children: [
         Icon(
           icon,
           scale: 2,
         ),
-        SizedBox(
-          height: spacing,
-        ),
         Text(
           title,
           style: AppTheme.of(context).typography.headingExtraLarge,
-        ),
-        SizedBox(
-          height: spacing,
         ),
         Text(
           message,
