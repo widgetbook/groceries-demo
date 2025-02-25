@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../ui/ui.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class AboutScreen extends StatelessWidget {
             height: 100,
           ),
           Text(
-            'Created by Widgetbook',
+            AppLocalizations.of(context)!.createdBy,
             style: AppTheme.of(context).typography.label,
           ),
         ],
