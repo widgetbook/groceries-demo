@@ -13,32 +13,34 @@ class RadiusPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      height: 120,
+      width: 120,
       padding: const EdgeInsets.all(8),
-      child: Row(
+      decoration: BoxDecoration(
+        color: AppTheme.of(context).background.brand.withAlpha(50),
+        borderRadius: BorderRadius.circular(radius),
+        border: Border.all(
+          width: 2,
+          color: AppTheme.of(context).background.brand,
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 100,
-            child: Text(
-              name,
+          Text(
+            name,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
             ),
           ),
-          Container(
-            height: 80,
-            width: 80,
-            decoration: BoxDecoration(
-              color: DesignSystemColor.brand.shade400.withOpacity(0.15),
-              borderRadius: BorderRadius.circular(radius),
-              border: Border.all(
-                width: 2,
-                color: DesignSystemColor.brand.shade400,
-              ),
+          Text(
+            '${radius}px',
+            style: const TextStyle(
+              fontWeight: FontWeight.w300,
+              fontSize: 12,
             ),
           ),
-          const SizedBox(
-            width: 16,
-          ),
-          Text('${radius.toStringAsFixed(0)}px'),
         ],
       ),
     );

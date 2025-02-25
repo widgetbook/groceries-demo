@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/ui/foundation/color.dart';
+import 'package:groceries_app/ui/ui.dart';
 
 class ColorPreview extends StatelessWidget {
   const ColorPreview({
@@ -13,45 +13,30 @@ class ColorPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorMap = <int, Color>{
-      100: color.shade100,
-      200: color.shade200,
-      300: color.shade300,
-      400: color.shade400,
-      500: color.shade500,
-      600: color.shade600,
-      700: color.shade700,
-      800: color.shade800,
-      900: color.shade900,
-    };
-
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            name,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 8,
+      children: [
+        Text(
+          name,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
           ),
-          const SizedBox(
-            height: 8,
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Row(
-              children: [
-                for (final entry in colorMap.entries)
-                  Expanded(
-                    child: _ColorShadePreview(
-                      color: entry.value,
-                      weight: entry.key,
-                    ),
+        ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Wrap(
+            children: color.keys
+                .map(
+                  (i) => _ColorShadePreview(
+                    color: color[i]!,
+                    weight: i,
                   ),
-              ],
-            ),
+                )
+                .toList(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -67,16 +52,19 @@ class _ColorShadePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const size = 64.0;
+
     return Container(
-      height: 50,
+      height: size,
+      width: size,
       color: color,
       child: Center(
         child: Text(
           weight.toString(),
           style: TextStyle(
-            color: (weight > 400)
+            color: color.computeLuminance() < 0.5
                 ? const Color(0xFFFFFFFF)
-                : const Color(0x00000000),
+                : const Color(0xFF000000),
           ),
         ),
       ),

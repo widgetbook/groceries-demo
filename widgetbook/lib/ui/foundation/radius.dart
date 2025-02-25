@@ -11,11 +11,14 @@ import 'radius_preview.dart';
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7340-24769&t=uJW8KKcBrCOkO7C7-4',
 )
 Widget buildDesignSystemRadiusUseCase(BuildContext context) {
-  return const SingleChildScrollView(
-    child: Column(
+  return const Padding(
+    padding: EdgeInsets.all(32),
+    child: Wrap(
+      spacing: 16,
+      runSpacing: 16,
       children: [
         RadiusPreview(
-          name: 'none',
+          name: 'zero',
           radius: DesignSystemRadius.none,
         ),
         RadiusPreview(

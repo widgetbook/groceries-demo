@@ -11,42 +11,52 @@ import 'spacing_preview.dart';
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7340-24767&t=uJW8KKcBrCOkO7C7-4',
 )
 Widget buildDesignSystemSpacingUseCase(BuildContext context) {
-  return const SingleChildScrollView(
-    child: Column(
-      children: [
-        SpacingPreview(
-          name: 'none',
-          spacing: DesignSystemSpacing.zero,
-        ),
-        SpacingPreview(
-          name: 'xxs',
-          spacing: DesignSystemSpacing.xxs,
-        ),
-        SpacingPreview(
-          name: 'xs',
-          spacing: DesignSystemSpacing.xs,
-        ),
-        SpacingPreview(
-          name: 'small',
-          spacing: DesignSystemSpacing.sm,
-        ),
-        SpacingPreview(
-          name: 'medium',
-          spacing: DesignSystemSpacing.m,
-        ),
-        SpacingPreview(
-          name: 'large',
-          spacing: DesignSystemSpacing.l,
-        ),
-        SpacingPreview(
-          name: 'xl',
-          spacing: DesignSystemSpacing.xl,
-        ),
-        SpacingPreview(
-          name: 'xxl',
-          spacing: DesignSystemSpacing.xxl,
-        ),
-      ],
+  return const Padding(
+    padding: EdgeInsets.all(32),
+    child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 16,
+        children: [
+          SpacingPreview(
+            name: 'zero',
+            spacing: DesignSystemSpacing.zero,
+          ),
+          SpacingPreview(
+            name: 'xxs',
+            spacing: DesignSystemSpacing.xxs,
+          ),
+          SpacingPreview(
+            name: 'xs',
+            spacing: DesignSystemSpacing.xs,
+          ),
+          SpacingPreview(
+            name: 'sm',
+            spacing: DesignSystemSpacing.sm,
+          ),
+          SpacingPreview(
+            name: 'md',
+            spacing: DesignSystemSpacing.m,
+          ),
+          SpacingPreview(
+            name: 'lg',
+            spacing: DesignSystemSpacing.l,
+          ),
+          SpacingPreview(
+            name: 'xl',
+            spacing: DesignSystemSpacing.xl,
+          ),
+          SpacingPreview(
+            name: 'xxl',
+            spacing: DesignSystemSpacing.xxl,
+          ),
+          SpacingPreview(
+            name: 'xxxl',
+            spacing: DesignSystemSpacing.xxxl,
+          ),
+        ],
+      ),
     ),
   );
 }

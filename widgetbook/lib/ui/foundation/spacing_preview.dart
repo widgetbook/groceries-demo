@@ -13,30 +13,42 @@ class SpacingPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 100,
-            child: Text(
-              name,
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      spacing: 12,
+      children: [
+        SizedBox(
+          width: 48,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                '${spacing}px',
+                style: const TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          height: 40,
+          width: spacing,
+          decoration: BoxDecoration(
+            color: AppTheme.of(context).background.brand,
+            borderRadius: BorderRadius.circular(
+              AppTheme.of(context).radius.xs,
             ),
           ),
-          Container(
-            height: 28,
-            width: spacing,
-            decoration: BoxDecoration(
-              color: DesignSystemColor.brand.shade400,
-              borderRadius: BorderRadius.circular(2),
-            ),
-          ),
-          const SizedBox(
-            width: 16,
-          ),
-          Text('${spacing.toStringAsFixed(0)}px'),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
