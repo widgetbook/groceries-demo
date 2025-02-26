@@ -1,5 +1,6 @@
 class Fruit {
   const Fruit({
+    required this.id,
     required this.name,
     required this.imageUrl,
     required this.farm,
@@ -7,6 +8,7 @@ class Fruit {
     required this.price,
   });
 
+  final int id;
   final String name;
   final double price;
   final String imageUrl;

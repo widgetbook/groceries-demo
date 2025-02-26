@@ -1,8 +1,10 @@
 import 'fruit.dart';
 
+// This is a mock of a database that has some fruits.
 abstract class DataStore {
   static const fruits = [
     Fruit(
+      id: 1,
       name: 'Mango',
       farm: 'John Doe Farm',
       origin: 'California',
@@ -10,6 +12,7 @@ abstract class DataStore {
       price: 3.34,
     ),
     Fruit(
+      id: 2,
       name: 'Avocado',
       farm: 'Widgetbook Farm',
       origin: 'Germany',
@@ -17,6 +20,7 @@ abstract class DataStore {
       price: 5.45,
     ),
     Fruit(
+      id: 3,
       name: 'Banana',
       farm: 'Widgetbook Farm',
       origin: 'Germany',

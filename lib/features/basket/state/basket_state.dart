@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../repositories/fruit.dart';
+import '../../../data/fruit.dart';
 import 'basket_scope.dart';
 
 class ProductOrder {

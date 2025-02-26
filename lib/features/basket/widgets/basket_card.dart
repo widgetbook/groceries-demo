@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../repositories/fruit.dart';
+import '../../../data/fruit.dart';
 import '../../../ui/ui.dart';
 
 class BasketCard extends StatelessWidget {

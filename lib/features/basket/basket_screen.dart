@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../data/fruit.dart';
 import '../../l10n/app_localizations.dart';
-import '../../repositories/fruit.dart';
 import '../../ui/ui.dart';
 import 'basket.dart';
 

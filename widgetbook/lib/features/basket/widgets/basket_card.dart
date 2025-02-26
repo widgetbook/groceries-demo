@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
+import 'package:groceries_app/data/data_store.dart';
 import 'package:groceries_app/features/features.dart';
-import 'package:groceries_app/repositories/data_store.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
