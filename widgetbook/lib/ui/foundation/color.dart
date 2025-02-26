@@ -12,7 +12,7 @@ import 'color_preview.dart';
 )
 Widget buildDesignSystemColorUseCase(BuildContext context) {
   return const Padding(
-    padding: EdgeInsets.all(32),
+    padding: EdgeInsets.all(24),
     child: Column(
       spacing: 16,
       mainAxisAlignment: MainAxisAlignment.center,

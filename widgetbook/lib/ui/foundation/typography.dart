@@ -14,7 +14,7 @@ Widget buildDesignSystemTextStylesUseCase(BuildContext context) {
   final styles = AppTheme.of(context).typography;
 
   return Padding(
-    padding: const EdgeInsets.all(32),
+    padding: const EdgeInsets.all(24),
     child: Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

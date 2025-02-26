@@ -12,7 +12,7 @@ import 'spacing_preview.dart';
 )
 Widget buildDesignSystemSpacingUseCase(BuildContext context) {
   return const Padding(
-    padding: EdgeInsets.all(32),
+    padding: EdgeInsets.all(24),
     child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

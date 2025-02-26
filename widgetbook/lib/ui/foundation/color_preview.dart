@@ -52,7 +52,7 @@ class _ColorShadePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const size = 64.0;
+    const size = 56.0;
 
     return Container(
       height: size,

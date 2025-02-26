@@ -12,7 +12,7 @@ import 'radius_preview.dart';
 )
 Widget buildDesignSystemRadiusUseCase(BuildContext context) {
   return const Padding(
-    padding: EdgeInsets.all(32),
+    padding: EdgeInsets.all(24),
     child: Wrap(
       spacing: 16,
       runSpacing: 16,
