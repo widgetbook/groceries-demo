@@ -34,14 +34,14 @@ Widget buildBasketScreenUseCase(BuildContext context) {
         fruit_1: ProductOrder(
           fruit: fruit_1,
           quantity: context.knobs.int.input(
-            label: '${fruit_1.name} Quantity',
+            label: '${fruit_1.name} quantity',
             initialValue: 1,
           ),
         ),
         fruit_2: ProductOrder(
           fruit: fruit_2,
           quantity: context.knobs.int.input(
-            label: '${fruit_2.name} Quantity',
+            label: '${fruit_2.name} quantity',
             initialValue: 2,
           ),
         ),

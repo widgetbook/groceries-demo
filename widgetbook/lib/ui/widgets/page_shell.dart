@@ -15,17 +15,26 @@ Widget buildPageShellUseCase(BuildContext context) {
       label: 'header',
       initialValue: 'Header',
     ),
-    child: const _Placeholder(),
+    child: _Placeholder(
+      context.knobs.color(
+        label: 'color',
+        initialValue: const Color(
+          0xFFD9D9D9,
+        ),
+      ),
+    ),
   );
 }
 
 class _Placeholder extends StatelessWidget {
-  const _Placeholder();
+  const _Placeholder(this.color);
+
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFD9D9D9),
+      color: color,
     );
   }
 }

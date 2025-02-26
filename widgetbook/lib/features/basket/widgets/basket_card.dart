@@ -15,12 +15,12 @@ Widget buildBasketCardUseCase(BuildContext context) {
     padding: const EdgeInsets.all(8),
     child: BasketCard(
       fruit: context.knobs.list(
-        label: 'Fruit',
+        label: 'fruit',
         options: DataStore.fruits,
         labelBuilder: (item) => item.name,
       ),
       count: context.knobs.int.input(
-        label: 'Count',
+        label: 'count',
       ),
       onFruitAdded: () {},
       onFruitRemoved: () => {},

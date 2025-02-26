@@ -16,10 +16,9 @@ Widget buildPrimaryButtonCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(16),
     child: PrimaryButton(
-      content: context.knobs.string(label: 'content', initialValue: 'Text'),
-      trailing: FaIcon(
-        FontAwesomeIcons.arrowRight,
-        color: AppTheme.of(context).text.inverse,
+      content: context.knobs.string(
+        label: 'content',
+        initialValue: 'Button',
       ),
     ),
   );

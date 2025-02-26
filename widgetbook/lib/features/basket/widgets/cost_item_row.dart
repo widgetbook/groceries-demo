@@ -16,7 +16,7 @@ Widget buildAppBarUseCase(BuildContext context) {
         initialValue: 'Delivery',
       ),
       cost: context.knobs.double.slider(
-        label: 'Cost',
+        label: 'cost',
         initialValue: 5,
         max: 10000,
         divisions: 100,
