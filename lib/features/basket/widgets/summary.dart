@@ -20,24 +20,16 @@ class Summary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      spacing: AppTheme.of(context).spacing.xxs,
       children: [
         const Divider(),
-        SizedBox(
-          height: AppTheme.of(context).spacing.xxs,
-        ),
         CostItemRow(
           label: AppLocalizations.of(context)!.basketSubtotal,
           cost: subTotal,
         ),
-        SizedBox(
-          height: AppTheme.of(context).spacing.xxs,
-        ),
         CostItemRow(
           label: AppLocalizations.of(context)!.basketDelivery,
           cost: delivery,
-        ),
-        SizedBox(
-          height: AppTheme.of(context).spacing.xxs,
         ),
         CostItemRow(
           label: AppLocalizations.of(context)!.basketTotal,

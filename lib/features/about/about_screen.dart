@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../ui/ui.dart';
+import '../../l10n/app_localizations.dart';
+import '../../ui/ui.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -10,6 +11,7 @@ class AboutScreen extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        spacing: AppTheme.of(context).spacing.m,
         children: [
           Image.asset(
             'logo.png',
@@ -17,11 +19,8 @@ class AboutScreen extends StatelessWidget {
             width: 100,
             height: 100,
           ),
-          SizedBox(
-            height: AppTheme.of(context).spacing.m,
-          ),
           Text(
-            'Created by Widgetbook',
+            AppLocalizations.of(context)!.createdBy,
             style: AppTheme.of(context).typography.label,
           ),
         ],

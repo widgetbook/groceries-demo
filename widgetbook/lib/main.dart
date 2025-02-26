@@ -4,7 +4,7 @@ import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-import 'addons/source_code_addon.dart';
+import 'addons/github_addon.dart';
 import 'main.directories.g.dart';
 
 void main() {
@@ -42,9 +42,6 @@ class WidgetbookApp extends StatelessWidget {
         color: const Color(0xFF404040),
         child: child,
       ),
-      integrations: [
-        WidgetbookCloudIntegration(),
-      ],
       addons: [
         GitHubAddon('widgetbook/groceries-demo'),
         DeviceFrameAddon(

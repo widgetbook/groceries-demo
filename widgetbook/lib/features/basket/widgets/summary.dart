@@ -11,9 +11,14 @@ Widget buildSummaryUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8),
     child: Summary(
-      subTotal:
-          context.knobs.double.slider(label: 'subTotal', initialValue: 10),
-      delivery: context.knobs.double.slider(label: 'delivery', initialValue: 5),
+      subTotal: context.knobs.double.slider(
+        label: 'subTotal',
+        initialValue: 10,
+      ),
+      delivery: context.knobs.double.slider(
+        label: 'delivery',
+        initialValue: 5,
+      ),
     ),
   );
 }

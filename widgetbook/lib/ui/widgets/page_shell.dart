@@ -3,8 +3,6 @@ import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-import '../../features/utility/placeholder.dart' as util;
-
 @UseCase(
   name: 'Default',
   type: PageShell,
@@ -13,7 +11,21 @@ import '../../features/utility/placeholder.dart' as util;
 )
 Widget buildPageShellUseCase(BuildContext context) {
   return PageShell(
-    header: context.knobs.string(label: 'header', initialValue: 'Header'),
-    child: const util.Placeholder(),
+    header: context.knobs.string(
+      label: 'header',
+      initialValue: 'Header',
+    ),
+    child: const _Placeholder(),
   );
+}
+
+class _Placeholder extends StatelessWidget {
+  const _Placeholder();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xFFD9D9D9),
+    );
+  }
 }

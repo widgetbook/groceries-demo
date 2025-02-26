@@ -11,5 +11,6 @@
   "startShopping": "Beginn mit dem Einkauf",
   "navigationShopLabel": "Shop",
   "navigationBasketLabel": "Warenkorb",
-  "navigationUserLabel": "Nutzer"
+  "navigationUserLabel": "Nutzer",
+  "createdBy": "Erstellt von Widgetbook"
 }
