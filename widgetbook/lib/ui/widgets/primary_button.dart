@@ -20,6 +20,12 @@ Widget buildPrimaryButtonCase(BuildContext context) {
         label: 'content',
         initialValue: 'Button',
       ),
+      onPressed: context.knobs.boolean(
+        label: 'enabled',
+        initialValue: true,
+      )
+          ? () => {}
+          : null,
     ),
   );
 }

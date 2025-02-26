@@ -12,11 +12,15 @@ class BasketScreen extends StatelessWidget {
     required this.basket,
     required this.delivery,
     required this.subTotal,
+    this.onStartShopping,
+    this.onContinueToShipping,
   });
 
   final Map<Fruit, int> basket;
   final double delivery;
   final double subTotal;
+  final VoidCallback? onStartShopping;
+  final VoidCallback? onContinueToShipping;
 
   Widget _buildFilledPage(BuildContext context) {
     return ListView.separated(
@@ -56,6 +60,7 @@ class BasketScreen extends StatelessWidget {
                 ),
                 PrimaryButton(
                   content: AppLocalizations.of(context)!.startShopping,
+                  onPressed: onStartShopping,
                 ),
               ],
             ),
@@ -75,6 +80,7 @@ class BasketScreen extends StatelessWidget {
                 PrimaryButton(
                   content:
                       AppLocalizations.of(context)!.basketContinueToShipping,
+                  onPressed: onContinueToShipping,
                 ),
               ],
             ),

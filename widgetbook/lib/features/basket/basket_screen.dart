@@ -11,10 +11,16 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5986&t=zUakLdAaKjMZAqSq-4',
 )
 Widget buildBasketScreenEmptyUseCase(BuildContext context) {
-  return const BasketScreen(
-    basket: {},
+  return BasketScreen(
+    basket: const {},
     delivery: 0,
     subTotal: 0,
+    onStartShopping: context.knobs.boolean(
+      label: 'enabled',
+      initialValue: true,
+    )
+        ? () => {}
+        : null,
   );
 }
 
@@ -49,6 +55,12 @@ Widget buildBasketScreenUseCase(BuildContext context) {
           basket: state.basket,
           delivery: state.deliveryFees,
           subTotal: state.subTotal,
+          onContinueToShipping: context.knobs.boolean(
+            label: 'enabled',
+            initialValue: true,
+          )
+              ? () => {}
+              : null,
         );
       },
     ),
