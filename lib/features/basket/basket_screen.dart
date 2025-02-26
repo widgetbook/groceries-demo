@@ -14,7 +14,7 @@ class BasketScreen extends StatelessWidget {
     required this.subTotal,
   });
 
-  final Map<Fruit, ProductOrder> basket;
+  final Map<Fruit, int> basket;
   final double delivery;
   final double subTotal;
 
@@ -31,7 +31,7 @@ class BasketScreen extends StatelessWidget {
         final fruit = basket.keys.elementAt(index);
         return BasketCard(
           fruit: fruit,
-          count: basket[fruit]!.quantity,
+          count: basket[fruit]!,
           onFruitAdded: () => BasketState.of(context).addFruit(fruit),
           onFruitRemoved: () => BasketState.of(context).removeFruit(fruit),
         );
@@ -67,7 +67,7 @@ class BasketScreen extends StatelessWidget {
                 Expanded(child: _buildFilledPage(context)),
                 Summary(
                   subTotal: subTotal,
-                  delivery: delivery,
+                  deliveryFees: delivery,
                 ),
                 SizedBox(
                   height: AppTheme.of(context).spacing.xs,

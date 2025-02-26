@@ -15,7 +15,7 @@ Widget buildSummaryUseCase(BuildContext context) {
         label: 'subTotal',
         initialValue: 10,
       ),
-      delivery: context.knobs.double.slider(
+      deliveryFees: context.knobs.double.slider(
         label: 'delivery',
         initialValue: 5,
       ),

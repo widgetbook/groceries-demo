@@ -16,12 +16,12 @@ final _router = GoRouter(
     GoRoute(
       path: '/basket',
       builder: (context, state) {
-        final basketState = BasketState.of(context);
+        final state = BasketState.of(context);
 
         return BasketScreen(
-          basket: basketState.store,
-          delivery: basketState.delivery,
-          subTotal: basketState.subTotal,
+          basket: state.basket,
+          delivery: state.deliveryFees,
+          subTotal: state.subTotal,
         );
       },
     ),

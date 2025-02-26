@@ -3,67 +3,52 @@ import 'package:flutter/material.dart';
 import '../../../data/fruit.dart';
 import 'basket_scope.dart';
 
-class ProductOrder {
-  ProductOrder({
-    required this.fruit,
-    required this.quantity,
-  });
-
-  final Fruit fruit;
-  final int quantity;
-
-  double get total => fruit.price * quantity;
-}
-
 class BasketState extends ChangeNotifier {
   BasketState({
-    Map<Fruit, ProductOrder>? data,
-  }) : store = data ?? {};
+    Map<Fruit, int>? initialBasket,
+  }) : basket = initialBasket ?? {};
 
-  Map<Fruit, ProductOrder> store;
-
-  double get subTotal {
-    return store.values.fold(
-      0,
-      (previousValue, element) => previousValue + element.total,
-    );
-  }
-
-  double get delivery => 0.56;
+  /// Map between [Fruit] and its quantity
+  final Map<Fruit, int> basket;
 
   static BasketState of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<BasketScope>()!.notifier!;
   }
 
+  double get subTotal {
+    return basket.entries.fold(
+      0,
+      (total, entry) {
+        final price = entry.key.price;
+        final quantity = entry.value;
+
+        return total + (price * quantity);
+      },
+    );
+  }
+
+  double get deliveryFees => 0.56;
+
   void addFruit(Fruit fruit) {
-    store.update(
+    basket.update(
       fruit,
-      (value) => ProductOrder(
-        fruit: fruit,
-        quantity: value.quantity + 1,
-      ),
-      ifAbsent: () => ProductOrder(
-        fruit: fruit,
-        quantity: 1,
-      ),
+      (quantity) => quantity + 1,
+      ifAbsent: () => 1,
     );
 
     notifyListeners();
   }
 
   void removeFruit(Fruit fruit) {
-    if (!store.containsKey(fruit)) return;
+    if (!basket.containsKey(fruit)) return;
 
-    store.update(
+    basket.update(
       fruit,
-      (value) => ProductOrder(
-        fruit: fruit,
-        quantity: value.quantity - 1,
-      ),
+      (quantity) => quantity - 1,
     );
 
-    if (store[fruit]!.quantity <= 0) {
-      store.remove(fruit);
+    if (basket[fruit]! <= 0) {
+      basket.remove(fruit);
     }
 
     notifyListeners();

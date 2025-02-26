@@ -30,31 +30,25 @@ Widget buildBasketScreenUseCase(BuildContext context) {
 
   return BasketScope(
     state: BasketState(
-      data: {
-        fruit_1: ProductOrder(
-          fruit: fruit_1,
-          quantity: context.knobs.int.input(
-            label: '${fruit_1.name} quantity',
-            initialValue: 1,
-          ),
+      initialBasket: {
+        fruit_1: context.knobs.int.input(
+          label: '${fruit_1.name} quantity',
+          initialValue: 1,
         ),
-        fruit_2: ProductOrder(
-          fruit: fruit_2,
-          quantity: context.knobs.int.input(
-            label: '${fruit_2.name} quantity',
-            initialValue: 2,
-          ),
+        fruit_2: context.knobs.int.input(
+          label: '${fruit_2.name} quantity',
+          initialValue: 2,
         ),
       },
     ),
     child: Builder(
       builder: (context) {
-        final basketState = BasketState.of(context);
+        final state = BasketState.of(context);
 
         return BasketScreen(
-          basket: basketState.store,
-          delivery: basketState.delivery,
-          subTotal: basketState.subTotal,
+          basket: state.basket,
+          delivery: state.deliveryFees,
+          subTotal: state.subTotal,
         );
       },
     ),

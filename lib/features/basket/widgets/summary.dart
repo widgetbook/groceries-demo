@@ -8,13 +8,13 @@ class Summary extends StatelessWidget {
   const Summary({
     super.key,
     required this.subTotal,
-    required this.delivery,
+    required this.deliveryFees,
   });
 
   final double subTotal;
-  final double delivery;
+  final double deliveryFees;
 
-  double get total => subTotal + delivery;
+  double get total => subTotal + deliveryFees;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class Summary extends StatelessWidget {
         ),
         CostItemRow(
           label: AppLocalizations.of(context)!.basketDelivery,
-          cost: delivery,
+          cost: deliveryFees,
         ),
         CostItemRow(
           label: AppLocalizations.of(context)!.basketTotal,
