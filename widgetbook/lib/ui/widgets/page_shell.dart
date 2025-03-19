@@ -11,7 +11,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 )
 Widget buildPageShellUseCase(BuildContext context) {
   return PageShell(
-    header: context.knobs.string(
+    title: context.knobs.string(
       label: 'header',
       initialValue: 'Header',
     ),

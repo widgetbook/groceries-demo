@@ -6,42 +6,28 @@ class PageShell extends StatelessWidget {
   const PageShell({
     super.key,
     required this.child,
-    this.header,
+    required this.title,
     this.action,
     this.navItems,
   });
 
   final Widget child;
-  final String? header;
+  final String title;
   final Widget? action;
   final List<NavigationItem>? navItems;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         AppBar(
-          title: 'Groceries App',
+          title: title,
           action: action,
         ),
         const Divider(),
-        if (header != null)
-          Padding(
-            padding: EdgeInsets.all(AppTheme.of(context).spacing.sm),
-            child: Text(
-              header!,
-              style: AppTheme.of(context).typography.headingLarge,
-            ),
-          ),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(
-              theme.spacing.sm,
-            ),
-            child: child,
-          ),
+          child: child,
         ),
         const Divider(),
         if (navItems != null)

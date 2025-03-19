@@ -1,2 +1,3 @@
-export 'basket_scope.dart';
-export 'basket_state.dart';
+export 'basket.dart';
+export 'basket_notifier.dart';
+export 'basket_provider.dart';

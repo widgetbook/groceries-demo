@@ -1,29 +1,29 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'state/state.dart';
 import 'views/views.dart';
 
-class BasketScreen extends StatelessWidget {
+class BasketScreen extends ConsumerWidget {
   const BasketScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final state = BasketState.of(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final basket = ref.watch(basketProvider);
+    final notifier = ref.read(basketProvider.notifier);
 
-    return state.basket.isEmpty
+    return basket.isEmpty
         ? BasketEmptyView(
             onStartShopping: () => context.go('/shop'),
           )
         : BasketDataView(
-            basket: state.basket,
-            delivery: state.deliveryFees,
-            subTotal: state.subTotal,
-            onFruitAdded: state.addFruit,
-            onFruitRemoved: state.removeFruit,
-            onContinueToShipping: () => {
-              // TODO
-            },
+            items: basket.items,
+            delivery: basket.deliveryFees,
+            subTotal: basket.subTotal,
+            onFruitAdded: notifier.addFruit,
+            onFruitRemoved: notifier.removeFruit,
+            onContinueToShipping: notifier.clear,
           );
   }
 }

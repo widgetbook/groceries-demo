@@ -8,7 +8,7 @@ import '../widgets/widgets.dart';
 class BasketDataView extends StatelessWidget {
   const BasketDataView({
     super.key,
-    required this.basket,
+    required this.items,
     required this.delivery,
     required this.subTotal,
     required this.onFruitAdded,
@@ -16,7 +16,7 @@ class BasketDataView extends StatelessWidget {
     required this.onContinueToShipping,
   });
 
-  final Map<Fruit, int> basket;
+  final Map<Fruit, int> items;
   final double delivery;
   final double subTotal;
   final void Function(Fruit fruit) onFruitAdded;
@@ -31,18 +31,18 @@ class BasketDataView extends StatelessWidget {
         children: [
           Expanded(
             child: ListView.separated(
-              key: ValueKey(basket),
-              itemCount: basket.length,
+              key: ValueKey(items),
+              itemCount: items.length,
               separatorBuilder: (context, index) {
                 return SizedBox(
                   height: AppTheme.of(context).spacing.m,
                 );
               },
               itemBuilder: (context, index) {
-                final fruit = basket.keys.elementAt(index);
+                final fruit = items.keys.elementAt(index);
                 return BasketCard(
                   fruit: fruit,
-                  count: basket[fruit]!,
+                  count: items[fruit]!,
                   onFruitAdded: () => onFruitAdded(fruit),
                   onFruitRemoved: () => onFruitRemoved(fruit),
                 );

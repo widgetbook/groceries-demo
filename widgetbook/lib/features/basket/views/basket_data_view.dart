@@ -11,36 +11,32 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5504&t=zUakLdAaKjMZAqSq-4',
 )
 Widget buildBasketDataViewUseCase(BuildContext context) {
-  return BasketScope(
-    state: BasketState(
-      // Get all fruits except Banana and create a map with the quantity knob
-      initialBasket: Map.fromEntries(
-        MockDataStore.fruits
-            .where((fruit) => fruit.name != 'Banana') //
-            .map(
-              (fruit) => MapEntry(
-                fruit,
-                context.knobs.int.input(
-                  label: '${fruit.name} quantity',
-                  initialValue: 2,
-                ),
-              ),
+  final items = Map.fromEntries(
+    MockDataStore.fruits
+        .where((fruit) => fruit.name != 'Banana') //
+        .map(
+          (fruit) => MapEntry(
+            fruit,
+            context.knobs.int.input(
+              label: '${fruit.name} quantity',
+              initialValue: 2,
             ),
-      ),
-    ),
-    child: Builder(
-      builder: (context) {
-        final state = BasketState.of(context);
+          ),
+        ),
+  );
 
-        return BasketDataView(
-          basket: state.basket,
-          delivery: state.deliveryFees,
-          subTotal: state.subTotal,
-          onFruitAdded: state.addFruit,
-          onFruitRemoved: state.removeFruit,
-          onContinueToShipping: () {},
-        );
-      },
+  return BasketDataView(
+    items: items,
+    delivery: context.knobs.double.input(
+      label: 'Delivery fees',
+      initialValue: 5,
     ),
+    subTotal: context.knobs.double.input(
+      label: 'Subtotal',
+      initialValue: 50,
+    ),
+    onFruitAdded: (_) {},
+    onFruitRemoved: (_) {},
+    onContinueToShipping: () {},
   );
 }

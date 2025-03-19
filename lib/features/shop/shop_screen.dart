@@ -1,36 +1,27 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/data.dart';
 import '../basket/basket.dart';
+import 'state/state.dart';
 import 'views/views.dart';
 
-class ShopScreen extends StatelessWidget {
+class ShopScreen extends ConsumerWidget {
   const ShopScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: FruitRepository().getAll(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState != ConnectionState.done) {
-          return const ShopLoadingView();
-        }
+  Widget build(BuildContext context, WidgetRef ref) {
+    final value = ref.watch(fruitsProvider);
+    final notifier = ref.read(basketProvider.notifier);
 
-        if (snapshot.hasError) {
-          return const ShopErrorView();
-        }
-
-        if (snapshot.data!.isEmpty) {
-          return const ShopEmptyView();
-        }
-
-        final state = BasketState.of(context);
-
-        return ShopDataView(
-          fruits: snapshot.data!,
-          onFruitAdded: state.addFruit,
-        );
-      },
+    return value.map(
+      loading: (_) => const ShopLoadingView(),
+      error: (_) => const ShopErrorView(),
+      data: (data) => data.value.isEmpty
+          ? const ShopEmptyView()
+          : ShopDataView(
+              fruits: data.value,
+              onFruitAdded: notifier.addFruit,
+            ),
     );
   }
 }

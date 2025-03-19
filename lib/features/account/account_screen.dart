@@ -1,31 +1,23 @@
-import 'package:flutter/material.dart' hide Icon;
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/data.dart';
+import 'state/state.dart';
 import 'views/views.dart';
 
-class AccountScreen extends StatelessWidget {
+class AccountScreen extends ConsumerWidget {
   const AccountScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: UserRepository().getByToken(0),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState != ConnectionState.done) {
-          return const AccountLoadingView();
-        }
+  Widget build(BuildContext context, WidgetRef ref) {
+    final value = ref.watch(userProvider);
 
-        if (snapshot.hasError) {
-          return const AccountErrorView();
-        }
-
-        return AccountDataView(
-          user: snapshot.data!,
-          onVerifyEmail: () => {
-            // TODO
-          },
-        );
-      },
+    return value.map(
+      loading: (_) => const AccountLoadingView(),
+      error: (_) => const AccountErrorView(),
+      data: (data) => AccountDataView(
+        user: data.value,
+        onVerifyEmail: () => {},
+      ),
     );
   }
 }
