@@ -19,11 +19,19 @@ class AppTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: data.typography.bodyRegular,
-      child: _InheritedAppTheme(
-        data: data,
-        child: child,
+    return _InheritedAppTheme(
+      data: data,
+      child: Builder(
+        builder: (context) {
+          final data = AppTheme.of(context);
+          return DefaultTextStyle(
+            style: data.typography.bodyRegular,
+            child: ColoredBox(
+              color: data.background.primary,
+              child: child,
+            ),
+          );
+        },
       ),
     );
   }

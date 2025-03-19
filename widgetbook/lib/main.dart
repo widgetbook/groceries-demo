@@ -68,15 +68,9 @@ class WidgetbookApp extends StatelessWidget {
               data: AppThemeData.dark,
             ),
           ],
-          themeBuilder: (context, theme, child) => ColoredBox(
-            color: theme.background.primary,
-            child: DefaultTextStyle(
-              style: theme.typography.bodyMedium,
-              child: AppTheme(
-                data: theme,
-                child: child,
-              ),
-            ),
+          themeBuilder: (context, theme, child) => AppTheme(
+            data: theme,
+            child: child,
           ),
         ),
         AlignmentAddon(),

@@ -11,26 +11,22 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final brightness = MediaQuery.platformBrightnessOf(context);
+
     return ProviderScope(
       child: AppTheme(
-        data: MediaQuery.of(context).platformBrightness == Brightness.light
+        data: brightness == Brightness.light
             ? AppThemeData.light
             : AppThemeData.dark,
         child: Builder(
           builder: (context) {
-            return ColoredBox(
+            return WidgetsApp.router(
+              title: 'Grocery App',
+              debugShowCheckedModeBanner: false,
               color: AppTheme.of(context).background.primary,
-              child: SafeArea(
-                child: WidgetsApp.router(
-                  title: 'Grocery App',
-                  debugShowCheckedModeBanner: false,
-                  color: AppTheme.of(context).background.primary,
-                  routerConfig: router,
-                  supportedLocales: AppLocalizations.supportedLocales,
-                  localizationsDelegates:
-                      AppLocalizations.localizationsDelegates,
-                ),
-              ),
+              routerConfig: router,
+              supportedLocales: AppLocalizations.supportedLocales,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
             );
           },
         ),

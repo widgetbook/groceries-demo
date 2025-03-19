@@ -23,37 +23,39 @@ class AppShell extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final basket = ref.watch(basketProvider);
 
-    return PageShell(
-      title: 'Grocery App',
-      action: Icon(
-        FontAwesomeIcons.circleQuestion,
-        onTap: () => onRouteTap(AppRoute.about),
+    return SafeArea(
+      child: PageShell(
+        title: 'Grocery App',
+        action: Icon(
+          FontAwesomeIcons.circleQuestion,
+          onTap: () => onRouteTap(AppRoute.about),
+        ),
+        navItems: [
+          NavigationItem(
+            isSelected: activeRoute == AppRoute.shop,
+            iconUnselected: FontAwesomeIcons.lemon,
+            iconSelected: FontAwesomeIcons.solidLemon,
+            text: AppLocalizations.of(context)!.navigationShopLabel,
+            onTap: () => onRouteTap(AppRoute.shop),
+          ),
+          NavigationItem(
+            isSelected: activeRoute == AppRoute.basket,
+            iconUnselected: FontAwesomeIcons.rectangleList,
+            iconSelected: FontAwesomeIcons.solidRectangleList,
+            text: AppLocalizations.of(context)!.navigationBasketLabel,
+            onTap: () => onRouteTap(AppRoute.basket),
+            showBadge: !basket.isEmpty,
+          ),
+          NavigationItem(
+            isSelected: activeRoute == AppRoute.account,
+            iconUnselected: FontAwesomeIcons.user,
+            iconSelected: FontAwesomeIcons.solidUser,
+            text: AppLocalizations.of(context)!.navigationUserLabel,
+            onTap: () => onRouteTap(AppRoute.account),
+          ),
+        ],
+        child: child,
       ),
-      navItems: [
-        NavigationItem(
-          isSelected: activeRoute == AppRoute.shop,
-          iconUnselected: FontAwesomeIcons.lemon,
-          iconSelected: FontAwesomeIcons.solidLemon,
-          text: AppLocalizations.of(context)!.navigationShopLabel,
-          onTap: () => onRouteTap(AppRoute.shop),
-        ),
-        NavigationItem(
-          isSelected: activeRoute == AppRoute.basket,
-          iconUnselected: FontAwesomeIcons.rectangleList,
-          iconSelected: FontAwesomeIcons.solidRectangleList,
-          text: AppLocalizations.of(context)!.navigationBasketLabel,
-          onTap: () => onRouteTap(AppRoute.basket),
-          showBadge: !basket.isEmpty,
-        ),
-        NavigationItem(
-          isSelected: activeRoute == AppRoute.account,
-          iconUnselected: FontAwesomeIcons.user,
-          iconSelected: FontAwesomeIcons.solidUser,
-          text: AppLocalizations.of(context)!.navigationUserLabel,
-          onTap: () => onRouteTap(AppRoute.account),
-        ),
-      ],
-      child: child,
     );
   }
 }
