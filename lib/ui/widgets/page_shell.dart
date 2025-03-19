@@ -3,10 +3,18 @@ import 'package:flutter/widgets.dart';
 import '../ui.dart';
 
 class PageShell extends StatelessWidget {
-  const PageShell({super.key, required this.child, this.header});
+  const PageShell({
+    super.key,
+    required this.child,
+    this.header,
+    this.action,
+    this.navItems,
+  });
 
   final Widget child;
   final String? header;
+  final Widget? action;
+  final List<NavigationItem>? navItems;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +22,9 @@ class PageShell extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AppBar(
+        AppBar(
           title: 'Groceries App',
+          action: action,
         ),
         const Divider(),
         if (header != null)
@@ -35,7 +44,10 @@ class PageShell extends StatelessWidget {
           ),
         ),
         const Divider(),
-        const BottomNavigationBar(),
+        if (navItems != null)
+          BottomNavigationBar(
+            navItems: navItems!,
+          ),
       ],
     );
   }

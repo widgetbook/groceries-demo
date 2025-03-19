@@ -1,4 +1,6 @@
 {
+  "welcome": "Welcome,",
+  "verifyAccount": "Please verify your account",
   "fruitsHeadline": "Fruits",
   "unit": "pcs",
   "basketContinueToShipping": "Continue to shipping",
@@ -12,5 +14,6 @@
   "navigationShopLabel": "Shop",
   "navigationBasketLabel": "Basket",
   "navigationUserLabel": "User",
-  "createdBy": "Created by Widgetbook"
+  "createdBy": "Created by Widgetbook",
+  "goBack": "Go back"
 }

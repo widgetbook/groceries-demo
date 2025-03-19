@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart' hide Icon;
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/widgets.dart';
 
 import '../ui.dart';
 
@@ -7,9 +6,11 @@ class AppBar extends StatelessWidget {
   const AppBar({
     super.key,
     required this.title,
+    this.action,
   });
 
   final String title;
+  final Widget? action;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class AppBar extends StatelessWidget {
             title,
             style: AppTheme.of(context).typography.subheadingLarge,
           ),
-          const Icon(FontAwesomeIcons.bell),
+          if (action != null) action!,
         ],
       ),
     );

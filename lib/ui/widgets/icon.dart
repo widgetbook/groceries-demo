@@ -8,19 +8,26 @@ class Icon extends StatelessWidget {
     this.icon, {
     super.key,
     this.scale = 1,
+    this.onTap,
+    this.color,
   });
 
   final IconData icon;
   final double scale;
+  final VoidCallback? onTap;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(AppTheme.of(context).spacing.xs),
-      child: FaIcon(
-        icon,
-        size: 20 * scale,
-        color: AppTheme.of(context).text.primary,
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: EdgeInsets.all(AppTheme.of(context).spacing.xs),
+        child: FaIcon(
+          icon,
+          size: 20 * scale,
+          color: color ?? AppTheme.of(context).text.primary,
+        ),
       ),
     );
   }

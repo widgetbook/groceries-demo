@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/fruit.dart';
+import '../../../data/data.dart';
 import 'basket_scope.dart';
 
 class BasketState extends ChangeNotifier {
@@ -51,6 +51,11 @@ class BasketState extends ChangeNotifier {
       basket.remove(fruit);
     }
 
+    notifyListeners();
+  }
+
+  void clear() {
+    basket.clear();
     notifyListeners();
   }
 }
