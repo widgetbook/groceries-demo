@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:groceries_app/l10n/app_localizations.dart';
 import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -43,6 +44,19 @@ class WidgetbookApp extends StatelessWidget {
         child: child,
       ),
       addons: [
+        BuilderAddon(
+          name: 'Disable Animations (Cloud)',
+          builder: (context, child) {
+            // In Widgetbook Cloud context, disable the animations
+            // so that the [Loader] widget doesn't show up in all
+            // the reviews' diffs.
+            if (WidgetbookState.of(context).previewMode) {
+              timeDilation = double.maxFinite;
+            }
+
+            return child;
+          },
+        ),
         GitHubAddon('widgetbook/groceries-demo'),
         DeviceFrameAddon(
           devices: [
