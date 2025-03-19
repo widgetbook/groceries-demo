@@ -1,7 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-import 'data/mocks.dart';
 import 'features/about/about.dart';
 import 'features/account/account.dart';
 import 'features/basket/basket.dart';
@@ -13,9 +12,7 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/about',
-      builder: (context, state) => AboutScreen(
-        onBack: () => context.go('/shop'),
-      ),
+      builder: (_, __) => const AboutScreen(),
     ),
     ShellRoute(
       builder: (context, state, child) {
@@ -54,50 +51,19 @@ final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          redirect: (context, state) => '/shop',
+          redirect: (_, __) => '/shop',
         ),
         GoRoute(
           path: '/shop',
-          builder: (context, state) {
-            final state = BasketState.of(context);
-
-            return ShopScreen(
-              fruits: MockDataStore.fruits, // TODO: fetch data
-              onFruitAdded: state.addFruit,
-            );
-          },
+          builder: (_, __) => const ShopScreen(),
         ),
         GoRoute(
           path: '/basket',
-          builder: (context, state) {
-            final state = BasketState.of(context);
-
-            return state.basket.isEmpty
-                ? EmptyBasketScreen(
-                    onStartShopping: () => context.go('/shop'),
-                  )
-                : BasketScreen(
-                    basket: state.basket,
-                    delivery: state.deliveryFees,
-                    subTotal: state.subTotal,
-                    onFruitAdded: state.addFruit,
-                    onFruitRemoved: state.removeFruit,
-                    onContinueToShipping: () => {
-                      // TODO
-                    },
-                  );
-          },
+          builder: (_, __) => const BasketScreen(),
         ),
         GoRoute(
           path: '/account',
-          builder: (context, state) {
-            return AccountScreen(
-              user: MockDataStore.user, // TODO: fetch data
-              onVerifyEmail: () => {
-                // TODO
-              },
-            );
-          },
+          builder: (_, __) => const AccountScreen(),
         ),
       ],
     ),

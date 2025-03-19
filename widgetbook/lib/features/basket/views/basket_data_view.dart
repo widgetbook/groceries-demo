@@ -5,24 +5,12 @@ import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
-  name: 'Empty',
-  type: EmptyBasketScreen,
-  designLink:
-      'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5986&t=zUakLdAaKjMZAqSq-4',
-)
-Widget buildBasketScreenEmptyUseCase(BuildContext context) {
-  return EmptyBasketScreen(
-    onStartShopping: () => {},
-  );
-}
-
-@UseCase(
-  name: 'Non-empty',
-  type: BasketScreen,
+  name: 'Default',
+  type: BasketDataView,
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=6809-5504&t=zUakLdAaKjMZAqSq-4',
 )
-Widget buildBasketScreenUseCase(BuildContext context) {
+Widget buildBasketDataViewUseCase(BuildContext context) {
   return BasketScope(
     state: BasketState(
       // Get all fruits except Banana and create a map with the quantity knob
@@ -44,13 +32,13 @@ Widget buildBasketScreenUseCase(BuildContext context) {
       builder: (context) {
         final state = BasketState.of(context);
 
-        return BasketScreen(
+        return BasketDataView(
           basket: state.basket,
           delivery: state.deliveryFees,
           subTotal: state.subTotal,
           onFruitAdded: state.addFruit,
           onFruitRemoved: state.removeFruit,
-          onContinueToShipping: () => {},
+          onContinueToShipping: () {},
         );
       },
     ),

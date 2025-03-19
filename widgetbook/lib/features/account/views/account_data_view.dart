@@ -1,16 +1,16 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/data/user/user.dart';
-import 'package:groceries_app/features/account/account.dart';
+import 'package:groceries_app/data/data.dart';
+import 'package:groceries_app/features/features.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
   name: 'Default',
-  type: AccountScreen,
+  type: AccountDataView,
 )
-Widget buildBasketScreenEmptyUseCase(BuildContext context) {
-  return AccountScreen(
-    onVerifyEmail: () => {},
+Widget buildAccountDataViewUseCase(BuildContext context) {
+  return AccountDataView(
+    onVerifyEmail: () {},
     user: User(
       name: context.knobs.string(
         label: 'name',

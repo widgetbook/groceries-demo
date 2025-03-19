@@ -3,6 +3,8 @@
   "verifyAccount": "Bitte verifiziere dein Konto",
   "fruitsHeadline": "Früchte",
   "unit": "Stück",
+  "shopNoItemsFound": "Keine Artikel gefunden",
+  "shopNoItemsFoundMessage": "Es tut uns leid, aber wir konnten keine Artikel finden, die deiner Suche entsprechen.",
   "basketContinueToShipping": "Weiter zum Versand",
   "basketHeadline": "Einkaufskorb",
   "basketTotal": "Gesamtsumme",

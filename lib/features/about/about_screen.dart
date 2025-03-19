@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../ui/ui.dart';
 
 class AboutScreen extends StatelessWidget {
-  const AboutScreen({
-    super.key,
-    required this.onBack,
-  });
-
-  final VoidCallback onBack;
+  const AboutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Screen(
+    return ViewShell(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         spacing: AppTheme.of(context).spacing.m,
@@ -29,7 +25,7 @@ class AboutScreen extends StatelessWidget {
             style: AppTheme.of(context).typography.label,
           ),
           GestureDetector(
-            onTap: onBack,
+            onTap: () => context.pop(),
             child: Text(
               AppLocalizations.of(context)!.goBack,
               style: AppTheme.of(context).typography.bodySmall,

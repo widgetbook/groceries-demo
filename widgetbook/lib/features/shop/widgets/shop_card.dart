@@ -7,8 +7,11 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
   name: 'Default',
   type: ShopCard,
 )
-Widget buildBasketScreenEmptyUseCase(BuildContext context) {
-  return ShopCard(
-    fruit: MockDataStore.fruits.first,
+Widget buildShopCardUseCase(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.all(8),
+    child: ShopCard(
+      fruit: MockDataStore.fruits.first,
+    ),
   );
 }

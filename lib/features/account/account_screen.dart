@@ -1,41 +1,31 @@
 import 'package:flutter/material.dart' hide Icon;
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../data/data.dart';
-import '../../ui/ui.dart';
-import 'widgets/widgets.dart';
+import 'views/views.dart';
 
 class AccountScreen extends StatelessWidget {
-  const AccountScreen({
-    super.key,
-    required this.user,
-    required this.onVerifyEmail,
-  });
-
-  final User user;
-  final VoidCallback onVerifyEmail;
+  const AccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Screen(
-      child: Column(
-        spacing: AppTheme.of(context).spacing.l,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          AccountCard(
-            name: user.name,
-          ),
-          if (!user.isVerified)
-            PrimaryButton(
-              content: 'Verify Email',
-              onPressed: onVerifyEmail,
-              leading: Icon(
-                FontAwesomeIcons.circleExclamation,
-                color: AppTheme.of(context).text.inverse,
-              ),
-            ),
-        ],
-      ),
+    return FutureBuilder(
+      future: UserRepository().getByToken(0),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const AccountLoadingView();
+        }
+
+        if (snapshot.hasError) {
+          return const AccountErrorView();
+        }
+
+        return AccountDataView(
+          user: snapshot.data!,
+          onVerifyEmail: () => {
+            // TODO
+          },
+        );
+      },
     );
   }
 }

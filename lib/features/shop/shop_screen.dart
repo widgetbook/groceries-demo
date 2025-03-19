@@ -1,28 +1,34 @@
 import 'package:flutter/widgets.dart';
 
 import '../../data/data.dart';
-import 'widgets/widgets.dart';
+import '../basket/basket.dart';
+import 'views/views.dart';
 
 class ShopScreen extends StatelessWidget {
-  const ShopScreen({
-    super.key,
-    required this.fruits,
-    this.onFruitAdded,
-  });
-
-  final List<Fruit> fruits;
-  final void Function(Fruit fruit)? onFruitAdded;
+  const ShopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: fruits.length,
-      itemBuilder: (context, index) {
-        final fruit = fruits[index];
+    return FutureBuilder(
+      future: FruitRepository().getAll(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const ShopLoadingView();
+        }
 
-        return ShopCard(
-          fruit: fruit,
-          onTap: () => onFruitAdded?.call(fruit),
+        if (snapshot.hasError) {
+          return const ShopErrorView();
+        }
+
+        if (snapshot.data!.isEmpty) {
+          return const ShopEmptyView();
+        }
+
+        final state = BasketState.of(context);
+
+        return ShopDataView(
+          fruits: snapshot.data!,
+          onFruitAdded: state.addFruit,
         );
       },
     );
