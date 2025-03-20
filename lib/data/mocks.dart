@@ -1,7 +1,25 @@
-import 'fruit.dart';
+// This file is just a collection of mocks that tries to mimics a backend,
+// since our demo app doesn't have a backend.
 
-// This is a mock of a database that has some fruits.
-abstract class DataStore {
+import 'fruit/fruit.dart';
+import 'user/user.dart';
+
+// Mimics a network request that takes some time to complete.
+Future<T> mimicNetworkRequest<T>(T data) {
+  return Future.delayed(
+    const Duration(seconds: 1),
+    () => data,
+  );
+}
+
+// A mock datastore that the repositories fetch the data from.
+// Usually the data will be coming from the backend.
+abstract class MockDataStore {
+  static const user = User(
+    name: 'John Doe',
+    isVerified: true,
+  );
+
   static const fruits = [
     Fruit(
       id: 1,

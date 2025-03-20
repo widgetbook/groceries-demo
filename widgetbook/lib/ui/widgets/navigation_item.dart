@@ -21,5 +21,8 @@ Widget buildNavigationItemUseCase(BuildContext context) {
       label: 'text',
       initialValue: 'Account',
     ),
+    showBadge: context.knobs.boolean(
+      label: 'showBadge',
+    ),
   );
 }

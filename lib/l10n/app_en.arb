@@ -1,6 +1,10 @@
 {
+  "welcome": "Welcome,",
+  "verifyAccount": "Please verify your account",
   "fruitsHeadline": "Fruits",
   "unit": "pcs",
+  "shopNoItemsFound": "No items found",
+  "shopNoItemsFoundMessage": "We're sorry, but we couldn't find any items matching your search.",
   "basketContinueToShipping": "Continue to shipping",
   "basketHeadline": "Basket",
   "basketTotal": "Total",
@@ -12,5 +16,6 @@
   "navigationShopLabel": "Shop",
   "navigationBasketLabel": "Basket",
   "navigationUserLabel": "User",
-  "createdBy": "Created by Widgetbook"
+  "createdBy": "Created by Widgetbook",
+  "goBack": "Go back"
 }

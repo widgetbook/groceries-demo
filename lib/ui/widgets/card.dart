@@ -12,17 +12,23 @@ class Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppTheme.of(context).background.primary,
-        borderRadius: BorderRadius.circular(
-          AppTheme.of(context).radius.sm,
-        ),
-        border: Border.all(
-          color: AppTheme.of(context).border.color,
-        ),
+    final radius = AppTheme.of(context).radius.sm;
+
+    return ClipRRect(
+      clipBehavior: Clip.hardEdge,
+      borderRadius: BorderRadius.all(
+        Radius.circular(AppTheme.of(context).radius.sm),
       ),
-      child: child,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppTheme.of(context).background.primary,
+          borderRadius: BorderRadius.circular(radius),
+          border: Border.all(
+            color: AppTheme.of(context).border.color,
+          ),
+        ),
+        child: child,
+      ),
     );
   }
 }

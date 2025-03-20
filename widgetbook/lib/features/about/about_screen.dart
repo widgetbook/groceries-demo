@@ -9,5 +9,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 Widget buildAboutScreenUseCase(BuildContext context) {
   // This use-case demonstrates how assets are loaded in
   // both app package and widgetbook package simultaneously.
-  return const AboutScreen();
+  return AboutScreen(
+    onGoBack: () {},
+  );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../data/fruit.dart';
+import '../../../data/data.dart';
 import '../../../ui/ui.dart';
 
 class BasketCard extends StatelessWidget {
@@ -24,18 +24,12 @@ class BasketCard extends StatelessWidget {
     return Card(
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(AppTheme.of(context).radius.sm),
-              bottomLeft: Radius.circular(AppTheme.of(context).radius.sm),
-            ),
-            child: SizedBox(
-              height: 72,
-              width: 76,
-              child: Image.network(
-                fruit.imageUrl,
-                fit: BoxFit.cover,
-              ),
+          SizedBox(
+            height: 72,
+            width: 76,
+            child: Image.network(
+              fruit.imageUrl,
+              fit: BoxFit.cover,
             ),
           ),
           Expanded(
