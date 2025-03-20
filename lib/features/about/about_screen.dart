@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../ui/ui.dart';
 
 class AboutScreen extends StatelessWidget {
-  const AboutScreen({super.key});
+  const AboutScreen({
+    super.key,
+    required this.onGoBack,
+  });
+
+  final VoidCallback onGoBack;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class AboutScreen extends StatelessWidget {
             style: AppTheme.of(context).typography.label,
           ),
           GestureDetector(
-            onTap: () => context.pop(),
+            onTap: onGoBack,
             child: Text(
               AppLocalizations.of(context)!.goBack,
               style: AppTheme.of(context).typography.bodySmall,

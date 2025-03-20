@@ -5,37 +5,33 @@ import 'app_route.dart';
 import 'app_shell.dart';
 
 final router = GoRouter(
+  initialLocation: AppRoute.shop.path,
   routes: [
     GoRoute(
-      path: '/about',
-      builder: (_, __) => const AboutScreen(),
+      path: AppRoute.about.path,
+      builder: (context, _) => AboutScreen(
+        onGoBack: () => context.go(AppRoute.shop.path),
+      ),
     ),
     ShellRoute(
       builder: (context, state, child) {
         return AppShell(
-          activeRoute: AppRoute.values.firstWhere(
-            (route) => route.path == state.fullPath,
-            orElse: () => AppRoute.shop,
-          ),
-          child: child,
+          activeRoute: AppRoute.byPath(state.fullPath!) ?? AppRoute.shop,
           onRouteTap: (route) => context.go(route.path),
+          child: child,
         );
       },
       routes: [
         GoRoute(
-          path: '/',
-          redirect: (_, __) => '/shop',
-        ),
-        GoRoute(
-          path: '/shop',
+          path: AppRoute.shop.path,
           builder: (_, __) => const ShopScreen(),
         ),
         GoRoute(
-          path: '/basket',
+          path: AppRoute.basket.path,
           builder: (_, __) => const BasketScreen(),
         ),
         GoRoute(
-          path: '/account',
+          path: AppRoute.account.path,
           builder: (_, __) => const AccountScreen(),
         ),
       ],
