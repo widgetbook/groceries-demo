@@ -95,6 +95,7 @@ class WidgetbookApp extends StatelessWidget {
             child: child,
           ),
         ),
+        SemanticsAddon(),
       ],
     );
   }
