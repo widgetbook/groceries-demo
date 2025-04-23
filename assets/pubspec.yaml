@@ -12,3 +12,4 @@ environment:
 flutter:
   assets:
     - .
+    - translations/

@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../ui/ui.dart';
 import 'cost_item_row.dart';
 
@@ -24,15 +24,15 @@ class Summary extends StatelessWidget {
       children: [
         const Divider(),
         CostItemRow(
-          label: AppLocalizations.of(context)!.basketSubtotal,
+          label: context.tr('basketSubtotal'),
           cost: subTotal,
         ),
         CostItemRow(
-          label: AppLocalizations.of(context)!.basketDelivery,
+          label: context.tr('basketDelivery'),
           cost: deliveryFees,
         ),
         CostItemRow(
-          label: AppLocalizations.of(context)!.basketTotal,
+          label: context.tr('basketTotal'),
           cost: total,
         ),
       ],

@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:groceries_app/l10n/app_localizations.dart';
 import 'package:groceries_app/ui/ui.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
@@ -17,19 +17,19 @@ Widget buildBottomNavigationBarUseCase(BuildContext context) {
         isSelected: false,
         iconUnselected: FontAwesomeIcons.lemon,
         iconSelected: FontAwesomeIcons.solidLemon,
-        text: AppLocalizations.of(context)!.navigationShopLabel,
+        text: context.tr('navigationShopLabel'),
       ),
       NavigationItem(
         isSelected: true,
         iconUnselected: FontAwesomeIcons.rectangleList,
         iconSelected: FontAwesomeIcons.solidRectangleList,
-        text: AppLocalizations.of(context)!.navigationBasketLabel,
+        text: context.tr('navigationBasketLabel'),
       ),
       NavigationItem(
         isSelected: false,
         iconUnselected: FontAwesomeIcons.user,
         iconSelected: FontAwesomeIcons.user,
-        text: AppLocalizations.of(context)!.navigationUserLabel,
+        text: context.tr('navigationUserLabel'),
       ),
     ],
   );

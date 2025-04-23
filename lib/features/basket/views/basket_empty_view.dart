@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../ui/ui.dart';
 
 class BasketEmptyView extends StatelessWidget {
@@ -21,13 +21,13 @@ class BasketEmptyView extends StatelessWidget {
             child: Center(
               child: EmptyState(
                 icon: FontAwesomeIcons.basketShopping,
-                title: AppLocalizations.of(context)!.basketEmpty,
-                message: AppLocalizations.of(context)!.basketEmptyMessage,
+                title: context.tr('basketEmpty'),
+                message: context.tr('basketEmptyMessage'),
               ),
             ),
           ),
           PrimaryButton(
-            content: AppLocalizations.of(context)!.startShopping,
+            content: context.tr('startShopping'),
             onPressed: onStartShopping,
           ),
         ],

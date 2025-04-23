@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../ui/ui.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -25,13 +25,13 @@ class AboutScreen extends StatelessWidget {
             height: 100,
           ),
           Text(
-            AppLocalizations.of(context)!.createdBy,
+            context.tr('createdBy'),
             style: AppTheme.of(context).typography.label,
           ),
           GestureDetector(
             onTap: onGoBack,
             child: Text(
-              AppLocalizations.of(context)!.goBack,
+              context.tr('goBack'),
               style: AppTheme.of(context).typography.bodySmall,
             ),
           ),

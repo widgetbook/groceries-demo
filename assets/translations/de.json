@@ -1,0 +1,21 @@
+{
+  "welcome": "Willkommen,",
+  "verifyAccount": "Bitte verifiziere dein Konto",
+  "fruitsHeadline": "Früchte",
+  "unit": "Stück",
+  "shopNoItemsFound": "Keine Artikel gefunden",
+  "shopNoItemsFoundMessage": "Es tut uns leid, aber wir konnten keine Artikel finden, die deiner Suche entsprechen.",
+  "basketContinueToShipping": "Weiter zum Versand",
+  "basketHeadline": "Einkaufskorb",
+  "basketTotal": "Gesamtsumme",
+  "basketSubtotal": "Zwischensumme",
+  "basketDelivery": "Versand",
+  "basketEmpty": "Dein Einkaufskorb ist leer",
+  "basketEmptyMessage": "Der Einkaufskorb öffnet das Tor zu einer Welt voller grenzenloser Möglichkeiten und wartet geduldig auf deine Auswahl, um zum Leben erweckt zu werden.",
+  "startShopping": "Beginn mit dem Einkauf",
+  "navigationShopLabel": "Geschäft",
+  "navigationBasketLabel": "Einkaufskorb",
+  "navigationUserLabel": "Konto",
+  "createdBy": "Erstellt von Widgetbook",
+  "goBack": "Zurück"
+}

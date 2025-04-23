@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../ui/ui.dart';
 
 class ShopEmptyView extends StatelessWidget {
@@ -13,8 +13,8 @@ class ShopEmptyView extends StatelessWidget {
       child: Center(
         child: EmptyState(
           icon: FontAwesomeIcons.shop,
-          title: AppLocalizations.of(context)!.shopNoItemsFound,
-          message: AppLocalizations.of(context)!.shopNoItemsFoundMessage,
+          title: context.tr('shopNoItemsFound'),
+          message: context.tr('shopNoItemsFoundMessage'),
         ),
       ),
     );

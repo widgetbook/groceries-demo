@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart' hide Icon;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../ui/ui.dart';
 
 class AccountCard extends StatelessWidget {
@@ -28,7 +28,7 @@ class AccountCard extends StatelessWidget {
               scale: 2,
             ),
             Text(
-              AppLocalizations.of(context)!.welcome,
+              context.tr('welcome'),
               style: AppTheme.of(context).typography.label,
             ),
             Text(

@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart' hide Icon;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../features/basket/basket.dart';
-import '../l10n/app_localizations.dart';
 import '../ui/ui.dart';
 import 'app_route.dart';
 
@@ -35,14 +35,14 @@ class AppShell extends ConsumerWidget {
             isSelected: activeRoute == AppRoute.shop,
             iconUnselected: FontAwesomeIcons.lemon,
             iconSelected: FontAwesomeIcons.solidLemon,
-            text: AppLocalizations.of(context)!.navigationShopLabel,
+            text: context.tr('navigationShopLabel'),
             onTap: () => onRouteTap(AppRoute.shop),
           ),
           NavigationItem(
             isSelected: activeRoute == AppRoute.basket,
             iconUnselected: FontAwesomeIcons.rectangleList,
             iconSelected: FontAwesomeIcons.solidRectangleList,
-            text: AppLocalizations.of(context)!.navigationBasketLabel,
+            text: context.tr('navigationBasketLabel'),
             onTap: () => onRouteTap(AppRoute.basket),
             showBadge: !basket.isEmpty,
           ),
@@ -50,7 +50,7 @@ class AppShell extends ConsumerWidget {
             isSelected: activeRoute == AppRoute.account,
             iconUnselected: FontAwesomeIcons.user,
             iconSelected: FontAwesomeIcons.solidUser,
-            text: AppLocalizations.of(context)!.navigationUserLabel,
+            text: context.tr('navigationUserLabel'),
             onTap: () => onRouteTap(AppRoute.account),
           ),
         ],

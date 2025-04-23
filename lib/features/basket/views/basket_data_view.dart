@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../data/data.dart';
-import '../../../l10n/app_localizations.dart';
 import '../../../ui/ui.dart';
 import '../widgets/widgets.dart';
 
@@ -54,7 +54,7 @@ class BasketDataView extends StatelessWidget {
             deliveryFees: delivery,
           ),
           PrimaryButton(
-            content: AppLocalizations.of(context)!.basketContinueToShipping,
+            content: context.tr('basketContinueToShipping'),
             onPressed: onContinueToShipping,
           ),
         ],

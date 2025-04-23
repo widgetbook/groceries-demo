@@ -9,6 +9,7 @@ environment:
 dependencies:
   assets:
     path: ../assets
+  easy_localization: ^3.0.0
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
