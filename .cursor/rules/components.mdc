@@ -1,0 +1,28 @@
+---
+description: Helps when creating new components or changing existing components
+alwaysApply: false
+---
+# UI Structure
+- Components such as modals, buttons, input field and such should be created under the lib/components folder
+    - If a component becomes to large and need restructure then we split it into a folder with a main file at the top
+- Widgets that become larger than a component should be under lib/widgets or lib/pages depending on their purpose
+- We follow the same tree structure for respective components in both widgetbook and lib/components
+    - Widgetbook's main folder exists outside of the lib folder, widgetbook is <root>/widgetbook/lib
+    - While the main project is under <root>/lib
+    - But each lib folder will follow same tree structure
+        - Example, we have custom_button.dart. Main project will be <root>/lib/component/custom_button.dart and widgetbook will be <root>/widgetbook/lib/component/custom_button.dart
+- Create small, private widget classes instead of methods like Widget _build....
+- All widgets should follow the Design System Principle
+    - All widget should have a respective use case in widgetbook so that they can be tested. Please check the widgetbook.mdc rule for more context on Widgetbook.
+    - Small UI components should be isolated and testable
+
+# tyling
+- Use Flutter's built-in widgets and create custom widgets.
+- Implement responsive design using LayoutBuilder or MediaQuery.
+- Use themes for consistent styling across the app.
+- Use Theme.of(context).textTheme.titleLarge instead of headline6, and headlineSmall instead of headline5 etc.
+
+
+# Documentation
+- Document complex logic and non-obvious code decisions.
+- Follow the latest, official Flutter and Widgetbook documentation for best practices.

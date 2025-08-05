@@ -1,71 +1,123 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../ui.dart';
 
-class PrimaryButton extends StatelessWidget {
+enum _PrimaryButtonState {
+  enabled,
+  pressed,
+  disabled,
+}
+
+class PrimaryButton extends StatefulWidget {
   const PrimaryButton({
     super.key,
     required this.content,
+    required this.onPressed,
+    this.enabled = true,
     this.leading,
-    this.trailing,
-    this.onPressed,
   });
 
   final String content;
-  final Widget? leading;
-  final Widget? trailing;
   final VoidCallback? onPressed;
+  final bool enabled;
+  final Widget? leading;
+
+  @override
+  State<PrimaryButton> createState() => _PrimaryButtonStateImpl();
+}
+
+class _PrimaryButtonStateImpl extends State<PrimaryButton> {
+  _PrimaryButtonState _currentState = _PrimaryButtonState.enabled;
+
+  void _onTapDown(TapDownDetails details) {
+    if (widget.enabled && widget.onPressed != null) {
+      setState(() {
+        _currentState = _PrimaryButtonState.pressed;
+      });
+    }
+  }
+
+  void _onTapUp(TapUpDetails details) {
+    if (widget.enabled && widget.onPressed != null) {
+      setState(() {
+        _currentState = _PrimaryButtonState.enabled;
+      });
+    }
+  }
+
+  void _onTapCancel() {
+    if (widget.enabled && widget.onPressed != null) {
+      setState(() {
+        _currentState = _PrimaryButtonState.enabled;
+      });
+    }
+  }
+
+  void _onTap() {
+    if (widget.enabled && widget.onPressed != null) {
+      widget.onPressed!();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: onPressed == null
-          ? SystemMouseCursors.forbidden
-          : SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            vertical: AppTheme.of(context).spacing.sm,
-            horizontal: AppTheme.of(context).spacing.l,
-          ),
-          decoration: BoxDecoration(
-            color: onPressed == null
-                ? AppTheme.of(context).background.primaryInactive
-                : AppTheme.of(context).background.brand,
-            borderRadius: BorderRadius.circular(
-              AppTheme.of(context).radius.full,
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (leading != null)
-                Row(
-                  children: [
-                    leading!,
-                    SizedBox(
-                      width: AppTheme.of(context).spacing.xs,
-                    ),
-                  ],
-                ),
-              Text(
-                content,
-                style: AppTheme.of(context).typography.label.copyWith(
-                      color: AppTheme.of(context).text.inverse,
-                    ),
-              ),
-              if (trailing != null)
-                Row(
-                  children: [
-                    SizedBox(
-                      width: AppTheme.of(context).spacing.xs,
-                    ),
-                    trailing!,
-                  ],
-                ),
+    final theme = AppTheme.of(context);
+    
+    // Determine current state
+    final currentState = !widget.enabled 
+        ? _PrimaryButtonState.disabled 
+        : _currentState;
+
+    // Get colors based on state
+    final backgroundColor = switch (currentState) {
+      _PrimaryButtonState.enabled => theme.background.brand,
+      _PrimaryButtonState.pressed => theme.background.brand,
+      _PrimaryButtonState.disabled => DesignSystemColor.primary.shade600,
+    };
+
+    final textColor = switch (currentState) {
+      _PrimaryButtonState.enabled => theme.text.inverse,
+      _PrimaryButtonState.pressed => theme.text.inverse,
+      _PrimaryButtonState.disabled => DesignSystemColor.grey.shade400,
+    };
+
+    return GestureDetector(
+      onTap: _onTap,
+      onTapDown: _onTapDown,
+      onTapUp: _onTapUp,
+      onTapCancel: _onTapCancel,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 100),
+        padding: EdgeInsets.symmetric(
+          horizontal: theme.spacing.l,
+          vertical: theme.spacing.sm,
+        ),
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(9999),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (widget.leading != null) ...[
+              widget.leading!,
+              SizedBox(width: theme.spacing.xs),
             ],
-          ),
+            Text(
+              widget.content,
+              style: theme.typography.label.copyWith(
+                color: textColor,
+              ),
+            ),
+            SizedBox(width: theme.spacing.xs),
+            FaIcon(
+              FontAwesomeIcons.arrowRight,
+              size: 20,
+              color: textColor,
+            ),
+          ],
         ),
       ),
     );
