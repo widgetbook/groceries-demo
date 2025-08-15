@@ -14,18 +14,18 @@ class ViewStateKnob extends Knob<ViewState> {
   ViewStateKnob({
     required this.allowedValues,
   }) : super(
-          label: 'state',
-          initialValue: allowedValues.contains(ViewState.data)
-              ? ViewState.data
-              : allowedValues.first,
-        );
+         label: 'state',
+         initialValue: allowedValues.contains(ViewState.data)
+             ? ViewState.data
+             : allowedValues.first,
+       );
 
   final List<ViewState> allowedValues;
 
   @override
   List<Field> get fields {
     return [
-      ListField<ViewState>(
+      ObjectDropdownField<ViewState>(
         name: 'state',
         initialValue: initialValue,
         values: allowedValues,

@@ -25,12 +25,11 @@ class Basket {
 
   Basket copyWithIncreasedQuantity(Fruit fruit) {
     return Basket(
-      Map.of(items)
-        ..update(
-          fruit,
-          (quantity) => quantity + 1,
-          ifAbsent: () => 1,
-        ),
+      Map.of(items)..update(
+        fruit,
+        (quantity) => quantity + 1,
+        ifAbsent: () => 1,
+      ),
     );
   }
 

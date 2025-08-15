@@ -46,8 +46,8 @@ class _InheritedAppTheme extends InheritedWidget {
   final AppThemeData data;
 
   static AppThemeData of(BuildContext context) {
-    final widget =
-        context.dependOnInheritedWidgetOfExactType<_InheritedAppTheme>();
+    final widget = context
+        .dependOnInheritedWidgetOfExactType<_InheritedAppTheme>();
     return widget!.data;
   }
 

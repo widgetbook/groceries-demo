@@ -14,7 +14,7 @@ Widget buildBasketCardUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8),
     child: BasketCard(
-      fruit: context.knobs.list(
+      fruit: context.knobs.object.dropdown(
         label: 'fruit',
         options: MockDataStore.fruits,
         labelBuilder: (item) => item.name,

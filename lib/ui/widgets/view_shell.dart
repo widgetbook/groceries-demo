@@ -12,18 +12,18 @@ class ViewShell extends StatelessWidget {
   const ViewShell.loading({
     super.key,
   }) : child = const Center(
-          child: Loader(),
-        );
+         child: Loader(),
+       );
 
   const ViewShell.error({
     super.key,
   }) : child = const Center(
-          child: Icon(
-            FontAwesomeIcons.circleXmark,
-            scale: 2,
-            color: Color(0xFFD32F2F),
-          ),
-        );
+         child: Icon(
+           FontAwesomeIcons.circleXmark,
+           scale: 2,
+           color: Color(0xFFD32F2F),
+         ),
+       );
 
   final Widget child;
 

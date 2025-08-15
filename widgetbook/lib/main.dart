@@ -58,13 +58,10 @@ class WidgetbookApp extends StatelessWidget {
           },
         ),
         GitHubAddon('widgetbook/groceries-demo'),
-        DeviceFrameAddon(
-          devices: [
-            Devices.ios.iPhone13,
-            Devices.ios.iPad,
-          ],
-          initialDevice: Devices.ios.iPhone13,
-        ),
+        ViewportAddon([
+          IosViewports.iPhone13,
+          IosViewports.iPad,
+        ]),
         InspectorAddon(),
         LocalizationAddon(
           locales: AppLocalizations.supportedLocales,
