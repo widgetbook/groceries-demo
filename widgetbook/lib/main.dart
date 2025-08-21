@@ -59,7 +59,9 @@ class WidgetbookApp extends StatelessWidget {
         ),
         GitHubAddon('widgetbook/groceries-demo'),
         ViewportAddon([
-          Viewports.all
+          Viewports.none, 
+          IosViewports.iPhone13,
+          IosViewports.iPad,
         ]),
         InspectorAddon(),
         LocalizationAddon(
